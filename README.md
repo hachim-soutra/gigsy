@@ -24,10 +24,7 @@ Development of new features starting from the 'develop' branch.
 ## Start developing a new feature with
 
 `git flow feature start MYFEATURE`
-
-
-
-
+`git flow feature finish MYFEATURE`
 `git flow feature publish MYFEATURE`
 
 Getting a published feature
