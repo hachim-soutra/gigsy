@@ -24,6 +24,10 @@ Development of new features starting from the 'develop' branch.
 ## Start developing a new feature with
 
 `git flow feature start MYFEATURE`
+`git checkout develop -f`
+`git flow feature start MYFEATURE`
+`git add .` 
+`git commit -m MYMESSAGE`
 `git flow feature finish MYFEATURE`
 `git flow feature publish MYFEATURE`
 
