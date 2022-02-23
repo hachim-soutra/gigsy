@@ -1,19 +1,24 @@
 <template>
   <div id="app">
     <TheHeader />
-    <router-view />
+    <TheMenu />
+    <Home />
     <TheFooter />
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-import TheFooter from './components/TheFooter.vue'
+import TheHeader from '@c/TheHeader.vue'
+import TheMenu from '@c/TheMenu.vue'
+import Home from './views/Home/Home.vue'
+import TheFooter from '@c/TheFooter.vue'
 
 export default {
   name: 'App',
   components: {
     TheHeader,
+    TheMenu,
+    Home,
     TheFooter
   }
 }
@@ -21,11 +26,14 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
 }
 </style>

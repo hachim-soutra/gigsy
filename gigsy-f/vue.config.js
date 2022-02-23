@@ -3,10 +3,12 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        "@c": path.resolve("./", "src/components"),
-        "@v": path.resolve("./", "src/views"),
-        "@": path.resolve("./", "src"),
+        "@c": path.resolve(__dirname, "src/components"),
+        "@v": path.resolve(__dirname, "src/views"),
+        "@assets": path.resolve(__dirname, "src/assets"),
+        "@": path.resolve(__dirname, "src"),
       },
+      extensions: ['.js', '.vue', '.json']
     },
   },
 };

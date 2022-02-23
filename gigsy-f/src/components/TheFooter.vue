@@ -1,25 +1,31 @@
 <template>
-  <div class="container m-auto" id="navbar">
-    <div class="home-navbar">
-      <div class="navbar-item">
-        <router-link class="navbar-link" :to="{ name: 'Login' }"
-          >Devenez vendeur</router-link
-        >
+  <footer >
+    <div class="container m-auto p-3">
+      <div class="row m-0 align-items-center py-3">
+        <div class="col-md-6 col-12">
+          <span class="subscribe-txt">Subscribe to our newsletter</span>
+        </div>
+        <div class="col-md-6 col-12">
+          <form class="d-flex">
+        <input class="form-control input-newsletter" type="search" placeholder="Enter your email" aria-label="Search">
+        <button class="btn btn-newsletter" type="submit">Search</button>
+      </form>
+        </div>
       </div>
-      <div class="navbar-item">
-        <router-link class="navbar-link" :to="{ name: 'Login' }">
-          <img :src="require('./../assets/login.svg')" alt="login" />
-          S'identifier
-        </router-link>
+      <div class="row m-0 align-items-center py-3">
+        <div class="col-md-3 col-12 text-left">
+          <span>2022 Copyright </span>
+        </div>
+        <div class="col-md-6 col-12 text-center">
+        
+        </div>
+        <div class="col-md-3 col-12 text-right">
+          <span>Designed by </span>
+        </div>
       </div>
-      <div class="navbar-item">
-        <router-link class="navbar-link" :to="{ name: 'Register' }">
-          <img :src="require('./../assets/register.svg')" alt="register" />
-          Rejoindre
-        </router-link>
-      </div>
+      
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -27,18 +33,28 @@ export default {};
 </script>
 
 <style scoped>
-.home-navbar {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  border-bottom: 2px solid var(--secondary-color);
+span {
+  color: var(--text-color);
 }
-.navbar-item {
-  padding: 1rem 2rem;
+
+.subscribe-txt{
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: center;
 }
-.navbar-item:hover {
-  padding: 1rem 2rem;
-  background-color: var(--secondary-color);
+.btn-newsletter {
+  color: var(--text-color);
+    background-color: var(--secondary-color);
+
 }
+.input-newsletter {
+  color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+
+}
+
 </style>
