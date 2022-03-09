@@ -1,14 +1,24 @@
-export default [
+let routes = [
   {
     path: "/",
-    component: () => import(`../views/Home.vue`),
+    name: "home",
+    component: () => import(`@/views/Home/Home.vue`),
   },
   {
     path: "/login",
-    component: () => import(`../views/Login.vue`),
+    name: "login",
+    component: () => import(`@v/login/Login.vue`),
   },
   {
     path: "/register",
-    component: () => import(`../views/Register.vue`),
+    name: "register",
+    component: () => import(`@v/register/Register.vue`),
+  },
+  {
+    path: "/forget-password",
+    name: "forget",
+    component: () => import(`@v/forget/Forget.vue`),
   },
 ];
+
+export default routes;

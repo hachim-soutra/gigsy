@@ -1,10 +1,17 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
-import homeRoutes from "./home.js";
+import Router from "vue-router";
+import HomeRoutes from "./home";
 
-Vue.use(VueRouter);
-const router = new VueRouter({
-  routes: [...homeRoutes],
+Vue.use(Router);
+
+const routes = [...HomeRoutes];
+
+let router = new Router({
   mode: "history",
+  routes: routes,
+  linkExactActiveClass: "active",
+  scrollBehavior: function(to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 };
+  },
 });
 export default router;

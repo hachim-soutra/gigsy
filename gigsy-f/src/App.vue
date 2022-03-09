@@ -1,39 +1,42 @@
 <template>
   <div id="app">
-    <TheHeader />
-    <TheMenu />
-    <Home />
-    <TheFooter />
+    <TheHeader></TheHeader>
+    <router-view/>
+    <the-footer></the-footer>
   </div>
 </template>
-
 <script>
 import TheHeader from '@c/TheHeader.vue'
-import TheMenu from '@c/TheMenu.vue'
-import Home from './views/Home/Home.vue'
 import TheFooter from '@c/TheFooter.vue'
 
 export default {
-  name: 'App',
   components: {
     TheHeader,
-    TheMenu,
-    Home,
-    TheFooter
+    TheFooter,
+
   }
 }
 </script>
 
 <style>
 #app {
-    background-color: var(--primary-color);
-    min-height: 100vh;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
-* {
-    margin: 0;
-    padding: 0;
+
+#nav {
+  padding: 30px;
 }
-body {
-    height: 100%;
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

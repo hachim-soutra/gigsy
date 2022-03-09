@@ -1,48 +1,30 @@
 <template>
-  <div class="container m-auto" id="navbar">
-    <nav class="navbar navbar-expand-lg ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img :src="require('./../assets/logo.svg')" alt="logo" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav navbar-handler">
-            <li class="nav-item">
-              <router-link class="nav-link-btn" :to="{ name: 'Login' }"
-                >Devenez vendeur</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'Login' }">
-                <img :src="require('./../assets/login.svg')" alt="login" />
-                S'identifier</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'Login' }">
-                <img
-                  :src="require('./../assets/register.svg')"
-                  alt="register"
-                />
-                Rejoindre</router-link
-              >
-            </li>
-          </ul>
-        </div>
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><router-link :to="{name:'home'}"><span>Ninestars</span></router-link></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-    </nav>
-  </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li :class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+  
+          <li><a href="#contact">Contact Us</a></li>
+
+          <li class="get-started"><router-link :to="{name:'login'}">Login</router-link></li>
+          <li><router-link :to="{name:'register'}">Register</router-link></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header>
 </template>
 
 <script>
