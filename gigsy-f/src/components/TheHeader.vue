@@ -10,7 +10,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li :class="active"><a href="#header">Home</a></li>
+          <li ><a href="#header">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>

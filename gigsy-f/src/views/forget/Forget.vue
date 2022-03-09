@@ -13,22 +13,21 @@
           data-aos-delay="200"
         >
           <form
-            action="forms/contact.php"
-            method="post"
+            @submit.prevent="forget"
             role="form"
             class="php-email-form w-100"
           >
             <div class="form-group">
-              <label for="name">Your Email</label>
+              <label for="email">Your Email</label>
               <input
+              v-model="form.email"
                 type="email"
                 class="form-control"
                 name="email"
                 id="email"
-                data-rule="email"
-                data-msg="Please enter a valid email"
+                :class="{ 'is-invalid': form.errors.has('email') }"
               />
-              <div class="validate"></div>
+              <has-error :form="form" field="email"></has-error>
             </div>
             <div class="text-center">
               <button type="submit">Send email</button>
@@ -41,7 +40,26 @@
 </template>
 
 <script>
-export default {};
+import Form from 'vform'
+export default {
+  data: () => ({
+    form: new Form({
+      email: '',
+    })
+  }),
+
+  methods: {
+    async forget () {
+      await this.form.post(`${this.$config.app_url}/api/forget`).then((result) => {
+        console.log(result);
+        
+      }).catch((err) => {
+                console.log(err);
+
+      });
+    }
+  }
+};
 </script>
 
 <style scoped>
