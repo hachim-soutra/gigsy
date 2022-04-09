@@ -1,5 +1,5 @@
 {
     "name":"test",
-    "app_url":"test"
+    "app_url":" http://localhost:8000"
 
 }

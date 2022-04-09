@@ -10,15 +10,6 @@ trait Userable
         if (in_array($key, $this->userable)) {
             $value = $this->user ? $this->user->$key : '';
         }
-
-        if (in_array($key, $this->encryptable)) {
-            try {
-                $value = decrypt($value);
-            } catch (\Throwable $th) {
-                $value = $value;
-            }
-        }
-
         return $value;
     }
 
@@ -29,9 +20,7 @@ trait Userable
             $this->user->save();
             $value = $this->user->$key;
         }else{
-            if (in_array($key, $this->encryptable)) {
-                $value = encrypt($value);
-            }
+
             return parent::setAttribute($key, $value);
         }
 

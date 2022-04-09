@@ -6,7 +6,9 @@
 2. Copier `.env.example` vers `.env` puis lancer `php artisan key:generate`
 3. Lancer les migrations `php artisan migrate` 
 4. Lancer un `composer install`.
+5. `php artisan passport:install`
 5. `php artisan serve`
+1. 
 
 ## instaltion frontend...
 
