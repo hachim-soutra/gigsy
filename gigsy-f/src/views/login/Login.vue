@@ -13,8 +13,8 @@
           data-aos-delay="200"
         >
           <form
-            action="forms/contact.php"
-            method="post"
+            @submit.prevent="login"
+            @keydown="form.onKeydown($event)"
             role="form"
             class="php-email-form w-100"
           >
@@ -25,10 +25,15 @@
                 class="form-control"
                 name="email"
                 id="email"
-                data-rule="email"
-                data-msg="Please enter a valid email"
+                v-model="form.email"
+                :class="{ 'is-invalid': form.errors.has('email') }"
               />
-              <div class="validate"></div>
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('email')"
+              >
+                {{ form.errors.get("email") }}
+              </div>
             </div>
          
             <div class="form-group">
@@ -38,11 +43,18 @@
                 class="form-control"
                 name="password"
                 id="password"
+                v-model="form.password"
+                :class="{ 'is-invalid': form.errors.has('password') }"
               />
-              <div class="validate"></div>
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('password')"
+              >
+                {{ form.errors.get("password") }}
+              </div>
             </div>
             <div class="text-center">
-              <button type="submit">Login</button>
+              <button type="submit" :disabled="form.busy">Login</button>
               <br>
               <router-link class="mt-2" :to="{name:'forget'}">Forget password ?</router-link>
             </div>
@@ -54,7 +66,25 @@
 </template>
 
 <script>
-export default {};
+import Form from "vform";
+export default {
+    data: () => ({
+    form: new Form({
+      email: "",
+      password: "",
+    }),
+  }),
+  methods: {
+    login() {
+      this.form
+        .post(this.$app_url + "/api/v1/user/login")
+        .then((response) => {
+          this.form.reset();
+          this.$toasted.success(response.data.message);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>

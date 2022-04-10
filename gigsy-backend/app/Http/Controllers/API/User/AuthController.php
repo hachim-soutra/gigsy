@@ -40,15 +40,7 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        if(!auth()->attempt(array("email" => $request->email, 'password' => $request['password']))){
-            return response(['message' => __('login ou mot de passe incorrect')], 404);
-        }
-        if (auth()->user()->userable_type != "App\Models\Contact")
-            return response(['message' => __('Vous avez pas l\'autorisation !')], 401);
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
-        $response["access_token"] = $accessToken;
-        $response["user"] = auth()->user();
-        return response($response, 200);
+        return  $this->userRepository->login($request);
     }
 
     public function register(RegisterRequest $request)
