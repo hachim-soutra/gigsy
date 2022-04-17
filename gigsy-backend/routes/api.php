@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\API\User\AuthController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\User\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +18,8 @@ Route::prefix('v1')->namespace("API")->group(function() {
     Route::prefix('user')->namespace("User")->group(function () {
         Route::post('login', [AuthController::class, "login"])->name('login');
         Route::post('register', [AuthController::class, "register"])->name('register');
+    });
+    Route::namespace("Shared")->name("shared.")->group(function () {
+        Route::get("services", [\App\Http\Controllers\API\Shared\ServiceController::class,"index"])->name('services.index');
     });
 });
