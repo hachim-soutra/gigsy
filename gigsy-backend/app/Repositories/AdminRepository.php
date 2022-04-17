@@ -2,10 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Builders\SellerBuilder;
 use App\Interfaces\UserRepositoryInterface;
 use App\Models\Admin;
-use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
