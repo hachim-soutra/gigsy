@@ -49,17 +49,4 @@ class AuthController extends Controller
         $response ['message'] = __('User successfully register.');
         return response($response, 200);
     }
-
-
-//    public function forgetPassword(Request $request): JsonResponse
-//    {
-//    }
-//
-//    public function logout(Request $request): JsonResponse
-//    {
-//        $token = $request->user()->token();
-//        $token->revoke();
-//        $response = ['message' => __('You have been successfully logged out!')];
-//        return response($response, 200);
-//    }
 }
