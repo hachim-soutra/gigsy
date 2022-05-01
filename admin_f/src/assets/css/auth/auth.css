@@ -1,0 +1,37 @@
+body {
+    background-color: #e4e4e4;
+}
+
+.login-zone {
+    margin: 10% auto;
+    max-width: 400px;
+    border-left: 6px solid rgb(197, 70, 1);
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 14px 0px rgb(153, 153, 153);
+}
+
+.login-zone label {
+    font-size: 15px;
+    color: rgb(197, 70, 1);
+}
+
+.login-zone input {
+    border: 1px solid rgb(197, 70, 1);
+    color: rgb(197, 70, 1) !important;
+}
+
+.login-zone .cus-btn {
+    background-color: rgb(197, 70, 1);
+    border-color: rgb(230, 80, 0);
+    width: 250px;
+    border-radius: 50px;
+}
+
+.login-zone hr.HrLine {
+    border: 1px solid #c54801;
+}
+
+.login-zone .copyright-text {
+    font-size: 12px;
+}
