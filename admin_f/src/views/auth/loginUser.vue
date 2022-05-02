@@ -34,33 +34,36 @@ export default {
         return{
             email: '',
             password:'',
+            fromIsValid: true,
             isLoading:false
         };
     },
     methods:{
         async submitForm(){
-            //rets
+            //rest
+            this.fromIsValid = true;
+            this.$store.commit('setErrors','');
+            //validation
+            if (this.password === '' || !this.email.includes('@') || this.email === ''){
+                return this.showAlert('error','Compléter les informations utilisateur');
+            }
+            //Submit
             const actionPayload = {
                     email: this.email,
                     password: this.password,
                     
                 };
-                
-            
                 this.isLoading = true;
                 await this.$store.dispatch('login',actionPayload);
                 this.isLoading = false;
-                this.showAlert('success','Connexion réussie');
-                
-                
-            
-            // //to redirect into register as a coach page or coaches 
-            // const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
-            // //if no errors go to dashboard
-            // if(!this.$store.getters.getErrors){
-            //     this.$router.replace(redirectUrl); 
-            // } 
-            
+
+                if(!this.$store.getters.getErrors){
+                    this.showAlert('success','Connexion réussie');
+                    this.$router.replace({name : 'dashboard'});
+                }else{
+                    return this.showAlert('error','Email ou mot de passe incorrect');
+                }
+
         }
     }
 }

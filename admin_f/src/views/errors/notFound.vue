@@ -1,3 +1,3 @@
 <template>
-    <div>ready</div>
+    <div>ready 404</div>
 </template>
