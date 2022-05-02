@@ -74,7 +74,7 @@ export default {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId');
-        const tokenExpiration = 3600; //localStorage.getItem('tokenExpiration');
+        const tokenExpiration = '1651504051664'; //localStorage.getItem('tokenExpiration');
 
         const expiresIn = tokenExpiration - new Date().getTime();
         if (expiresIn < 0) {
