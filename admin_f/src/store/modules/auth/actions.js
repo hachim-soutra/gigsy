@@ -26,16 +26,16 @@ export default {
                     password: payload.password,
                     password_confirmation: payload.password_confirmation,
                 })
-                .then(response => {
-                    const responseData = response.data.message;
-                    console.log(responseData);
+                // .then(response => {
+                //     const responseData = response.data.message;
+                //     console.log(responseData);
 
-                    context.commit('setSuccess', {
-                        success: responseData,
-                    });
+            //     context.commit('setSuccess', {
+            //         success: responseData,
+            //     });
 
-                })
-                .catch(error => context.commit('setErrors', error));
+            // })
+            .catch(errors => context.commit('setErrors', errors.response.data.errors));
         } else {
             //login
             await window.axios.post(url, {
@@ -74,7 +74,7 @@ export default {
         const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId');
-        const tokenExpiration = '1651504051664'; //localStorage.getItem('tokenExpiration');
+        const tokenExpiration = localStorage.getItem('tokenExpiration');
 
         const expiresIn = tokenExpiration - new Date().getTime();
         if (expiresIn < 0) {
