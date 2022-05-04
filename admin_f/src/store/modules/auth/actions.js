@@ -86,7 +86,7 @@ export default {
 
         if (token && userId && user) {
             context.commit('setUser', {
-                user: user,
+                user: JSON.parse(user),
                 token: token,
                 userId: userId,
             });

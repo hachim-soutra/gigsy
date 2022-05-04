@@ -4,6 +4,7 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <h5 class="w-100 text-light">Bonjour {{fullName}}</h5>
         <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -19,6 +20,12 @@ export default {
         logout(){
             this.$store.dispatch('logout');
             this.$router.replace({name: 'login'});
+        },
+    },
+    computed:{
+        fullName(){
+            const user = this.$store.getters.user;
+            return user.userable.user.fullname;
         }
     }
 }
@@ -41,6 +48,9 @@ export default {
     right: 1rem;
 }
 
+.navbar h5{
+    margin-left: 10px !important;
+}
 .navbar .form-control {
     padding: .75rem 1rem;
     border-width: 0;

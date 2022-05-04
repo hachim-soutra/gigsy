@@ -1,35 +1,57 @@
 <template>
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div class="position-sticky pt-3">
+            <div class="position-sticky pt-1">
                 <ul class="nav flex-column">
                 <li class="nav-item">
                     <router-link class="nav-link active" aria-current="page" to="dashboard">
                     <span data-feather="home"></span>
-                    <h5><i class="fa-solid fa-gauge"></i> Tableau de bord</h5>
-                    </router-link>
-                </li>
-                    <li class="nav-item">
-                    <router-link class="nav-link" to="users">
-                        <i class="fa fa-users"></i>
-                        Utilisateurs
+                    <h5 class="list-group-item list-group-item-action list-group-item-dark"><i class="fa-solid fa-gauge"></i> Page d'accueil</h5>
                     </router-link>
                 </li>
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                <span>Saved reports</span>
+                <span>Utilisateurs</span>
                 <a class="link-secondary" href="#" aria-label="Add a new report">
-                    <span data-feather="plus-circle"></span>
+                    <i class="fa fa-user"></i>
                 </a>
                 </h6>
-                <ul class="nav flex-column mb-2">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <i class="fa fa-save"></i>
-                    Year-end sale
-                    </a>
+                <ul class="nav flex-column mb-2 list-group">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
+                    <router-link class="nav-link" to="users">
+                    <i class="fa fa-users"></i>
+                    List des utilisateurs
+                    </router-link>
+                </li>
+                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
+                    <router-link class="nav-link" to="users">
+                    <i class="fa fa-user-plus"></i>
+                    Ajouter un utilisateur
+                    </router-link>
                 </li>
                 </ul>
+
+                <h6 class=" sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Les vendeurs</span>
+                <a class="link-secondary" href="#" aria-label="Add a new report">
+                    <i class="fa fa-shop"></i>
+                </a>
+                </h6>
+                <ul class="nav flex-column mb-2 list-group">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
+                    <router-link class="nav-link" to="users">
+                    <i class="fa fa-shop"></i>
+                    Liste des vendeurs
+                    </router-link>
+                </li>
+                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
+                    <router-link class="nav-link" to="users">
+                    <i class="fa fa-cart-plus"></i>
+                    Add Seller
+                    </router-link>
+                </li>
+                </ul>
+
             </div>
         </nav>
 </template>
@@ -67,6 +89,7 @@
 .sidebar .nav-link {
     font-weight: 500;
     color: #333;
+    padding: 0px;
 }
 
 .sidebar .nav-link .feather {
@@ -84,7 +107,7 @@
 }
 
 .sidebar-heading {
-    font-size: .75rem;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 </style>

@@ -4,7 +4,7 @@ import getters from "./getters";
 
 export default {
     state: {
-        user: null,
+        user: [],
         userId: null,
         token: null,
         errors: '',
