@@ -1,9 +1,18 @@
 <template>
-  <router-view></router-view>
+<the-header v-if="isAuthenticated"></the-header>
+<div class="container-fluid">
+  <div class="row">
+    <the-sidebar v-if="isAuthenticated"></the-sidebar>
+    <main :class="printClass" class="mt-4">
+        <router-view></router-view>
+    </main>
+  </div>
+</div>
 </template>
 
 <script>
 export default{
+  
   created(){
     //auth
     this.$store.dispatch('tryLogin');
@@ -12,7 +21,15 @@ export default{
     //auth
     didAutoLogout(){
           return this.$store.getters.didAutoLogout;
-        }
+        },
+    //show/hide sideBar and NaveBar
+    isAuthenticated(){
+          return this.$store.getters.isAuthenticated;
+    },
+    printClass(){
+      return this.$store.getters.isAuthenticated? 'col-md-9 ms-sm-auto col-lg-10 px-md-4' : '';
+    }
+    
   },
   watch:{
     //auth
@@ -27,5 +44,29 @@ export default{
 
 </script>
 <style>
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  font-size: .875rem;
+}
 
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 </style>

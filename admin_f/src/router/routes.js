@@ -1,4 +1,4 @@
-import dashboardPage from '../views/dashboardPage.vue';
+import dashboardPage from '../views/DashboardPage.vue';
 
 const login = () =>
     import ('../views/auth/loginUser.vue');

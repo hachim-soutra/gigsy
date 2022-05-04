@@ -21,7 +21,13 @@ const app = createApp(App);
 /*Global Components*/
 const WarningSpinner = defineAsyncComponent(() =>
     import ('./components/ui/spinner/WarningSpinner.vue'));
+const TheHeader = defineAsyncComponent(() =>
+    import ('./components/layout/TheHeader.vue'));
+const TheSidebar = defineAsyncComponent(() =>
+    import ('./components/layout/TheSidebar.vue'));
 app.component('warning-spinner', WarningSpinner);
+app.component('the-header', TheHeader);
+app.component('the-sidebar', TheSidebar);
 
 app.mixin(alertMixin);
 app.use(store);
