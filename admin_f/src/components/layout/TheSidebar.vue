@@ -3,16 +3,16 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <router-link class="nav-link active" aria-current="page" to="dashboard">
                     <span data-feather="home"></span>
-                    Dashboard
-                    </a>
+                    <h5><i class="fa-solid fa-gauge"></i> Tableau de bord</h5>
+                    </router-link>
                 </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-box"></i>
-                        Orders
-                    </a>
+                    <router-link class="nav-link" to="users">
+                        <i class="fa fa-users"></i>
+                        Utilisateurs
+                    </router-link>
                 </li>
                 </ul>
 

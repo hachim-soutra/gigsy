@@ -6,6 +6,8 @@ const register = () =>
     import ('../views/auth/registerUser.vue');
 const notFound = () =>
     import ('../views/errors/notFound.vue');
+const usersList = () =>
+    import ('../views/users/UsersList.vue');
 
 const routes = [{
         path: '/',
@@ -34,6 +36,12 @@ const routes = [{
     {
         path: '/:notFound(.*)',
         component: notFound
+    },
+    {
+        path: '/users',
+        name: 'users',
+        component: usersList,
+        meta: { requiresAuth: true }
     }
 ]
 export default routes
