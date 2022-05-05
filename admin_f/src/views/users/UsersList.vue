@@ -1,5 +1,6 @@
 <template>
-    <h1>User list</h1>
+    <section>
+        <h1>User list</h1>
        <div class="card rounded-5">
             <div class="card-header">
                 <div class="row">
@@ -80,6 +81,7 @@
 
             </div>
         </div>
+    </section>
 </template>
 
 <style scoped>

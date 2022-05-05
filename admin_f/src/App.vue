@@ -1,15 +1,17 @@
 <template>
-<the-header v-if="isAuthenticated"></the-header>
-<div class="container-fluid">
-  <div class="row">
-    <the-sidebar v-if="isAuthenticated"></the-sidebar>
-    <main :class="printClass" class="mt-4">
-      <transition name="route">
-        <router-view></router-view>
-      </transition>
-    </main>
+  <the-header v-if="isAuthenticated"></the-header>
+  <div class="container-fluid">
+    <div class="row">
+        <the-sidebar v-if="isAuthenticated"></the-sidebar>
+        <main :class="printClass" class="mt-4">
+            <router-view v-slot="slotProps" mode="out-in">
+              <transition name="route">
+                <component :is="slotProps.Component"></component>
+              </transition>
+            </router-view>
+        </main>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
