@@ -3,9 +3,8 @@
     <div class="col-md-4 col-xl-3">
             <div class="card order-card" :class="color">
                 <div class="card-block">
-                    <h6 class="m-b-20">Orders Received</h6>
-                    <h2 class="text-right"><i class="fa f-left" :class="icon"></i> <span>486</span></h2>
-                    <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    <h6 class="m-b-20" v-text="title"></h6>
+                    <h2 class="text-right"><i class="fa f-left" :class="icon"></i> <span v-text="number"></span></h2>
                 </div>
             </div>
         </div>
@@ -13,7 +12,7 @@
 
 <script>
 export default {
-    props:['color','icon']
+    props:['color','icon','title','number']
     
 }
 </script>
@@ -54,7 +53,9 @@ export default {
 .card .card-block {
     padding: 25px;
 }
-
+.card .card-block h2 span{
+    margin-left: 10px !important;
+}
 .order-card i {
     font-size: 26px;
 }

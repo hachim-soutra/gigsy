@@ -1,5 +1,5 @@
 <template>
-        <div class="card">
+        <div class="card rounded-0">
             <div class="card-body">
                 <h5 class="card-title">{{title}}</h5>
                 <div class="row">

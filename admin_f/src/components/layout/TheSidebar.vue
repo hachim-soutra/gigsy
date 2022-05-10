@@ -1,13 +1,13 @@
 <template>
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
             <div class="position-sticky pt-1">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                    <router-link class="nav-link active" aria-current="page" to="dashboard">
-                    <span data-feather="home"></span>
-                    <h5 class="list-group-item list-group-item-action list-group-item-dark"><i class="fa-solid fa-gauge"></i> Page d'accueil</h5>
-                    </router-link>
-                </li>
+                <ul class="nav flex-column ">
+                    <li class="nav-item bg-dark">
+                        <router-link class="nav-link active" aria-current="page" to="dashboard">
+                        <span data-feather="home"></span>
+                        <h5 class="list-group-item list-group-item-action list-group-item-dark "><i class="fa-solid fa-gauge"></i> Page d'accueil</h5>
+                        </router-link>
+                    </li>
                 </ul>
 
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -17,14 +17,14 @@
                 </a>
                 </h6>
                 <ul class="nav flex-column mb-2 list-group">
-                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
-                    <router-link class="nav-link" to="users">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
+                    <router-link class="nav-link text-warning" to="users">
                     <i class="fa fa-users"></i>
                     List des utilisateurs
                     </router-link>
                 </li>
-                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
-                    <router-link class="nav-link" to="users">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
+                    <router-link class="nav-link text-warning" to="users">
                     <i class="fa fa-user-plus"></i>
                     Ajouter un utilisateur
                     </router-link>
@@ -38,14 +38,14 @@
                 </a>
                 </h6>
                 <ul class="nav flex-column mb-2 list-group">
-                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
-                    <router-link class="nav-link" to="users">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
+                    <router-link class="nav-link text-warning" to="users">
                     <i class="fa fa-shop"></i>
                     Liste des vendeurs
                     </router-link>
                 </li>
-                <li class="nav-item rounded-0 list-group-item list-group-item-action list-group-item-light">
-                    <router-link class="nav-link" to="users">
+                <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
+                    <router-link class="nav-link text-warning" to="users">
                     <i class="fa fa-cart-plus"></i>
                     Add Seller
                     </router-link>
@@ -104,10 +104,25 @@
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
+    
 }
 
 .sidebar-heading {
     font-size: 1rem;
     text-transform: uppercase;
+}
+.sidebar .nav-item{
+    padding: 0px;
+}
+.sidebar .nav-link{
+    padding: .5rem 1rem;
+}
+.sidebar .nav-item:hover{
+    background-color: #f7bb09 !important;
+    color: black;
+    
+}
+.sidebar .nav-link:hover{
+    color: black !important;
 }
 </style>

@@ -5,10 +5,10 @@
         <div class="container">
         <div class="row">
             <base-card title="Surbrillance">
-                <number-card color="bg-c-yellow" icon="fa-users"></number-card>
-                <number-card color="bg-c-pink" icon="fa-shop"></number-card>
-                <number-card color="bg-c-green" icon="fa-credit-card"></number-card>
-                <number-card color="bg-c-blue" icon="fa-credit-card"></number-card>
+                <number-card color="bg-c-yellow" icon="fa-users" title="Nombre d'utilisateur" number="50"></number-card>
+                <number-card color="bg-c-pink" icon="fa-shop" title="Nombre de vendeurs" number="50"></number-card>
+                <number-card color="bg-c-green" icon="fa-cart-flatbed" title="Nombre d'acheteurs" number="500"></number-card>
+                <number-card color="bg-c-blue" icon="fa-chart-line" title="Nombre de commandes" number="450"></number-card>
             </base-card>
             
         </div>
