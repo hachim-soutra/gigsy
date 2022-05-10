@@ -14,3 +14,10 @@ export default {
     props:['title']
 }
 </script>
+
+<style scoped>
+.card{
+        box-shadow: 0px 1px 11px 0px #00000033;
+}
+
+</style>

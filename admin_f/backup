@@ -1,0 +1,83 @@
+<section>
+    <h1>User list</h1>
+    <div class="card rounded-5">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-6   mb-1">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded-0 search" placeholder="Rechercher par e-mail, numéro de téléphone ou nom d'utilisateur" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    </div>
+
+                </div>
+                <div class="col-6   mb-1">
+                    <button class="btn btn-light rounded-0"><i class="fa fa-plus"></i> Ajouter un utilisateur</button>
+                    <button class="btn btn-light rounded-0"><i class="fa fa-arrow-rotate-right"></i> Rafraîchir <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body bg-light">
+            <!-- Data Tabel -->
+            <table class="table bg-light mt-2">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Approbation</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td><span class="badge bg-success">A approuvé</span></td>
+                        <td><button class="btn btn-outline-success "><i class="fa fa-pen-to-square"></i> Éditer</button></td>
+                        <td><button class="btn btn-outline-danger "><i class="fa fa-trash-can"></i> Supprimer</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td><span class="badge bg-danger">Désapprouvé</span></td>
+                        <td><button class="btn btn-outline-success "><i class="fa fa-pen-to-square"></i> Éditer</button></td>
+                        <td><button class="btn btn-outline-danger "><i class="fa fa-trash-can"></i> Supprimer</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td><span class="badge bg-success">A approuvé</span></td>
+                        <td><button class="btn btn-outline-success "><i class="fa fa-pen-to-square"></i> Éditer</button></td>
+                        <td><button class="btn btn-outline-danger "><i class="fa fa-trash-can"></i> Supprimer</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td><span class="badge bg-success">A approuvé</span></td>
+                        <td><button class="btn btn-outline-success "><i class="fa fa-pen-to-square"></i> Éditer</button></td>
+                        <td><button class="btn btn-outline-danger "><i class="fa fa-trash-can"></i> Supprimer</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- spinner -->
+            <div class="d-flex justify-content-center p-5">
+                <div class="spinner-grow width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

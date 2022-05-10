@@ -1,7 +1,7 @@
 <template>
     
     <section class="mt-4">
-        <h2>Dashboard</h2>
+        <!-- <h2>Dashboard</h2> -->
         <div class="container">
         <div class="row">
             <base-card title="Surbrillance">
