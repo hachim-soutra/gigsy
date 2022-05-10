@@ -18,13 +18,13 @@
                 </h6>
                 <ul class="nav flex-column mb-2 list-group">
                 <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
-                    <router-link class="nav-link text-warning" to="users">
+                    <router-link class="nav-link text-orange" to="users">
                     <i class="fa fa-users"></i>
                     List des utilisateurs
                     </router-link>
                 </li>
                 <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
-                    <router-link class="nav-link text-warning" to="users">
+                    <router-link class="nav-link text-orange" to="users">
                     <i class="fa fa-user-plus"></i>
                     Ajouter un utilisateur
                     </router-link>
@@ -39,13 +39,13 @@
                 </h6>
                 <ul class="nav flex-column mb-2 list-group">
                 <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
-                    <router-link class="nav-link text-warning" to="users">
+                    <router-link class="nav-link text-orange" to="users">
                     <i class="fa fa-shop"></i>
                     Liste des vendeurs
                     </router-link>
                 </li>
                 <li class="nav-item rounded-0 list-group-item list-group-item-action bg-dark">
-                    <router-link class="nav-link text-warning" to="users">
+                    <router-link class="nav-link text-orange" to="users">
                     <i class="fa fa-cart-plus"></i>
                     Add Seller
                     </router-link>
@@ -118,11 +118,15 @@
     padding: .5rem 1rem;
 }
 .sidebar .nav-item:hover{
-    background-color: #f7bb09 !important;
+    background-color: #ff5b27 !important;
     color: black;
     
 }
 .sidebar .nav-link:hover{
     color: black !important;
+}
+
+.text-orange{
+    color: #ff5b27 !important;
 }
 </style>

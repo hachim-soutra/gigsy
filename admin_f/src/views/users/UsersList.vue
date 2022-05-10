@@ -1,7 +1,7 @@
 <template>
     <section>
-        <base-card title=" List des utilisateurs ">
-        <users-filter></users-filter>
+        <base-card :shadow="true" title=" List des utilisateurs ">
+            <users-filter></users-filter>
         </base-card>
     </section>
 </template>

@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-6   mb-1">
                     <button class="btn btn-light rounded-0"><i class="fa fa-plus"></i> Ajouter un utilisateur</button>
-                    <button class="btn btn-light rounded-0"><i class="fa fa-arrow-rotate-right"></i> Rafraîchir <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+                    <button class="btn btn-light rounded-0"><i class="fa fa-arrow-rotate-right"></i> Rafraîchir <span class="spinner-border text-warning spinner-border-sm" role="status" aria-hidden="true"></span></button>
                 </div>
             </div>
     </section>
