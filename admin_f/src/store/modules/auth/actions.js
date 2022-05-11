@@ -54,6 +54,7 @@ export default {
                     localStorage.setItem('token', responseData.access_token);
                     localStorage.setItem('userId', responseData.user.id);
                     localStorage.setItem('tokenExpiration', expirationDate);
+                    window.axios.defaults.headers.common["Authorization"] = responseData.access_token;
 
                     //After this duration "expiresIn" this function will execute 
                     timer = setTimeout(function() {
@@ -90,6 +91,7 @@ export default {
                 token: token,
                 userId: userId,
             });
+            window.axios.defaults.headers.common["Authorization"] = token;
         }
     },
     logout(context) {
@@ -97,6 +99,7 @@ export default {
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
         localStorage.removeItem('tokenExpiration');
+        window.axios.defaults.headers.common["Authorization"] = null;
         //if we manualy click the logout
         clearTimeout(timer);
         context.commit('setUser', {
