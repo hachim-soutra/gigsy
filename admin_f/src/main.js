@@ -27,10 +27,13 @@ const TheSidebar = defineAsyncComponent(() =>
     import ('./components/layout/TheSidebar.vue'));
 const BaseCard = defineAsyncComponent(() =>
     import ('./components/ui/card/BaseCard.vue'));
+const RoundedButton = defineAsyncComponent(() =>
+    import ('./components/ui/button/RoundedButton.vue'));
 app.component('warning-spinner', WarningSpinner);
 app.component('the-header', TheHeader);
 app.component('the-sidebar', TheSidebar);
 app.component('base-card', BaseCard);
+app.component('rounded-button', RoundedButton);
 
 app.mixin(alertMixin);
 app.use(store);

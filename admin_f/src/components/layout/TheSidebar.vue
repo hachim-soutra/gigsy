@@ -5,7 +5,7 @@
                     <li class="nav-item bg-dark">
                         <router-link class="nav-link active" aria-current="page" to="dashboard">
                         <span data-feather="home"></span>
-                        <h5 class="list-group-item list-group-item-action list-group-item-dark "><i class="fa-solid fa-gauge"></i> Page d'accueil</h5>
+                        <h6 class="list-group-item list-group-item-action list-group-item-dark "><i class="fa-solid fa-gauge"></i> Page d'accueil</h6>
                         </router-link>
                     </li>
                 </ul>
