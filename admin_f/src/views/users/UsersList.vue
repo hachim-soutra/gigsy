@@ -16,10 +16,10 @@
                         <th >Supprimer</th>
                     </template>
                     <template v-slot:tableBody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Amine Aqebli</td>
-                            <td>admin@admin.com</td>
+                        <tr v-for="user in users" :key="user.id">
+                            <th scope="row">{{user.id}}</th>
+                            <td>{{user.fullname}}</td>
+                            <td>{{user.email}}</td>
                             <td><rounded-button type="success"><i class="fa fa-edit"></i></rounded-button></td>
                             <td><rounded-button type="danger"><i class="fa fa-trash"></i></rounded-button></td>
                         </tr>
@@ -27,6 +27,7 @@
                 </base-table>
             </base-card>
         </section>
+        
     </div>
 </template>
 
@@ -38,11 +39,22 @@ export default {
     components:{UsersFilter,BaseTable},
     data(){
         return{
-            users: []
+            
         }
     },
     mounted(){
-        this.users = this.$store.getters['users/users'];
+        this.loadUsers();
+        
+    },
+    methods:{
+        async loadUsers(){
+            await this.$store.dispatch('users/loadUsers');
+        }
+    },
+    computed:{
+        users(){
+            return this.$store.getters['users/users'];
+        }
     }
     
 }
