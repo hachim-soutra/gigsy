@@ -30,4 +30,7 @@ export default {
 h5 span{
     border-bottom: 3px solid #ff5b27;
 }
+.card{
+    border-bottom: 3px solid #ff5927;
+}
 </style>

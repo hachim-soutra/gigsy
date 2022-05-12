@@ -7,6 +7,7 @@ export default {
     state() {
         return {
             users: [{}],
+            lastFetch: null,
             errors: null
         }
     },

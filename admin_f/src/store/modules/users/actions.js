@@ -1,5 +1,8 @@
 export default {
-    async loadUsers(context) {
+    async loadUsers(context, payload) {
+        if (!payload.forceRefresh && !context.getters.shouldUpdate) {
+            return;
+        }
         const users = [];
         await window.axios.get('http://127.0.0.1:8001/api/v1/admin').then(response => {
             const respanseData = response.data.data;
@@ -13,7 +16,8 @@ export default {
                 users.push(user);
             }
             context.commit('setUsers', users);
-        }).catch(error => console.log(error));
+            context.commit('setFetchTimesTamp');
+        }).catch(error => context.commit('setErrors', error.message));
 
     }
 }

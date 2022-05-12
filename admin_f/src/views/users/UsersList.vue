@@ -2,12 +2,13 @@
     <div>
         <section>
             <base-card :shadow="true" title=" List des utilisateurs ">
-                <users-filter></users-filter>
+                <users-filter @forceRefresh="loadUsers" v-model="keyword" ></users-filter>
             </base-card>
         </section>
         <section>
             <base-card class="mt-3">
-                <base-table>
+            <warning-spinner v-if="isLoading"></warning-spinner>
+                <base-table v-else-if="haseUsers">
                     <template v-slot:default>
                         <th >#</th>
                         <th >Nom complet</th>
@@ -16,7 +17,8 @@
                         <th >Supprimer</th>
                     </template>
                     <template v-slot:tableBody>
-                        <tr v-for="user in users" :key="user.id">
+                    
+                        <tr v-for="user in filtredUsers" :key="user.id">
                             <th scope="row">{{user.id}}</th>
                             <td>{{user.fullname}}</td>
                             <td>{{user.email}}</td>
@@ -25,6 +27,7 @@
                         </tr>
                     </template>
                 </base-table>
+                <h4 class="text-secondary" v-else>Aucun utilisateur trouvé</h4>
             </base-card>
         </section>
         
@@ -39,22 +42,40 @@ export default {
     components:{UsersFilter,BaseTable},
     data(){
         return{
+            isLoading: false,
+            keyword:'',
             
+
         }
     },
-    mounted(){
+    created(){
         this.loadUsers();
         
     },
     methods:{
-        async loadUsers(){
-            await this.$store.dispatch('users/loadUsers');
+        async loadUsers(refresh = false){
+            this.isLoading = true;
+            await this.$store.dispatch('users/loadUsers', {forceRefresh: refresh});
+            if(this.$store.getters['users/errors']){
+                this.showAlert('error',this.$store.getters['users/errors']);
+                this.$store.commit('users/setErrors' , null);
+            }
+            this.isLoading = false;
         }
     },
     computed:{
         users(){
             return this.$store.getters['users/users'];
+        },
+        haseUsers(){
+            return !this.isLoading && this.$store.getters['users/hasUsers'];
+        },
+        filtredUsers(){
+            return this.users.filter(user => {
+                return user.fullname.match(this.keyword) || user.email.match(this.keyword)
+            })
         }
+        
     }
     
 }
