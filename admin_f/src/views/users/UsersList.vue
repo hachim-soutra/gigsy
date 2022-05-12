@@ -1,8 +1,9 @@
 <template>
     <div>
+        <delete-dialog title="avertissement" command="Supprimé" @deleteFromModal="deleteUser"><h5>Vous voulez vraiment supprimer cet utilisateur</h5></delete-dialog>
         <section>
             <base-card :shadow="true" title=" List des utilisateurs ">
-                <users-filter @forceRefresh="loadUsers" v-model="keyword" ></users-filter>
+                <users-filter  @forceRefresh="loadUsers" v-model="keyword" ></users-filter>
             </base-card>
         </section>
         <section>
@@ -23,7 +24,7 @@
                             <td>{{user.fullname}}</td>
                             <td>{{user.email}}</td>
                             <td><rounded-button type="success"><i class="fa fa-edit"></i></rounded-button></td>
-                            <td><rounded-button type="danger"><i class="fa fa-trash"></i></rounded-button></td>
+                            <td><rounded-button data-bs-toggle="modal" data-bs-target="#showMessageModal" type="danger" @click="passUserId(user.id)"><i class="fa fa-trash"></i></rounded-button></td>
                         </tr>
                     </template>
                 </base-table>
@@ -44,6 +45,7 @@ export default {
         return{
             isLoading: false,
             keyword:'',
+            deleteId:null,
             
 
         }
@@ -53,14 +55,31 @@ export default {
         
     },
     methods:{
-        async loadUsers(refresh = false){
-            this.isLoading = true;
-            await this.$store.dispatch('users/loadUsers', {forceRefresh: refresh});
+        showRequestResult(){
             if(this.$store.getters['users/errors']){
                 this.showAlert('error',this.$store.getters['users/errors']);
                 this.$store.commit('users/setErrors' , null);
-            }
+            }else if(this.$store.getters['users/success']){
+                this.showAlert('success',this.$store.getters['users/success']);
+                this.$store.commit('users/setSuccess' , null);
+            }else{return;}
+        },
+        async loadUsers(refresh = false){
+            this.isLoading = true;
+            await this.$store.dispatch('users/loadUsers', {forceRefresh: refresh});
+            this.showRequestResult();
             this.isLoading = false;
+        },
+        passUserId(id){
+            this.deleteId = id;
+        },
+        async deleteUser(){
+            this.isLoading = true
+            await this.$store.dispatch('users/deleteUser' , { id: this.deleteId });
+            this.showRequestResult();
+            this.isLoading = false;
+
+            this.deleteId = null;
         }
     },
     computed:{
@@ -75,6 +94,7 @@ export default {
                 return user.fullname.match(this.keyword) || user.email.match(this.keyword)
             })
         }
+        
         
     }
     

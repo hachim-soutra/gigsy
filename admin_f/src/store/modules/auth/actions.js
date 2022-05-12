@@ -14,11 +14,11 @@ export default {
     },
     async auth(context, payload) {
         const mode = payload.mode;
-        let url = 'http://127.0.0.1:8001/api/v1/admin/login';
+        let url = this.$app_url + '/api/v1/admin/login';
 
         if (mode === 'signup') {
             // register
-            url = 'http://127.0.0.1:8001/api/v1/admin/register';
+            url = this.$app_url + '/api/v1/admin/register';
             await window.axios.post(url, {
                     email: payload.email,
                     first_name: payload.first_name,

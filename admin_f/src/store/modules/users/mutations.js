@@ -8,5 +8,8 @@ export default {
 
     setErrors(state, payload) {
         state.errors = payload;
+    },
+    setSuccess(state, payload) {
+        state.success = payload;
     }
 }

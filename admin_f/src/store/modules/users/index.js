@@ -8,7 +8,8 @@ export default {
         return {
             users: [{}],
             lastFetch: null,
-            errors: null
+            errors: null,
+            success: null
         }
     },
     mutations,
