@@ -12,7 +12,10 @@
     "core-js": "^3.6.5",
     "vform": "^2.1.2",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vue-slick": "^1.1.20",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-toasted": "^1.1.28"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
