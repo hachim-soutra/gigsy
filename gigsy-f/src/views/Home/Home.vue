@@ -6,9 +6,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-          <h1>Bettter digital experience with Ninestars</h1>
-          <h2>We are team of talanted designers making websites with Bootstrap</h2>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <h1>Des milliers de microservices pour tous vos besoins</h1>
+          <h2>Besoin d'un service ? <br> Vous etes au bon endroit</h2>
+          <a href="#about" class="btn-get-started scrollto">Commencer</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
@@ -56,40 +56,40 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>Check out the great services we offer</p>
+          <h2>Nos Services</h2>
+          <p>Découvrez les excellents services que nous offrons</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+              <h4 class="title"><a href="#">Design & Graphisme</a></h4>
+              <p class="description">Création de logo, retouches photos, réalisation de cartes de visite ou de supports de communication : sur le site Gisgsy.com, spécialiste des microservices, dénichez en quelques clics un graphiste freelance qualifié pour vous aider à réaliser votre projet.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+              <h4 class="title"><a href="#">Rédaction</a></h4>
+              <p class="description">Article, texte optimisé SEO, lettre de motivation, etc., confiez la rédaction de vos documents professionnels ou personnels à un rédacteur chevronné grâce au site Gigsy.com.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+              <h4 class="title"><a href="#">Site & Développement</a></h4>
+              <p class="description">Création de site web, de site vitrine ou de site de e-commerce : la solution se trouve sur Gigsy.com. Un grand nombre de freelances chevronnés vous proposent leurs services en développement web.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+              <h4 class="title"><a href="#">Réseaux sociaux</a></h4>
+              <p class="description">Faites appel à un community manager en freelance qualifié pour gérer votre communication via vos réseaux sociaux, avec le site Gigsy.com, le spécialiste des microservices</p>
             </div>
           </div>
 
@@ -103,14 +103,14 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>Check out our beautifull portfolio</p>
+          <h2>Portefeuille</h2>
+          <p>Découvrez notre magnifique portefeuille</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter="*" class="filter-active">Tout</li>
               <li data-filter=".filter-app">App</li>
               <li data-filter=".filter-card">Card</li>
               <li data-filter=".filter-web">Web</li>
@@ -125,7 +125,7 @@
               <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 1</h4>
@@ -139,7 +139,7 @@
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 3</h4>
@@ -153,7 +153,7 @@
               <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 2</h4>
@@ -167,7 +167,7 @@
               <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 2</h4>
@@ -181,7 +181,7 @@
               <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 2</h4>
@@ -195,7 +195,7 @@
               <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 3</h4>
@@ -209,7 +209,7 @@
               <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 1</h4>
@@ -223,7 +223,7 @@
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 3</h4>
@@ -237,7 +237,7 @@
               <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 3</h4>
