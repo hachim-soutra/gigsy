@@ -19,41 +19,39 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
-            <h3>Ninestars</h3>
+            <h3>Gigsy</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              Gueliz <br>
+              Marrakech<br><br>
+              <strong>Telephone:</strong> +212 00 00 00 00<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-            <h4>Useful Links</h4>
+            <h4>Liens utiles</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Acueil</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">A-propos</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Conditions d'utilisation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Politique de confidentialité</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-            <h4>Our Services</h4>
+            <h4>Nos Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Design & Graphisme</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Redaction</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Site & developpement</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Réseaux sociaux</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <h4>Nos réseaux sociaux</h4>
+            <p>Rejoignez-nous</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -69,14 +67,10 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Ninestars</span></strong>. All Rights Reserved
+        &copy; droits d'auteur <strong><span>Gigsy</span></strong>. Tous les droits sont réservés
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Conçu par <a href="">L'équipe Gigsy</a>
       </div>
     </div>
   </footer>
