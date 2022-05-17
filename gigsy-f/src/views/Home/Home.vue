@@ -326,8 +326,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Our team is always here to help</p>
+          <h2>Equipe</h2>
+          <p>Notre équipe est toujours là pour vous aider</p>
         </div>
 
         <div class="row">
@@ -337,8 +337,8 @@
               <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>Hachim Soutra</h4>
+                  <span>Chef de projet</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -355,8 +355,8 @@
               <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
+                  <h4>Amine Aqebli</h4>
+                  <span>Developpeur Back-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -373,8 +373,8 @@
               <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
+                  <h4>Azzeddine Najdawi</h4>
+                  <span>Developpeur Front-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -391,8 +391,8 @@
               <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
+                  <h4>Monsif Ouaqasse</h4>
+                  <span>Developpeur Front-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -414,8 +414,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Clients</h2>
-          <p>They trusted us</p>
+          <h2>Nos Clients</h2>
+          <p>Ils nous ont fait confiance</p>
         </div>
 
         <div class="owl-carousel clients-carousel" data-aos="fade-up" data-aos-delay="100">
@@ -437,8 +437,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
-          <p>Contact us the get started</p>
+          <h2>Contactez-nous</h2>
+          <p>Pour commencer Contactez-nous</p>
         </div>
 
         <div class="row">
@@ -447,8 +447,8 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Adresse:</h4>
+                <p>Gueliz Marrakech</p>
               </div>
 
               <div class="email">
@@ -459,11 +459,11 @@
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Telephone:</h4>
+                <p>+212 00 00 00 00</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108703.09881241457!2d-8.007853099999998!3d31.634621449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech%2C%20Maroc!5e0!3m2!1sfr!2sfr!4v1652822025565!5m2!1sfr!2sfr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
 
           </div>
@@ -472,32 +472,32 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <label for="name">Votre Nom</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Veuillez entrer au moins 4 caractères" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <label for="name">Votre Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Veuillez entrer un email valide" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <label for="name">Objet</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Veuillez entrer au moins 8 caractères" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="S'il vous plaît écrivez nous quelque chose"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Chargement</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">Votre message a été envoyé. Merci!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Envoyez Votre Message</button></div>
             </form>
           </div>
 
