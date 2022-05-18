@@ -19,7 +19,7 @@
           <li><a href="#contact">Contactez-nous</a></li>
 
           <li class="get-started"><router-link :to="{name:'login'}">S'identifier</router-link></li>
-          <li><router-link :to="{name:'register'}">S'enregistrer</router-link></li>
+          <li><router-link :to="{name:'register'}">S'inscrire</router-link></li>
         </ul>
       </nav><!-- .nav-menu -->
 
