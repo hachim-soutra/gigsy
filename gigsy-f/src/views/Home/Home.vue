@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
           <h1>Des milliers de microservices pour tous vos besoins</h1>
-          <h2>Besoin d'un service ? <br> Vous etes au bon endroit</h2>
+          <h2>Besoin d'un service ? <br> Vous êtes au bon endroit</h2>
           <a href="#about" class="btn-get-started scrollto">Commencer</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -29,20 +29,20 @@
             <img src="assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
+            <h3 data-aos="fade-up">Tout un monde de talents freelance à votre portée</h3>
             <p data-aos="fade-up" data-aos-delay="100">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              Confiez votre demande à nos vendeurs vérifiés
             </p>
             <div class="row">
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                <h4>Des services de qualité pour tous les budgets</h4>
+                <p>Trouvez des services de haute qualité à tous les prix. Pas de tarifs horaires, mais une tarification en fonction des projets.</p>
               </div>
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                <h4>Des paiements protégés</h4>
+                <p>Sachez toujours ce que vous allez payer d'avance. Votre paiement n'est pas débloqué tant que vous n'avez pas approuvé le travail.</p>
               </div>
             </div>
           </div>
