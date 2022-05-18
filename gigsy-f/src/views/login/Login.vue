@@ -21,7 +21,7 @@
             class="php-email-form w-100"
           >
             <div class="form-group">
-              <label for="name">Your Email</label>
+              <label for="name">Votre Email</label>
               <input
                 type="email"
                 class="form-control"
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-              <label for="name">password</label>
+              <label for="name">Mot de Passe</label>
               <input
                 type="password"
                 class="form-control"
@@ -56,10 +56,10 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="submit" :disabled="form.busy">Login</button>
+              <button type="submit" :disabled="form.busy">Connexion</button>
               <br />
               <router-link class="mt-2" :to="{ name: 'forget' }"
-                >Forget password ?</router-link
+                >Mot de Passe oublié ?</router-link
               >
             </div>
           </form>

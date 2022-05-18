@@ -20,7 +20,7 @@
             class="php-email-form w-100"
           >
             <div class="form-group">
-              <label for="name">Your name</label>
+              <label for="name">Votre nom</label>
               <input
                 type="text"
                 class="form-control"
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="name">Your Email</label>
+              <label for="name">Votre Email</label>
               <input
                 type="email"
                 class="form-control"
@@ -53,7 +53,7 @@
             </div>
 
             <div class="form-group">
-              <label for="name">password</label>
+              <label for="name">Mot de Passe</label>
               <input
                 type="password"
                 class="form-control"
@@ -70,7 +70,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="name">repeat password</label>
+              <label for="name">Répéter le mot de passe</label>
               <input
                 type="password"
                 class="form-control"
@@ -89,7 +89,7 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="submit" :disabled="form.busy">Register</button>
+              <button type="submit" :disabled="form.busy">S'inscrire</button>
             </div>
           </form>
         </div>
