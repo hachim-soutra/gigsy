@@ -2,9 +2,11 @@
   <div class="container-fluid log-reg-container">
     <section class="login-regester mt-lg-5">
       <div class="row d-flex justify-content-center">
-        <div class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-center"  
+        <div
+          class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-center"
           data-aos="fade-up"
-          data-aos-delay="200">
+          data-aos-delay="200"
+        >
           <img class="img-fluid animated" src="assets/img/hero-img.svg" />
         </div>
         <div
@@ -35,7 +37,7 @@
                 {{ form.errors.get("email") }}
               </div>
             </div>
-         
+
             <div class="form-group">
               <label for="name">password</label>
               <input
@@ -55,8 +57,10 @@
             </div>
             <div class="text-center">
               <button type="submit" :disabled="form.busy">Login</button>
-              <br>
-              <router-link class="mt-2" :to="{name:'forget'}">Forget password ?</router-link>
+              <br />
+              <router-link class="mt-2" :to="{ name: 'forget' }"
+                >Forget password ?</router-link
+              >
             </div>
           </form>
         </div>
@@ -68,7 +72,7 @@
 <script>
 import Form from "vform";
 export default {
-    data: () => ({
+  data: () => ({
     form: new Form({
       email: "",
       password: "",
@@ -78,9 +82,11 @@ export default {
     login() {
       this.form
         .post(this.$app_url + "/api/v1/user/login")
-        .then((response) => {
+        .then(async (response) => {
           this.form.reset();
+          await this.$store.dispatch("setUser", response.data);
           this.$toasted.success(response.data.message);
+          this.$router.push({ name: "home" });
         });
     },
   },
@@ -93,10 +99,10 @@ label {
 }
 button {
   background: #eb5d1e;
-    color: #fff;
-    border-radius: 50px;
-    margin: 0 15px;
-    padding: 10px 25px;
-    border: none;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 15px;
+  padding: 10px 25px;
+  border: none;
 }
 </style>
