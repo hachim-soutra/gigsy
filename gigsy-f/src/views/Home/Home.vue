@@ -94,9 +94,9 @@
           </div>
 
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </section>
+    <!-- End Hero -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -340,15 +340,20 @@
                   <h4>Hachim Soutra</h4>
                   <span>Chef de projet</span>
                 </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>Ullamco laboris nisi</h4>
+                  <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- End About Section -->
 
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="member">
@@ -358,15 +363,224 @@
                   <h4>Amine Aqebli</h4>
                   <span>Developpeur Back-end</span>
                 </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+                  <p>App</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-2.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-2.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Web 3"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Web 3</h4>
+                  <p>Web</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-3.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-3.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="App 2"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>App</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-4.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-4.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Card 2"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Card 2</h4>
+                  <p>Card</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-5.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-5.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Web 2"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Web 2</h4>
+                  <p>Web</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-6.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-6.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="App 3"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>App</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-7.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-7.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Card 1"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Card 1</h4>
+                  <p>Card</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-8.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-8.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Card 3"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Card 3</h4>
+                  <p>Card</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/portfolio-9.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <a
+                    href="assets/img/portfolio/portfolio-9.jpg"
+                    data-gall="portfolioGallery"
+                    class="venobox"
+                    title="Web 3"
+                    ><i class="icofont-plus-circle"></i
+                  ></a>
+                  <a href="#" title="More Details"
+                    ><i class="icofont-link"></i
+                  ></a>
+                </div>
+                <div class="portfolio-info">
+                  <h4>Web 3</h4>
+                  <p>Web</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- End Portfolio Section -->
 
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="member">
@@ -376,15 +590,90 @@
                   <h4>Azzeddine Najdawi</h4>
                   <span>Developpeur Front-end</span>
                 </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/team/team-2.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Sarah Jhonson</h4>
+                    <span>Product Manager</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="icofont-twitter"></i></a>
+                    <a href=""><i class="icofont-facebook"></i></a>
+                    <a href=""><i class="icofont-instagram"></i></a>
+                    <a href=""><i class="icofont-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/team/team-3.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>William Anderson</h4>
+                    <span>CTO</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="icofont-twitter"></i></a>
+                    <a href=""><i class="icofont-facebook"></i></a>
+                    <a href=""><i class="icofont-instagram"></i></a>
+                    <a href=""><i class="icofont-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-3 col-lg-4 col-md-6"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/team/team-4.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-info">
+                  <div class="member-info-content">
+                    <h4>Amanda Jepson</h4>
+                    <span>Accountant</span>
+                  </div>
+                  <div class="social">
+                    <a href=""><i class="icofont-twitter"></i></a>
+                    <a href=""><i class="icofont-facebook"></i></a>
+                    <a href=""><i class="icofont-instagram"></i></a>
+                    <a href=""><i class="icofont-linkedin"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- End Team Section -->
 
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="member">
@@ -404,7 +693,23 @@
             </div>
           </div>
 
+          <div
+            class="owl-carousel clients-carousel"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img src="assets/img/clients/client-1.png" alt="" />
+            <img src="assets/img/clients/client-2.png" alt="" />
+            <img src="assets/img/clients/client-3.png" alt="" />
+            <img src="assets/img/clients/client-4.png" alt="" />
+            <img src="assets/img/clients/client-5.png" alt="" />
+            <img src="assets/img/clients/client-6.png" alt="" />
+            <img src="assets/img/clients/client-7.png" alt="" />
+            <img src="assets/img/clients/client-8.png" alt="" />
+          </div>
         </div>
+      </section>
+      <!-- End Clients Section -->
 
       </div>
     </section><!-- End Team Section -->
@@ -479,63 +784,6 @@
                 <div class="form-group col-md-6">
                   <label for="name">Votre Email</label>
                   <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Veuillez entrer un email valide" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Objet</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Veuillez entrer au moins 8 caractères" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="S'il vous plaît écrivez nous quelque chose"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Chargement</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Votre message a été envoyé. Merci!</div>
-              </div>
-              <div class="text-center"><button type="submit">Envoyez Votre Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Us Section -->
-
-  </main><!-- End #main -->
-  </div>
-</template>
-
-<script>
-
-export default {
-  components: {
-
-  }
-}
-</script>
-
-<style scoped>
-.landing-slider {
-  position: relative;
-}
-
-#participant-img {
-  position: absolute;
-  right: 34px;
-  top: 25%;
-  height: 50%;
-  width: auto;
-}
-
-.landing-text {
-  color: var(--text-color);
-  font-size: 2rem;
-  font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0em;
@@ -544,7 +792,6 @@ export default {
   display: flex;
   padding: 2rem 0;
 }
-.tags-handler {
   width: 100%;
   display: flex;
   padding: 0.5rem 0;
@@ -553,7 +800,6 @@ export default {
 .tags {
   color: var(--text-color);
   background-color: var(--secondary-color);
-  border-radius: 15px;
   padding: 5px 15px;
   cursor: pointer;
 }
@@ -563,4 +809,3 @@ export default {
   border: 1px solid var(--text-color);
   width: 50%;
 }
-</style>
