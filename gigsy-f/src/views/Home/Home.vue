@@ -6,9 +6,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-          <h1>Bettter digital experience with Ninestars</h1>
-          <h2>We are team of talanted designers making websites with Bootstrap</h2>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <h1>Des milliers de microservices pour tous vos besoins</h1>
+          <h2>Besoin d'un service ? <br> Vous êtes au bon endroit</h2>
+          <a href="#about" class="btn-get-started scrollto">Commencer</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
@@ -29,20 +29,20 @@
             <img src="assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
+            <h3 data-aos="fade-up">Tout un monde de talents freelance à votre portée</h3>
             <p data-aos="fade-up" data-aos-delay="100">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              Confiez votre demande à nos vendeurs vérifiés
             </p>
             <div class="row">
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <i class="bx bx-receipt"></i>
-                <h4>Corporis voluptates sit</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                <h4>Des services de qualité pour tous les budgets</h4>
+                <p>Trouvez des services de haute qualité à tous les prix. Pas de tarifs horaires, mais une tarification en fonction des projets.</p>
               </div>
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <i class="bx bx-cube-alt"></i>
-                <h4>Ullamco laboris nisi</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                <h4>Des paiements protégés</h4>
+                <p>Sachez toujours ce que vous allez payer d'avance. Votre paiement n'est pas débloqué tant que vous n'avez pas approuvé le travail.</p>
               </div>
             </div>
           </div>
@@ -56,40 +56,40 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>Check out the great services we offer</p>
+          <h2>Nos Services</h2>
+          <p>Découvrez les excellents services que nous offrons</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+              <h4 class="title"><a href="#">Design & Graphisme</a></h4>
+              <p class="description">Création de logo, retouches photos, réalisation de cartes de visite ou de supports de communication : sur le site Gisgsy.com, spécialiste des microservices, dénichez en quelques clics un graphiste freelance qualifié pour vous aider à réaliser votre projet.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+              <h4 class="title"><a href="#">Rédaction</a></h4>
+              <p class="description">Article, texte optimisé SEO, lettre de motivation, etc., confiez la rédaction de vos documents professionnels ou personnels à un rédacteur chevronné grâce au site Gigsy.com.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+              <h4 class="title"><a href="#">Site & Développement</a></h4>
+              <p class="description">Création de site web, de site vitrine ou de site de e-commerce : la solution se trouve sur Gigsy.com. Un grand nombre de freelances chevronnés vous proposent leurs services en développement web.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+              <h4 class="title"><a href="#">Réseaux sociaux</a></h4>
+              <p class="description">Faites appel à un community manager en freelance qualifié pour gérer votre communication via vos réseaux sociaux, avec le site Gigsy.com, le spécialiste des microservices</p>
             </div>
           </div>
 
@@ -103,14 +103,14 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>Check out our beautifull portfolio</p>
+          <h2>Portefeuille</h2>
+          <p>Découvrez notre magnifique portefeuille</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter="*" class="filter-active">Tout</li>
               <li data-filter=".filter-app">App</li>
               <li data-filter=".filter-card">Card</li>
               <li data-filter=".filter-web">Web</li>
@@ -125,7 +125,7 @@
               <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 1</h4>
@@ -139,7 +139,7 @@
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 3</h4>
@@ -153,7 +153,7 @@
               <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 2</h4>
@@ -167,7 +167,7 @@
               <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 2</h4>
@@ -181,7 +181,7 @@
               <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 2</h4>
@@ -195,7 +195,7 @@
               <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>App 3</h4>
@@ -209,7 +209,7 @@
               <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 1</h4>
@@ -223,7 +223,7 @@
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Card 3</h4>
@@ -237,7 +237,7 @@
               <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="icofont-plus-circle"></i></a>
-                <a href="#" title="More Details"><i class="icofont-link"></i></a>
+                <a href="#" title="Plus de details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
                 <h4>Web 3</h4>
@@ -326,8 +326,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Our team is always here to help</p>
+          <h2>Equipe</h2>
+          <p>Notre équipe est toujours là pour vous aider</p>
         </div>
 
         <div class="row">
@@ -337,8 +337,8 @@
               <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>Hachim Soutra</h4>
+                  <span>Chef de projet</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -355,8 +355,8 @@
               <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
+                  <h4>Amine Aqebli</h4>
+                  <span>Developpeur Back-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -373,8 +373,8 @@
               <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
+                  <h4>Azzeddine Najdawi</h4>
+                  <span>Developpeur Front-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -391,8 +391,8 @@
               <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
+                  <h4>Monsif Ouaqasse</h4>
+                  <span>Developpeur Front-end</span>
                 </div>
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -414,8 +414,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Clients</h2>
-          <p>They trusted us</p>
+          <h2>Nos Clients</h2>
+          <p>Ils nous ont fait confiance</p>
         </div>
 
         <div class="owl-carousel clients-carousel" data-aos="fade-up" data-aos-delay="100">
@@ -437,8 +437,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
-          <p>Contact us the get started</p>
+          <h2>Contactez-nous</h2>
+          <p>Pour commencer Contactez-nous</p>
         </div>
 
         <div class="row">
@@ -447,8 +447,8 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Adresse:</h4>
+                <p>Gueliz Marrakech</p>
               </div>
 
               <div class="email">
@@ -459,11 +459,11 @@
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Telephone:</h4>
+                <p>+212 00 00 00 00</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108703.09881241457!2d-8.007853099999998!3d31.634621449999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech%2C%20Maroc!5e0!3m2!1sfr!2sfr!4v1652822025565!5m2!1sfr!2sfr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
 
           </div>
@@ -472,32 +472,32 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <label for="name">Votre Nom</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Veuillez entrer au moins 4 caractères" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <label for="name">Votre Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Veuillez entrer un email valide" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <label for="name">Objet</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Veuillez entrer au moins 8 caractères" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="S'il vous plaît écrivez nous quelque chose"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Chargement</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">Votre message a été envoyé. Merci!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Envoyez Votre Message</button></div>
             </form>
           </div>
 
