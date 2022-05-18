@@ -24,14 +24,14 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="form.name"
-                :class="{ 'is-invalid': form.errors.has('name') }"
+                v-model="form.first_name"
+                :class="{ 'is-invalid': form.errors.has('first_name') }"
               />
               <div
                 class="invalid-feedback text-left"
-                v-if="form.errors.has('name')"
+                v-if="form.errors.has('first_name')"
               >
-                {{ form.errors.get("name") }}
+                {{ form.errors.get("first_name") }}
               </div>
             </div>
             <div class="form-group">
@@ -103,7 +103,7 @@ import Form from "vform";
 export default {
   data: () => ({
     form: new Form({
-      name: "",
+      first_name: "",
       email: "",
       password: "",
       password_confirmation: "",

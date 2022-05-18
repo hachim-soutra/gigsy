@@ -1,21 +1,20 @@
 <template>
   <div id="app">
     <TheHeader></TheHeader>
-    <router-view/>
+    <router-view />
     <the-footer></the-footer>
   </div>
 </template>
 <script>
-import TheHeader from '@c/TheHeader.vue'
-import TheFooter from '@c/TheFooter.vue'
+import TheHeader from "@l/TheHeader.vue";
+import TheFooter from "@l/TheFooter.vue";
 
 export default {
   components: {
     TheHeader,
     TheFooter,
-
-  }
-}
+  },
+};
 </script>
 
 <style>
