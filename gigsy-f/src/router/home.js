@@ -23,6 +23,11 @@ let routes = [
     path: "/services",
     name: "services",
     component: () => import(`@v/services/services.vue`),
+  },
+  {
+    path: "/categories/seo-services",
+    name: "seo-services",
+    component: () => import(`@v/categories/seo-services.vue`),
   }, 
 ];
 
