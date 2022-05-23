@@ -7,6 +7,19 @@
         <div class="section-title" data-aos="fade-up">
           <p>Search Engine Optimization (SEO)</p>
         </div>
+        <div class="row">
+              <small style="left: 15px;position: relative;">16 services available</small>
+              <span class="sortB">Sort By</span>
+              <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Best selling
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Recommended</a>
+                <a class="dropdown-item" href="#">Newest Arrivals</a>
+              </div>
+          </div>
+        </div>
 
         <div class="row">
 
@@ -230,5 +243,17 @@ hr{
 
 small{
     color: #b5b6ba;
+}
+
+.dropdown{
+  margin-bottom: 15px;
+  left:49em;
+}
+
+.sortB{
+  left: 49em;
+  position: relative;
+  margin-top: 10px;
+  color: gray;
 }
 </style>
