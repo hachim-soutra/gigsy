@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\Admin\AdminController;
+use App\Http\Controllers\API\Admin\AuthController as AdminAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\User\AuthController;
 
@@ -14,7 +16,7 @@ use App\Http\Controllers\API\User\AuthController;
 |
 */
 
-Route::prefix('v1')->group(function() {
+Route::prefix('v1')->group(function () {
     Route::prefix('user')->namespace("User")->group(function () {
         Route::post('login', [AuthController::class, "login"])->name('login');
         Route::post('register', [AuthController::class, "register"])->name('register');
@@ -22,5 +24,13 @@ Route::prefix('v1')->group(function() {
     Route::name("shared.")->group(function () {
         Route::resource("categories", \App\Http\Controllers\API\Shared\CategoryController::class);
         Route::resource("services", \App\Http\Controllers\API\Shared\ServiceController::class);
+        Route::post('login', [AdminAuthController::class, "login"])->name('login');
+        Route::post('register', [AdminAuthController::class, "register"])->name('register');
     });
+
+    Route::resource("/admin", AdminController::class);
+
+    // Route::namespace("Shared")->name("shared.")->group(function () {
+    //     Route::get("services", [\App\Http\Controllers\API\Shared\ServiceController::class, "index"])->name('services.index');
+    // });
 });

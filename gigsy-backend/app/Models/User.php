@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name',
+        'last_name',
         'email',
         'password',
         'userable_id',
@@ -35,6 +36,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $appends = ['fullname'];
+
     /**
      * The attributes that should be cast.
      *
@@ -43,6 +46,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
+    }
 
     /**
      * Get the owning userable model.
