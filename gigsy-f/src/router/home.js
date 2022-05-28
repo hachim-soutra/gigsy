@@ -19,6 +19,16 @@ let routes = [
     name: "forget",
     component: () => import(`@v/forget/Forget.vue`),
   },
+  {
+    path: "/services",
+    name: "services",
+    component: () => import(`@v/services/services.vue`),
+  },
+  {
+    path: "/categories/seo-services",
+    name: "seo-services",
+    component: () => import(`@v/categories/seo-services.vue`),
+  }, 
 ];
 
 export default routes;

@@ -12,7 +12,7 @@
         <ul>
           <li ><a href="#header">Accueil</a></li>
           <li><a href="#about">A-propos</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><router-link :to="{name:'services'}">Services</router-link></li>
           <li><a href="#portfolio">Portefeuille</a></li>
           <li><a href="#team">Equipe</a></li>
   
