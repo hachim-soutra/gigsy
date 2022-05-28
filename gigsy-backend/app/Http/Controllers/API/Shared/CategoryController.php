@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\API\Shared;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Shared\Service\ServiceRequest;
-use App\Models\Service;
-use App\Repositories\ServiceInterface;
-use App\Repositories\ServiceRepository;
+use App\Http\Requests\Shared\Category\CategoryRequest;
+use App\Models\Category;
+use App\Repositories\CategoryInterface;
+use App\Repositories\CategoryRepository;
 use Illuminate\Http\Response;
 
-class ServiceController extends Controller
+class CategoryController extends Controller
 {
 
-    private $serviceRepository;
+    private $CategoryRepository;
 
-    public  function __construct(ServiceRepository $serviceRepository) {
-        $this->serviceRepository = $serviceRepository;
+    public  function __construct(CategoryRepository $CategoryRepository) {
+        $this->CategoryRepository = $CategoryRepository;
     }
 
     /**
@@ -25,8 +25,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $data = $this->serviceRepository->all();
-        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
+        $data = $this->CategoryRepository->all();
+        return $this->success(__("get Categorys by success"), $data, Response::HTTP_OK);
     }
 
     /**
@@ -42,10 +42,10 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Shared\Service\ServiceRequest  $request
+     * @param  \App\Http\Requests\StoreCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServiceRequest $request)
+    public function store(CategoryRequest $request)
     {
         //
     }
@@ -53,10 +53,10 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Category  $Category
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Category $Category)
     {
         //
     }
@@ -64,10 +64,10 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Category  $Category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Category $Category)
     {
         //
     }
@@ -75,11 +75,11 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Shared\Service\ServiceRequest  $request
-     * @param  \App\Models\Service  $service
+     * @param  \App\Http\Requests\CategoryRequest  $request
+     * @param  \App\Models\Category  $Category
      * @return \Illuminate\Http\Response
      */
-    public function update(ServiceRequest $request, Service $service)
+    public function update(CategoryRequest $request, Category $Category)
     {
         //
     }
@@ -87,10 +87,10 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Category  $Category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Category $Category)
     {
         //
     }
