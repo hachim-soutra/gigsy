@@ -22,6 +22,12 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $response["data"] = $this->adminRepository->paginate();
+        $response["message"] = __("Admins list");
+        return response($response, Response::HTTP_OK);
+    }
+    public function list()
+    {
         $response["data"] = $this->adminRepository->all();
         $response["message"] = __("Admins list");
         return response($response, Response::HTTP_OK);

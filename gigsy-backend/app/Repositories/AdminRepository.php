@@ -5,9 +5,11 @@ namespace App\Repositories;
 use App\Interfaces\UserRepositoryInterface;
 use App\Models\Admin;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class AdminRepository implements UserRepositoryInterface
 {
@@ -28,7 +30,7 @@ class AdminRepository implements UserRepositoryInterface
         return response($response, Response::HTTP_OK);
     }
 
-    public function register(HttpRequest $request): Response
+    public function register($request): Response
     {
         $admin                      = Admin::create([]);
         $request['userable_id']     = $admin->id;
@@ -40,12 +42,25 @@ class AdminRepository implements UserRepositoryInterface
 
         $response["message"] = __("Admins list");
         $response["data"] = $admin;
-        return response($response, Response::HTTP_CREATED);
+        return response($response, ResponseAlias::HTTP_CREATED);
     }
 
     public function all()
     {
-        return Admin::get();
+        return Admin::with('user')->get();
+    }
+    
+    public function paginate()
+    {
+        $page = request('page') ? request('page') : 1;
+        $search = request('search') ? request('search') : '';
+        $per_page = request('per_page') ? request('per_page') : 15;
+        return Admin::with('user')->whereHas( 'user', function ($query) use ($search) {
+            $query->where("first_name","LIKE","%$search%")
+                ->orWhere("last_name","LIKE","%$search%")
+                ->orWhere("email","LIKE","%$search%");
+            })
+            ->paginate($per_page,['*'],'page',$page);
     }
 
     public function findById(int $id): Response
@@ -53,15 +68,18 @@ class AdminRepository implements UserRepositoryInterface
         $admin = Admin::findOrFail($id);
         $response["data"] = $admin;
         $response["message"] = __("Admin retrieved with success");
-        return response($response, Response::HTTP_OK);
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
     public function deleteById(int $id): Response
     {
-        $admin = Admin::findOrFail($id);
-        $admin->delete();
-        $response["message"] = __("Admin deleted with success");
-        return response($response, Response::HTTP_OK);
+        if($admin = Admin::findOrFail($id)) {
+            $admin->delete();
+            $response["message"] = __("Admin deleted with success");
+            return response($response, ResponseAlias::HTTP_OK);
+        }
+        $response["message"] = __("Admin not found");
+        return response($response, ResponseAlias::HTTP_NOT_FOUND);
     }
 
     public function updateById(int $id, $request): Response
@@ -70,6 +88,6 @@ class AdminRepository implements UserRepositoryInterface
         $admin->update($request);
         $response["data"] = $admin;
         $response["message"] = __("Admin updated with success");
-        return response($response, Response::HTTP_OK);
+        return response($response, ResponseAlias::HTTP_OK);
     }
 }

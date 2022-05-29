@@ -4,10 +4,13 @@ namespace App\Http\Controllers\API\Shared;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Category\CategoryRequest;
+use App\Models\Admin;
 use App\Models\Category;
+use App\Models\Service;
 use App\Repositories\CategoryInterface;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class CategoryController extends Controller
 {
@@ -24,6 +27,12 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        $data = $this->CategoryRepository->paginate();
+        return $this->success(__("get Categorys by success"), $data, Response::HTTP_OK);
+    }
+
+    public function list()
     {
         $data = $this->CategoryRepository->all();
         return $this->success(__("get Categorys by success"), $data, Response::HTTP_OK);
@@ -56,9 +65,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $Category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $Category)
+    public function show($id)
     {
-        //
+        return $this->CategoryRepository->findById($id);
     }
 
     /**
@@ -94,4 +103,7 @@ class CategoryController extends Controller
     {
         //
     }
+
+
+
 }

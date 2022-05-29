@@ -25,6 +25,12 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $data = $this->serviceRepository->paginate();
+        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
+    }
+
+    public function list()
+    {
         $data = $this->serviceRepository->all();
         return $this->success(__("get services by success"), $data, Response::HTTP_OK);
     }
@@ -56,9 +62,9 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($id)
     {
-        //
+        return $this->serviceRepository->findById($id);
     }
 
     /**

@@ -14,7 +14,8 @@ class CategorieFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'category_name' => $this->faker->name(),
+            'parent_id' => null,
         ];
     }
 }

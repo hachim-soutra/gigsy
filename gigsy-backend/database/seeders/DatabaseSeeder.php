@@ -29,10 +29,10 @@ class DatabaseSeeder extends Seeder
             User::factory(1)->create(array('userable_id' => $seller->id, 'userable_type' => Seller::class));
         });
 
-        // Categorie::factory(10)->create()->each(function ($service) {
-        //     Service::factory(10)->create([
-        //         "service_id"=>$service->id
-        //     ]);
-        // });
+        Categorie::factory(10)->create()->each(function ($service) {
+             Service::factory(10)->create([
+                 "category_id" => $service->id
+             ]);
+        });
     }
 }
