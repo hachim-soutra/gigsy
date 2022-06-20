@@ -5,7 +5,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <p>Optimisation du moteur de recherche (SEO)</p>
+          <p>Traduction</p>
         </div>
         <div class="row">
               <small style="left: 15px;position: relative;">{{services.length}} services disponibles</small>
@@ -51,9 +51,8 @@ export default {
   name: 'MyComponent',
   data() {
     return {
-        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296},
-         {description:"I will build SEO backlinks with high quality contextual link building", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125048837/original/2835bf817763a336500dc4ac027dc5dba75fe2b5.jpg", price: "STARTING AT US$120", rating: 4.9, count: 296},
-          {description:"I will complete on page seo optimization service and monthly off pag", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/252781441/original/59cabb063c4f273a3d85090bcb776fcdcf7545aa.jpg", price: "STARTING AT US$10", rating: 5.0, count: 35}
+        services: [{description:"I will translate english to norwegian fast", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/168956439/original/43549a5726b8d3e7f668ac652824c450985e8441.png", price: "STARTING AT US$5", rating: 5.0, count: 614},
+         {description:"I will manually translate your english document to native japanese", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/100634631/original/0e1b6b7f60ee1c2398be4b314670283607c518df.png", price: "STARTING AT US$10", rating: 4.9, count: 441},
           ],
     }
   },

@@ -5,7 +5,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <p>Optimisation du moteur de recherche (SEO)</p>
+          <p>Création de logos</p>
         </div>
         <div class="row">
               <small style="left: 15px;position: relative;">{{services.length}} services disponibles</small>
@@ -51,9 +51,11 @@ export default {
   name: 'MyComponent',
   data() {
     return {
-        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296},
-         {description:"I will build SEO backlinks with high quality contextual link building", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125048837/original/2835bf817763a336500dc4ac027dc5dba75fe2b5.jpg", price: "STARTING AT US$120", rating: 4.9, count: 296},
-          {description:"I will complete on page seo optimization service and monthly off pag", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/252781441/original/59cabb063c4f273a3d85090bcb776fcdcf7545aa.jpg", price: "STARTING AT US$10", rating: 5.0, count: 35}
+        services: [{description:"I will design 3 modern minimalist logo design", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/22527722/original/d9de303ea2f07efe1e75e1a67f657e33e6aa9b4f.jpg", price: "STARTING AT US$10", rating: 4.9, count: 1230},
+        {description:"I will design 3 modern minimalist flat logo designs", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/3171448/original/a41a38f3733bb97279a49d1449f7337dece50693.jpg", price: "STARTING AT US$10", rating: 4.9, count: 895},
+        {description:"I will create a unique logo and brand identity", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/98614021/original/baa1f40071e28953280573a5f5cb4d9516950c15.jpg", price: "STARTING AT US$90", rating: 5.0, count: 255},
+        {description:"Our studio will design a modern and minimalist logo with copyright", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/151843524/original/9b551fdc526dfb3c2115262720762f990974e8ab.jpg", price: "STARTING AT US$85", rating: 4.9, count: 166},
+        {description:"I will design hand drawn custom signature logo or branding kit", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/164834346/original/86dbae2c024c03b472cdc49aafb49fb6a3df5ac6.jpg", price: "STARTING AT US$70", rating: 4.7, count: 148}
           ],
     }
   },

@@ -5,7 +5,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <p>Optimisation du moteur de recherche (SEO)</p>
+          <p>Couverture du livre</p>
         </div>
         <div class="row">
               <small style="left: 15px;position: relative;">{{services.length}} services disponibles</small>
@@ -51,9 +51,13 @@ export default {
   name: 'MyComponent',
   data() {
     return {
-        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296},
-         {description:"I will build SEO backlinks with high quality contextual link building", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125048837/original/2835bf817763a336500dc4ac027dc5dba75fe2b5.jpg", price: "STARTING AT US$120", rating: 4.9, count: 296},
-          {description:"I will complete on page seo optimization service and monthly off pag", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/252781441/original/59cabb063c4f273a3d85090bcb776fcdcf7545aa.jpg", price: "STARTING AT US$10", rating: 5.0, count: 35}
+        services: [{description:"I will create a premium book cover design or ebook cover design", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/140574007/original/8d0940d80ab643869b70c24acdea87e555b72aff.jpg", price: "STARTING AT US$90", rating: 4.9, count: 296},
+         {description:"I will design an eye catching ebook or kindle cover with bonus", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/23596922/original/d256cdd41272ce6d6ed6b7bb797a4707bcfee694.jpg", price: "STARTING AT US$120", rating: 4.9, count: 500},
+          {description:"I will design professional ebook cover or kindle cover", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/81346356/original/3abb6cb73253d5f765fb27bcd8bebf293229c4e8.jpg", price: "STARTING AT US$90", rating: 4.9, count: 424},
+          {description:"I will design book covers for your fantasy, sci fi, horror etc books", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/12690134/original/9bb45e2f972c093393f95c318c6b385f3e1d02d3.jpg", price: "STARTING AT US$50", rating: 4.9, count: 522},
+          {description:"I will design best selling fantasy cover for you", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207075009/original/ba5f73d4e2f2d1fc5f312b7968da78f84056c546.jpg", price: "STARTING AT US$85", rating: 4.9, count: 885},
+          {description:"I will design your minimalist book cover", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/233540990/original/b88700dd1343bcfb033f72d459d1540010c5d191.jpg", price: "STARTING AT US$130", rating: 4.9, count: 445},
+          {description:"I will design book cover, format, and ebook conversion", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/190232624/original/206d66fcf2575e2e89352a71326a757f9329e45b.png", price: "STARTING AT US$70", rating: 4.9, count: 778}
           ],
     }
   },

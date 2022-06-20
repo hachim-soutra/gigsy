@@ -29,6 +29,51 @@ let routes = [
     name: "seo-services",
     component: () => import(`@v/categories/seo-services.vue`),
   }, 
+  {
+    path: "/categories/illus-services",
+    name: "illus-services",
+    component: () => import(`@v/categories/illus-services.vue`),
+  },
+  {
+    path: "/categories/trad-services",
+    name: "trad-services",
+    component: () => import(`@v/categories/trad-services.vue`),
+  },
+  {
+    path: "/categories/sais-services",
+    name: "sais-services",
+    component: () => import(`@v/categories/sais-services.vue`),
+  },
+  {
+    path: "/categories/couv-services",
+    name: "couv-services",
+    component: () => import(`@v/categories/couv-services.vue`),
+  },
+  {
+    path: "/categories/logo-services",
+    name: "logo-services",
+    component: () => import(`@v/categories/logo-services.vue`),
+  },
+  {
+    path: "/categories/wp-services",
+    name: "wp-services",
+    component: () => import(`@v/categories/wp-services.vue`),
+  },
+  {
+    path: "/categories/voix-services",
+    name: "voix-services",
+    component: () => import(`@v/categories/voix-services.vue`),
+  },
+  {
+    path: "/categories/video-services",
+    name: "video-services",
+    component: () => import(`@v/categories/video-services.vue`),
+  },
+  {
+    path: "/categories/sm-services",
+    name: "sm-services",
+    component: () => import(`@v/categories/sm-services.vue`),
+  },
 ];
 
 export default routes;

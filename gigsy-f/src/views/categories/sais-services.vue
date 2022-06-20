@@ -5,7 +5,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <p>Optimisation du moteur de recherche (SEO)</p>
+          <p>Saisie des données</p>
         </div>
         <div class="row">
               <small style="left: 15px;position: relative;">{{services.length}} services disponibles</small>
@@ -51,10 +51,8 @@ export default {
   name: 'MyComponent',
   data() {
     return {
-        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296},
-         {description:"I will build SEO backlinks with high quality contextual link building", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125048837/original/2835bf817763a336500dc4ac027dc5dba75fe2b5.jpg", price: "STARTING AT US$120", rating: 4.9, count: 296},
-          {description:"I will complete on page seo optimization service and monthly off pag", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/252781441/original/59cabb063c4f273a3d85090bcb776fcdcf7545aa.jpg", price: "STARTING AT US$10", rating: 5.0, count: 35}
-          ],
+        services: [{description:"I will find emails, list address, excel data entry, data mining, data scrapin", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/182814500/original/f6d530a179daa72caa0264f66a93030847100c9a.png", price: "STARTING AT US$50", rating: 5.0, count: 1020},
+         ],
     }
   },
 }
