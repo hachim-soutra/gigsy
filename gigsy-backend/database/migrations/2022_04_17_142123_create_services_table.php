@@ -21,6 +21,7 @@ class CreateServicesTable extends Migration
             $table->json("galeries")->nullable();
             $table->text("description")->nullable();
             $table->string("parent_id")->nullable();
+            $table->string("category_id")->nullable();
             $table->timestamps();
         });
     }

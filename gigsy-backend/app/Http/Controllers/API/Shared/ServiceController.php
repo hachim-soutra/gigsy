@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API\Shared;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreServiceRequest;
-use App\Http\Requests\UpdateServiceRequest;
+use App\Http\Requests\Shared\Service\ServiceRequest;
 use App\Models\Service;
 use App\Repositories\ServiceInterface;
+use App\Repositories\ServiceRepository;
 use Illuminate\Http\Response;
 
 class ServiceController extends Controller
@@ -14,8 +14,8 @@ class ServiceController extends Controller
 
     private $serviceRepository;
 
-    public  function __construct(ServiceInterface $serviceRepository) {
-        $this->$serviceRepository = $serviceRepository;
+    public  function __construct(ServiceRepository $serviceRepository) {
+        $this->serviceRepository = $serviceRepository;
     }
 
     /**
@@ -25,8 +25,14 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $data = $this->serviceRepository->paginate();
+        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
+    }
+
+    public function list()
+    {
         $data = $this->serviceRepository->all();
-        $this->success(__("get services by success"), $data, Response::HTTP_OK);
+        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
     }
 
     /**
@@ -42,10 +48,10 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreServiceRequest  $request
+     * @param  \App\Http\Requests\Shared\Service\ServiceRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreServiceRequest $request)
+    public function store(ServiceRequest $request)
     {
         //
     }
@@ -56,9 +62,9 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($id)
     {
-        //
+        return $this->serviceRepository->findById($id);
     }
 
     /**
@@ -75,11 +81,11 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateServiceRequest  $request
+     * @param  \App\Http\Requests\Shared\Service\ServiceRequest  $request
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateServiceRequest $request, Service $service)
+    public function update(ServiceRequest $request, Service $service)
     {
         //
     }
