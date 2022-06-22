@@ -29,6 +29,11 @@ let routes = [
     name: "seo-services",
     component: () => import(`@v/categories/seo-services.vue`),
   }, 
+  {
+    path: "/profil",
+    name: "profil",
+    component: () => import(`@v/Profil/Profil.vue`),
+  }, 
 ];
 
 export default routes;
