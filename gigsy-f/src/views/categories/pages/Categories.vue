@@ -23,7 +23,7 @@
             message="Please wait 5 seconds"
           />
         </div>
-        <div class="row" v-if="!loading">
+        <div class="row" v-else>
           <div
             class="col-6 col-md-3 col-lg-4"
             v-for="service in services"
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { fetchServices } from "./api/services";
+import { fetchCategories } from "./../api/categories";
 
 export default {
   data() {
@@ -67,7 +67,7 @@ export default {
   methods: {
     fetchData() {
       this.loading = true;
-      fetchServices()
+      fetchCategories()
         .then((res) => {
           this.services = res.data.data;
         })

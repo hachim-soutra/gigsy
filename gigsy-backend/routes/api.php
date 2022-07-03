@@ -30,6 +30,7 @@ Route::prefix('v1')->group(function () {
 
     Route::name("shared.")->group(function () {
         Route::get("categories/list", [\App\Http\Controllers\API\Shared\CategoryController::class, "list"]);
+        Route::get("categories/{slug}", [\App\Http\Controllers\API\Shared\CategoryController::class, "findBySlug"]);
         Route::resource("categories", \App\Http\Controllers\API\Shared\CategoryController::class);
 
         Route::get("services/list", [\App\Http\Controllers\API\Shared\ServiceController::class, "list"]);
