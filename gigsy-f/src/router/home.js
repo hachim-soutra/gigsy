@@ -74,6 +74,11 @@ let routes = [
     name: "sm-services",
     component: () => import(`@v/categories/sm-services.vue`),
   },
+  {
+    path: "/categories/gigs-details",
+    name: "gigs-details",
+    component: () => import(`@v/categories/gigs-details.vue`),
+  },
 ];
 
 export default routes;

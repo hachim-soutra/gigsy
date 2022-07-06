@@ -25,7 +25,8 @@
 
           
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" v-for="service in services" :key="service.$key">
-            <div class="icon-box">
+          <router-link :to="'gigs-details'" >
+           <div class="icon-box">
               <div><img class="card-img-top" :src="service.src" alt="Card image cap"></div>
               <hr>
               <p class="description">{{service.description}}</p>
@@ -33,6 +34,7 @@
               <span class="fa fa-star checked">{{service.rating}}</span><small> {{service.count}}</small>
               <p class="card-text"><small class="text-muted">{{service.price}}</small></p>
             </div>
+          </router-link> 
           </div>
 
          
@@ -51,7 +53,7 @@ export default {
   name: 'MyComponent',
   data() {
     return {
-        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296},
+        services: [{description:"I will build SEO backlinks via high authority dofollow link building method", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/163093250/original/fc7ae610bc8112db4e2d19dfbe05df57054e6241.png", price: "STARTING AT US$90", rating: 4.9, count: 296, path: ""},
          {description:"I will build SEO backlinks with high quality contextual link building", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125048837/original/2835bf817763a336500dc4ac027dc5dba75fe2b5.jpg", price: "STARTING AT US$120", rating: 4.9, count: 296},
           {description:"I will complete on page seo optimization service and monthly off pag", src: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/252781441/original/59cabb063c4f273a3d85090bcb776fcdcf7545aa.jpg", price: "STARTING AT US$10", rating: 5.0, count: 35}
           ],
