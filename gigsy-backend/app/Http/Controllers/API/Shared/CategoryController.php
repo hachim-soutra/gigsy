@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Service;
 use App\Repositories\CategoryInterface;
 use App\Repositories\CategoryRepository;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
@@ -17,7 +18,8 @@ class CategoryController extends Controller
 
     private $CategoryRepository;
 
-    public  function __construct(CategoryRepository $CategoryRepository) {
+    public  function __construct(CategoryRepository $CategoryRepository)
+    {
         $this->CategoryRepository = $CategoryRepository;
     }
 
@@ -35,6 +37,12 @@ class CategoryController extends Controller
     public function list()
     {
         $data = $this->CategoryRepository->all();
+        return $this->success(__("get Categorys by success"), $data, Response::HTTP_OK);
+    }
+
+    public function findBySlug(string $slug)
+    {
+        $data = $this->CategoryRepository->findBySlug($slug);
         return $this->success(__("get Categorys by success"), $data, Response::HTTP_OK);
     }
 
@@ -103,7 +111,4 @@ class CategoryController extends Controller
     {
         //
     }
-
-
-
 }

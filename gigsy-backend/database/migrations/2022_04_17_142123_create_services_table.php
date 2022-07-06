@@ -16,7 +16,7 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string("name")->nullable();
-            $table->string("slug")->nullable();
+            $table->string("slug")->unique();
             $table->string("image")->nullable();
             $table->json("galeries")->nullable();
             $table->text("description")->nullable();
