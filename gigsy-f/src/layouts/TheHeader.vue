@@ -72,9 +72,10 @@
               </button>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="#">
+                  <router-link :to="{ name: 'profil' }">
                     <i class="fa fa-fw fa-user"></i>
-                    {{ user.data.first_name }} {{ user.data.last_name }}</a
+                    {{ user.data.first_name }}
+                    {{ user.data.last_name }}</router-link
                   >
                 </li>
                 <li>
