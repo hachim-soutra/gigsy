@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\API\Admin\AdminController;
 use App\Http\Controllers\API\Admin\AuthController as AdminAuthController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\User\AuthController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,26 +17,28 @@ use App\Http\Controllers\API\User\AuthController;
 */
 
 Route::prefix('v1')->group(function () {
-
-    Route::prefix('user')->namespace("User")->group(function () {
-        Route::post('login', [AuthController::class, "login"])->name('login');
-        Route::post('register', [AuthController::class, "register"])->name('register');
+    Route::prefix('user')->namespace('User')->group(function () {
+        Route::post('login', [AuthController::class, 'login'])->name('login');
+        Route::post('register', [AuthController::class, 'register'])->name('register');
     });
 
-    Route::prefix("admin")->name("admin.")->group(function () {
-        Route::post('login', [AdminAuthController::class, "login"])->name('login');
-        Route::post('register', [AdminAuthController::class, "register"])->name('register');
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::post('login', [AdminAuthController::class, 'login'])->name('login');
+        Route::post('register', [AdminAuthController::class, 'register'])->name('register');
     });
 
-    Route::name("shared.")->group(function () {
-        Route::get("categories/list", [\App\Http\Controllers\API\Shared\CategoryController::class, "list"]);
-        Route::get("categories/{slug}", [\App\Http\Controllers\API\Shared\CategoryController::class, "findBySlug"]);
-        Route::resource("categories", \App\Http\Controllers\API\Shared\CategoryController::class);
+    Route::name('shared.')->group(function () {
+        Route::get('categories/list', [\App\Http\Controllers\API\Shared\CategoryController::class, 'list']);
+        Route::get('categories/{slug}', [\App\Http\Controllers\API\Shared\CategoryController::class, 'findBySlug']);
+        Route::resource('categories', \App\Http\Controllers\API\Shared\CategoryController::class);
 
-        Route::get("services/list", [\App\Http\Controllers\API\Shared\ServiceController::class, "list"]);
-        Route::resource("services", \App\Http\Controllers\API\Shared\ServiceController::class);
+        Route::get('services/list', [\App\Http\Controllers\API\Shared\ServiceController::class, 'list']);
+        Route::get('gigs/{slug}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'findBySlug']);
+        Route::resource('services', \App\Http\Controllers\API\Shared\ServiceController::class);
 
-        Route::get("admins/list", [AdminController::class, "list"]);
-        Route::resource("admins", AdminController::class);
+        Route::get('admins/list', [AdminController::class, 'list']);
+        Route::resource('admins', AdminController::class);
+
+        Route::post('store-newsletter', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'store']);
     });
 });

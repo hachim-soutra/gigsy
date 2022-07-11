@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Traits;
 
-trait RespondsWithHttpStatus {
-    protected function success($message, $data = [], $status = 200) {
+trait RespondsWithHttpStatus
+{
+    protected function success($message, $data = [], $status = 200)
+    {
         return response([
             'success' => true,
             'data' => $data,

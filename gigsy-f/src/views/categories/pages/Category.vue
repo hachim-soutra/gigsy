@@ -9,7 +9,7 @@
           <div class="p-3 col-8 m-auto" data-aos="fade-up">
             <p>{{ category.description }}</p>
           </div>
-          <small class="col-12 text-left py-3"
+          <small class="col-12 text-left py-3" v-if="category.services"
             >{{ category.services.length }} services disponibles</small
           >
           <div class="col-9">
@@ -36,7 +36,11 @@
                 v-for="service in category.services"
                 :key="service.$key"
               >
-                <div class="icon-box">
+                <router-link
+                  tag="div"
+                  :to="{ name: 'gigs', params: { slug: service.slug } }"
+                  class="icon-box"
+                >
                   <div>
                     <img
                       class="card-img-top"
@@ -51,7 +55,7 @@
                   <p class="card-text">
                     <small class="text-muted">{{ service.price }}</small>
                   </p>
-                </div>
+                </router-link>
               </div>
             </div>
           </div>

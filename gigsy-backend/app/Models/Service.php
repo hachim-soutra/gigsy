@@ -15,12 +15,22 @@ class Service extends Model
         'image',
         'galeries',
         'description',
-        'parent_id',
         'category_id',
+        'tags',
+        'faq',
+        'price',
+        'livraison',
+        'seller_id',
+        'status',
     ];
 
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Categorie::class,"category_id");
+        return $this->belongsTo(Categorie::class, 'category_id');
+    }
+
+    public function seller(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Seller::class, 'seller_id');
     }
 }

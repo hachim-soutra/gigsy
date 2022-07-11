@@ -35,6 +35,21 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="name">Votre prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="form.last_name"
+                :class="{ 'is-invalid': form.errors.has('last_name') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('last_name')"
+              >
+                {{ form.errors.get("last_name") }}
+              </div>
+            </div>
+            <div class="form-group">
               <label for="name">Votre Email</label>
               <input
                 type="email"
@@ -104,6 +119,7 @@ export default {
   data: () => ({
     form: new Form({
       first_name: "",
+      last_name: "",
       email: "",
       password: "",
       password_confirmation: "",
@@ -112,12 +128,10 @@ export default {
 
   methods: {
     register() {
-      this.form
-        .post(this.$app_url + "/api/v1/user/register")
-        .then((response) => {
-          this.form.reset();
-          this.$toasted.success(response.data.message);
-        });
+      this.form.post("/api/v1/user/register").then((response) => {
+        this.form.reset();
+        this.$toasted.success(response.data.message);
+      });
     },
   },
 };

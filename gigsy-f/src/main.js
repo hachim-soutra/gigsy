@@ -22,7 +22,9 @@ if (process.env.NODE_ENV === "production") {
 
 Vue.prototype.$app_url = Vue.prototype.$config.app_url;
 
-Vue.use(Toasted);
+Vue.use(Toasted, {
+  duration: 2000,
+});
 ApiService.init();
 
 Vue.component("loader", require("../src/components/Loader.vue").default);

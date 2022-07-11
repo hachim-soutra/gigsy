@@ -20,8 +20,7 @@ class SellerBuilder
         $request['userable_type'] = Seller::class;
         $this->user = User::create($request->all());
         $this->user->userable()->associate($this->seller);
+
         return $this;
     }
-
-
 }

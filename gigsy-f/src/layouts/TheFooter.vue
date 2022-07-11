@@ -5,12 +5,22 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Rejoignez notre newsletter</h4>
-            <form action="" method="post">
+            <form @submit.prevent="send" @keydown="form.onKeydown($event)">
               <input
                 type="email"
                 name="email"
                 placeholder="Votre Email"
-              /><input type="submit" value="Subscribe" />
+                class="form-control"
+                v-model="form.email"
+                :class="{ 'is-invalid': form.errors.has('email') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('email')"
+              >
+                {{ form.errors.get("email") }}
+              </div>
+              <input type="submit" value="Subscribe" :disabled="form.busy" />
             </form>
           </div>
         </div>
@@ -116,7 +126,33 @@
 </template>
 
 <script>
-export default {};
+import Form from "vform";
+export default {
+  data: () => ({
+    form: new Form({
+      email: "",
+    }),
+  }),
+  methods: {
+    send() {
+      this.form
+        .post("/api/v1/store-newsletter")
+        .then(async (response) => {
+          this.form.reset();
+          this.$toasted.success(response.data.message, {
+            singleton: true,
+            icon: "check",
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+            icon: "warning",
+          });
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Traits;
 
 trait Userable
@@ -10,6 +11,7 @@ trait Userable
         if (in_array($key, $this->userable)) {
             $value = $this->user ? $this->user->$key : '';
         }
+
         return $value;
     }
 
@@ -19,10 +21,8 @@ trait Userable
             $this->user->$key = $value;
             $this->user->save();
             $value = $this->user->$key;
-        }else{
-
+        } else {
             return parent::setAttribute($key, $value);
         }
-
     }
 }

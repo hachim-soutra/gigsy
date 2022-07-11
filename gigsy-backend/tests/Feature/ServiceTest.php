@@ -4,8 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\Service;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
 use Tests\TestCase;
 
@@ -20,7 +18,7 @@ class ServiceTest extends TestCase
         $response = $this->get(route('shared.services.index'));
         $response->assertStatus(Response::HTTP_OK)
             ->assertSee([
-            "data", "code"
+                'data', 'code',
             ])
             ->assertJson(compact('data'));
     }

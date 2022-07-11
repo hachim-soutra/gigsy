@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication, DatabaseMigrations, DatabaseTransactions;
+
     protected $faker;
 
     public function setUp(): void
@@ -20,7 +21,7 @@ abstract class TestCase extends BaseTestCase
 
     public function tearDown(): void
     {
-        $this->artisan("migrate:reset");
+        $this->artisan('migrate:reset');
         parent::tearDown();
     }
 }

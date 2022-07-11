@@ -30,9 +30,9 @@ let routes = [
     component: () => import(`@v/categories/pages/Category.vue`),
   },
   {
-    path: "/categories/gigs-details",
-    name: "gigs-details",
-    component: () => import(`@v/categories/gigs-details.vue`),
+    path: "/gigs/:slug",
+    name: "gigs",
+    component: () => import(`@v/gigs/pages/GigsDetails.vue`),
   },
 ];
 
