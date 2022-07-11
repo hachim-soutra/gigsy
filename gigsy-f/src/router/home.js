@@ -25,6 +25,11 @@ let routes = [
     component: () => import(`@v/categories/pages/Categories.vue`),
   },
   {
+    path: "/profil",
+    name: "profil",
+    component: () => import(`@v/Profil/Profil.vue`),
+  },
+  {
     path: "/categories/:slug",
     name: "category",
     component: () => import(`@v/categories/pages/Category.vue`),
