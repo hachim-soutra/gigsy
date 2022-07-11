@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 interface CategoryInterface
@@ -13,6 +14,5 @@ interface CategoryInterface
 
     public function update(int $id, array $data);
 
-    public function delete(Service $id);
+    public function delete(int $id);
 }
-?>

@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Userable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traits\Userable;
 
 class Admin extends Model
 {
@@ -12,7 +12,7 @@ class Admin extends Model
 
     protected $userable = [];
 
-    protected $with = ["user"];
+    protected $with = ['user'];
 
     public function user()
     {

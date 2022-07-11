@@ -5,16 +5,16 @@ namespace App\Http\Controllers\API\Shared;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Service\ServiceRequest;
 use App\Models\Service;
-use App\Repositories\ServiceInterface;
 use App\Repositories\ServiceRepository;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ServiceController extends Controller
 {
-
     private $serviceRepository;
 
-    public  function __construct(ServiceRepository $serviceRepository) {
+    public function __construct(ServiceRepository $serviceRepository)
+    {
         $this->serviceRepository = $serviceRepository;
     }
 
@@ -26,13 +26,13 @@ class ServiceController extends Controller
     public function index()
     {
         $data = $this->serviceRepository->paginate();
-        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
+        return $this->success(__('get services by success'), $data, Response::HTTP_OK);
     }
 
     public function list()
     {
         $data = $this->serviceRepository->all();
-        return $this->success(__("get services by success"), $data, Response::HTTP_OK);
+        return $this->success(__('get services by success'), $data, Response::HTTP_OK);
     }
 
     /**
@@ -99,5 +99,11 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         //
+    }
+
+    public function findBySlug(string $slug)
+    {
+        $data = $this->serviceRepository->findBySlug($slug);
+        return $this->success(__('get service by success'), $data, Response::HTTP_OK);
     }
 }

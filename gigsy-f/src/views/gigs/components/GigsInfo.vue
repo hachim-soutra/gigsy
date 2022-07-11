@@ -1,0 +1,343 @@
+<template>
+  <div class="col-8 bg-white p-3">
+    <VueSlickCarousel v-bind="settings">
+      <div v-for="image in galeries" :key="image.$key">
+        <img :src="image" />
+      </div>
+    </VueSlickCarousel>
+    <div class="row m-0 mt-5" v-html="description"></div>
+  </div>
+</template>
+
+<script>
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+export default {
+  components: { VueSlickCarousel },
+  props: ["galeries", "description"],
+  data() {
+    return {
+      loading: true,
+      gigs: true,
+      settings: {
+        dots: true,
+        infinite: true,
+        initialSlide: 3,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+      },
+    };
+  },
+  mounted() {},
+  methods: {},
+};
+</script>
+
+<style scoped>
+label {
+  float: left;
+}
+
+button {
+  background: #eb5d1e;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 15px;
+  padding: 10px 25px;
+  border: none;
+}
+
+.section-title {
+  margin-top: 40px;
+}
+
+.card-text {
+  padding-top: 10px;
+  position: absolute;
+  left: 60px;
+}
+
+hr {
+  margin: 0;
+}
+
+.checked {
+  color: orange;
+}
+
+small {
+  color: #b5b6ba;
+}
+
+.dropdown {
+  margin-bottom: 15px;
+  left: 49em;
+}
+
+.sortB {
+  left: 49em;
+  position: relative;
+  margin-top: 10px;
+  color: gray;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.button {
+  --background: #362a89;
+  --text: #fff;
+  --cart: #fff;
+  --tick: var(--background);
+  position: relative;
+  border: none;
+  background: none;
+  padding: 8px 28px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  min-width: 144px;
+  color: var(--text);
+  background: var(--background);
+  transform: scale(var(--scale, 1));
+  transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
+}
+
+.button:active {
+  --scale: 0.95;
+}
+
+.button span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-left: -8px;
+  line-height: 26px;
+  transform: translateY(var(--span-y, 0));
+  transition: transform 0.7s ease;
+}
+
+.button span:before,
+.button span:after {
+  content: "";
+  width: var(--w, 2px);
+  height: var(--h, 14px);
+  border-radius: 1px;
+  position: absolute;
+  left: var(--l, 8px);
+  top: var(--t, 6px);
+  background: currentColor;
+  transform: scale(0.75) rotate(var(--icon-r, 0deg))
+    translateY(var(--icon-y, 0));
+  transition: transform 0.65s ease 0.05s;
+}
+
+.button span:after {
+  --w: 14px;
+  --h: 2px;
+  --l: 2px;
+  --t: 12px;
+}
+
+.button .cart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -13px 0 0 -18px;
+  transform-origin: 12px 23px;
+  transform: translateX(-120px) rotate(-18deg);
+}
+
+.button .cart:before,
+.button .cart:after {
+  content: "";
+  position: absolute;
+}
+
+.button .cart:before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--cart);
+  bottom: 0;
+  left: 9px;
+  filter: drop-shadow(11px 0 0 var(--cart));
+}
+
+.button .cart:after {
+  width: 16px;
+  height: 9px;
+  background: var(--cart);
+  left: 9px;
+  bottom: 7px;
+  transform-origin: 50% 100%;
+  transform: perspective(4px) rotateX(-6deg) scaleY(var(--fill, 0));
+  transition: transform 1.2s ease var(--fill-d);
+}
+
+.button .cart svg {
+  z-index: 1;
+  width: 36px;
+  height: 26px;
+  display: block;
+  position: relative;
+  fill: none;
+  stroke: var(--cart);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.button .cart svg polyline:last-child {
+  stroke: var(--tick);
+  stroke-dasharray: 10px;
+  stroke-dashoffset: var(--offset, 10px);
+  transition: stroke-dashoffset 0.4s ease var(--offset-d);
+}
+
+.button.loading {
+  --scale: 0.95;
+  --span-y: -32px;
+  --icon-r: 180deg;
+  --fill: 1;
+  --fill-d: 0.8s;
+  --offset: 0;
+  --offset-d: 1.73s;
+}
+
+.button.loading .cart {
+  animation: cart 3.4s linear forwards 0.2s;
+}
+
+@keyframes cart {
+  12.5% {
+    transform: translateX(-60px) rotate(-18deg);
+  }
+
+  25%,
+  45%,
+  55%,
+  75% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  44%,
+  56% {
+    transform-origin: 12px 23px;
+  }
+
+  45%,
+  55% {
+    transform-origin: 50% 50%;
+  }
+
+  87.5% {
+    transform: translateX(70px) rotate(-18deg);
+  }
+
+  100% {
+    transform: translateX(140px) rotate(-18deg);
+  }
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  font-family: "Inter UI", "Inter", Arial;
+  justify-content: center;
+  align-items: center;
+  background: #eceffc;
+}
+
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+
+body .twitter {
+  position: fixed;
+  display: block;
+  right: 64px;
+  bottom: 14px;
+}
+
+body .twitter svg {
+  width: 32px;
+  height: 32px;
+  fill: #1da1f2;
+}
+
+span {
+  content: "\2713";
+}
+
+.wrapper .container {
+  width: calc(33% - 10px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 5px;
+}
+
+.container .quote i {
+  margin-top: 10px;
+  font-size: 45px;
+  color: #17c0eb;
+}
+
+.wrapper .container .image {
+  margin: 10px 0;
+  height: 150px;
+  width: 150px;
+  background: #c10037;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.container .image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+</style>

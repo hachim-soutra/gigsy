@@ -20,20 +20,25 @@ let routes = [
     component: () => import(`@v/forget/Forget.vue`),
   },
   {
-    path: "/services",
-    name: "services",
-    component: () => import(`@v/services/services.vue`),
+    path: "/categories",
+    name: "categories",
+    component: () => import(`@v/categories/pages/Categories.vue`),
   },
-  {
-    path: "/categories/seo-services",
-    name: "seo-services",
-    component: () => import(`@v/categories/seo-services.vue`),
-  }, 
   {
     path: "/profil",
     name: "profil",
     component: () => import(`@v/Profil/Profil.vue`),
-  }, 
+  },
+  {
+    path: "/categories/:slug",
+    name: "category",
+    component: () => import(`@v/categories/pages/Category.vue`),
+  },
+  {
+    path: "/gigs/:slug",
+    name: "gigs",
+    component: () => import(`@v/gigs/pages/GigsDetails.vue`),
+  },
 ];
 
 export default routes;

@@ -16,7 +16,7 @@ class CreateSellerReviewsTable extends Migration
         Schema::create('seller_reviews', function (Blueprint $table) {
             $table->id();
             $table->string('comment');
-            $table->integer('stars_number')->useCurrent(0,1,2,3,4,5,6)->default(0);
+            $table->integer('stars_number')->useCurrent(0, 1, 2, 3, 4, 5, 6)->default(0);
             $table->timestamps();
         });
     }

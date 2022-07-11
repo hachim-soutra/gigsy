@@ -1,5 +1,8 @@
 <?php
+
 namespace App\Repositories;
+
+use Illuminate\Http\Request;
 
 interface ServiceInterface
 {
@@ -13,6 +16,5 @@ interface ServiceInterface
 
     public function update(int $id, array $data);
 
-    public function delete(Service $id);
+    public function delete(int $id);
 }
-?>

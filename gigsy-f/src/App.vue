@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TheHeader></TheHeader>
-    <router-view />
+    <router-view class="content" />
     <the-footer></the-footer>
   </div>
 </template>
@@ -37,5 +37,8 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.content {
+  margin-top: 80px;
 }
 </style>
