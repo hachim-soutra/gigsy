@@ -12,6 +12,8 @@ class Seller extends Model
 
     protected $userable = [];
 
+    protected $with = ['user'];
+
     public function user()
     {
         return $this->morphOne(User::class, 'userable');

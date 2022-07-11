@@ -5,12 +5,19 @@
 namespace App\Repositories;
 
 use App\Models\Service;
+use Illuminate\Http\Request;
 
 class ServiceRepository implements ServiceInterface
 {
     public function all()
     {
-        return Service::all();
+        return app(Pipeline::class)
+            ->send(Service::query())
+            ->through([
+                \App\Filters\Active::class,
+            ])
+            ->thenReturn()
+            ->get();
     }
 
     public function paginate()
@@ -45,7 +52,7 @@ class ServiceRepository implements ServiceInterface
 
     public function findBySlug(string $slug)
     {
-        Service::where('slug', $slug)->firstOrFail();
+        return Service::where('slug', $slug)->firstOrFail();
     }
 
     public function findById($id)

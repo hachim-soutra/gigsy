@@ -1,87 +1,11 @@
 <template>
   <div class="col-8 bg-white p-3">
     <VueSlickCarousel v-bind="settings">
-      <div>
-        <img
-          src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/67036611/original/aacc1f8470d5f94b7cbe5106b656dae64ad00c35/build-perfect-seo-strategy-backlinks.jpg"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          src="https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/4d81cea6284f0860933e4fe7e5c02715-1644898471/FREE-TIPS-ABOUT-SEO-ON-PAGE/build-perfect-seo-strategy-backlinks.pdf"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          src="https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/4d81cea6284f0860933e4fe7e5c02715-1644898471/FREE-TIPS-ABOUT-SEO-ON-PAGE/build-perfect-seo-strategy-backlinks.pdf"
-          alt=""
-        />
-      </div>
-      <div>
-        <img
-          src="https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/d149ae6433f16263880ea2d0537268be-1637013584/READ-ME-BEFORE-perfect-n/build-perfect-seo-strategy-backlinks.pdf"
-          alt=""
-        />
+      <div v-for="image in galeries" :key="image.$key">
+        <img :src="image" />
       </div>
     </VueSlickCarousel>
-    <div class="row m-0 mt-5">
-      <p>
-        Why SEO Backlinks? Want to know the secret to getting found on Google
-        ranking?
-      </p>
-
-      <p>The answer is to give authority to your website.</p>
-
-      <p><strong> How? Building a valuable SEO Backlinks!</strong></p>
-
-      <p>
-        - With over 8,000+ completed orders in SEO services, I know how to build
-        high quality backlinks that can help to improving your website's ranking
-        with safe and efficient Off Page link building techiques.
-      </p>
-
-      <p><strong>What Will You Get</strong></p>
-
-      <p>
-        - Contextual Backlinks: I'll create Contextual Backlinks on my blogs
-        with some related content about your niche
-      </p>
-      <p>
-        - Mixed and Natural Way: Mostly dofollow, but with some nofollow
-        included
-      </p>
-      <p>
-        - Efficient Strategy: As you know, not all links are the same, I have a
-        unique, safe and efficient SEO Backlinks
-      </p>
-      <p>
-        - Safe Anchor Text: In addition to your target keywords, I'll use
-        diversified anchor text as URL and Generics Keywords
-      </p>
-      <p>
-        - High Quality Backlinks: The posts will be placed on blogs with High
-        Ahrefs Metrics DR or UR 49~20, or High Moz Metrics DA or PA 49~20
-      </p>
-
-      <p><strong> What Will I Need</strong></p>
-
-      <p>- Only 1 URL per Order</p>
-      <p>- Short Description About Your Business</p>
-      <p>- 4 Keywords as Anchor Text</p>
-
-      <p>- Indexing: 7~30 Days After Delivery</p>
-
-      <p><strong> Something Unclear?</strong></p>
-
-      <p>
-        <small>
-          Cancellations/Refunds are not accepted, talk to me before buying link
-          building</small
-        >
-      </p>
-    </div>
+    <div class="row m-0 mt-5" v-html="description"></div>
   </div>
 </template>
 
@@ -90,8 +14,8 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
-  name: "MyComponent",
   components: { VueSlickCarousel },
+  props: ["galeries", "description"],
   data() {
     return {
       loading: true,
@@ -99,7 +23,7 @@ export default {
       settings: {
         dots: true,
         infinite: true,
-        initialSlide: 2,
+        initialSlide: 3,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,

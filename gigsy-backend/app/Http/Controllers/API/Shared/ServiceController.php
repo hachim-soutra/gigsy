@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\Service\ServiceRequest;
 use App\Models\Service;
 use App\Repositories\ServiceRepository;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ServiceController extends Controller
@@ -25,14 +26,12 @@ class ServiceController extends Controller
     public function index()
     {
         $data = $this->serviceRepository->paginate();
-
         return $this->success(__('get services by success'), $data, Response::HTTP_OK);
     }
 
     public function list()
     {
         $data = $this->serviceRepository->all();
-
         return $this->success(__('get services by success'), $data, Response::HTTP_OK);
     }
 

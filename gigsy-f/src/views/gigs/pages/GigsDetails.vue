@@ -4,9 +4,15 @@
     <section id="services" class="services section-bg">
       <div class="container">
         <div class="row">
-          <GigsSellerHeader />
-          <GigsInfo />
-          <GigsSellerCard />
+          <GigsSellerHeader :title="gigs.name" />
+          <GigsInfo :galeries="gigs.galeries" :description="gigs.description" />
+          <GigsSellerCard
+            :seller="gigs.seller"
+            :livraison="gigs.livraison"
+            :price="gigs.price"
+            :rating="gigs.rating"
+            :bayers_count="gigs.bayers_count"
+          />
         </div>
       </div>
     </section>

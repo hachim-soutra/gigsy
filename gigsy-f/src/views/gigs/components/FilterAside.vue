@@ -1,13 +1,15 @@
 <template>
   <div class="col-3 row m-0 col-gap">
-    <h2 class="col-12 sortB text-left p-0">
-      <i class="fa-thin fa-arrow-down-short-wide"></i> Trier par
-    </h2>
+    <h2 class="col-12 sortB text-left p-0">Trier par:</h2>
     <select class="col-12 form-select" aria-label="Default select example">
       <option selected>Évaluation des services</option>
-      <option value="1">1 <span class="fa fa-star checked"></span></option>
-      <option value="2">2-3 <span class="fa fa-star checked"></span></option>
-      <option value="3">3+ <span class="fa fa-star checked"></span></option>
+      <option value="1">1 <i class="fa fa-star" aria-hidden="true"></i></option>
+      <option value="2">
+        2-3 <i class="fa fa-star" aria-hidden="true"></i>
+      </option>
+      <option value="3">
+        3+ <i class="fa fa-star" aria-hidden="true"></i>
+      </option>
     </select>
 
     <select class="col-12 form-select" aria-label="Default select example">

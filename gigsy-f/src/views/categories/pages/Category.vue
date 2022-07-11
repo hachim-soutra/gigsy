@@ -32,14 +32,14 @@
             </div>
             <div class="row" v-else>
               <div
-                class="col-md-6 col-lg-3 d-flex align-items-stretch"
+                class="col-md-6 col-lg-4 d-flex align-items-stretch"
                 v-for="service in category.services"
                 :key="service.$key"
               >
                 <router-link
                   tag="div"
                   :to="{ name: 'gigs', params: { slug: service.slug } }"
-                  class="icon-box"
+                  class="icon-box p-0"
                 >
                   <div>
                     <img
@@ -48,13 +48,26 @@
                       alt="Card image cap"
                     />
                   </div>
-                  <hr />
-                  <p class="description">{{ service.name }}</p>
-                  <hr />
-                  <span class="fa fa-star checked">{{ service.rating }}</span>
-                  <p class="card-text">
-                    <small class="text-muted">{{ service.price }}</small>
-                  </p>
+                  <div class="row m-0 d-flex justify-content-between">
+                    <div class="col-12 my-3 d-flex justify-content-between">
+                      <span>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        {{ service.seller.user.fullname }}
+                      </span>
+                      <span
+                        >{{ service.rating }}
+                        <span class="fa fa-star checked"></span
+                      ></span>
+                    </div>
+                    <div class="col-12 my-3 d-flex justify-content-between">
+                      <h5 class="text-left checked">
+                        {{ service.name }}
+                      </h5>
+                    </div>
+                    <smal class="col-12 text-muted text-left">
+                      start from {{ service.price }}$
+                    </smal>
+                  </div>
                 </router-link>
               </div>
             </div>

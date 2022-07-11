@@ -40,5 +40,6 @@ Route::prefix('v1')->group(function () {
         Route::resource('admins', AdminController::class);
 
         Route::post('store-newsletter', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'store']);
+        Route::post('store-contact', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'storeContact']);
     });
 });

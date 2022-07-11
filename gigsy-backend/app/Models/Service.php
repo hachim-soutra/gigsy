@@ -24,6 +24,15 @@ class Service extends Model
         'status',
     ];
 
+    protected $appends = ['rating'];
+
+    protected $with = ['seller'];
+
+    protected $casts = [
+        'galeries' => 'array'
+    ];
+
+
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Categorie::class, 'category_id');
@@ -32,5 +41,10 @@ class Service extends Model
     public function seller(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Seller::class, 'seller_id');
+    }
+
+    public function getRatingAttribute()
+    {
+        return 5;
     }
 }

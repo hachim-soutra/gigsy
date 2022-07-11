@@ -5,40 +5,26 @@
         <div class="section-title m-0 p-0" data-aos="fade-up">
           <p>Carte de services</p>
         </div>
-        <div class="row m-0">
-          <div class="col-8 text-left p-0">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-              ></path>
-              <path d="M9 4H7v5h5V7H9V4z"></path>
-            </svg>
-            livraisons :
-          </div>
-          <div class="col">3 Jours</div>
+        <div class="row m-0 d-flex justify-content-between mb-2">
+          <div class="col-8 text-left p-0">livraisons :</div>
+          <div class="col text-right">{{ livraison }}</div>
         </div>
-        <div class="row m-0">
+        <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">Reviews :</div>
-          <div class="col"></div>
+          <div class="col text-right">
+            {{ rating }} <span class="fa fa-star checked"></span>
+          </div>
         </div>
-        <div class="row m-0">
+        <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">Acheteurs :</div>
-          <div class="col"></div>
+          <div class="col text-right">25</div>
+          <!-- <div class="col text-right">{{ bayers_count }}</div> -->
         </div>
-        <div class="row m-0">
-          <div class="col-8 text-left p-0">Les demandes sont en cours :</div>
-          <div class="col"></div>
-        </div>
-        <div class="row m-0">
+        <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">
             Le prix du service commence à partir de :
           </div>
-          <div class="col"></div>
+          <div class="col text-right">{{ price }}$</div>
         </div>
       </div>
     </div>
@@ -48,14 +34,9 @@
         <p>About The Seller</p>
       </div>
       <div class="image">
-        <img
-          src="https://i.ibb.co/3FZZgWZ/Rauf.png"
-          alt=""
-          width="100%"
-          height="auto"
-        />
+        <img :src="seller.photo" alt="" width="100%" height="auto" />
       </div>
-      <strong>Shehriyar Ahmed</strong>
+      <strong>{{ seller.user.fullname }}</strong>
       <div class="rating">
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -63,12 +44,7 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
       </div>
-      <p>
-        Hi my name is Shehriyar Ahmed and I am SEO expert. I have worked with
-        several websites in terms of SEO and helped them ranking higher in
-        google I am really excited to work with more clients and want to share
-        my experience and help businesses to grow organically
-      </p>
+      <p v-html="seller.bio"></p>
       <br />
       <button type="button" class="btn btn-outline-primary" href="#">
         contacter le vendeur
@@ -79,6 +55,7 @@
 
 <script>
 export default {
+  props: ["seller", "price", "livraison", "rating", "bayers_count"],
   data() {
     return {};
   },

@@ -40,27 +40,29 @@
               />
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
-              <h3 data-aos="fade-up">Voluptatem dignissimos provident quasi</h3>
+              <h3 data-aos="fade-up">
+                Tout un monde de talents freelance à votre portée
+              </h3>
               <p data-aos="fade-up" data-aos-delay="100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-                aute irure dolor in reprehenderit
+                Confiez votre demande à nos vendeurs vérifiés
               </p>
               <div class="row">
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
+                  <h4>Des services de qualité pour tous les budgets</h4>
                   <p>
-                    Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-                    laboris nisi ut aliquip
+                    Trouvez des services de haute qualité à tous les prix. Pas
+                    de tarifs horaires, mais une tarification en fonction des
+                    projets.
                   </p>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
+                  <h4>Des paiements protégés</h4>
                   <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt
+                    Sachez toujours ce que vous allez payer d'avance. Votre
+                    paiement n'est pas débloqué tant que vous n'avez pas
+                    approuvé le travail.
                   </p>
                 </div>
               </div>
@@ -637,33 +639,6 @@
         </div>
       </section>
       <!-- End Team Section -->
-
-      <!-- ======= Clients Section ======= -->
-      <section id="clients" class="clients section-bg">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Nos Clients</h2>
-            <p>Ils nous ont fait confiance</p>
-          </div>
-
-          <div
-            class="owl-carousel clients-carousel"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <img src="assets/img/clients/client-1.png" alt="" />
-            <img src="assets/img/clients/client-2.png" alt="" />
-            <img src="assets/img/clients/client-3.png" alt="" />
-            <img src="assets/img/clients/client-4.png" alt="" />
-            <img src="assets/img/clients/client-5.png" alt="" />
-            <img src="assets/img/clients/client-6.png" alt="" />
-            <img src="assets/img/clients/client-7.png" alt="" />
-            <img src="assets/img/clients/client-8.png" alt="" />
-          </div>
-        </div>
-      </section>
-      <!-- End Clients Section -->
-
       <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
         <div class="container">
@@ -712,8 +687,8 @@
               data-aos-delay="200"
             >
               <form
-                action="forms/contact.php"
-                method="post"
+                @submit.prevent="contact"
+                @keydown="form.onKeydown($event)"
                 role="form"
                 class="php-email-form"
               >
@@ -727,8 +702,15 @@
                       id="name"
                       data-rule="minlen:4"
                       data-msg="Veuillez entrer au moins 4 caractères"
+                      v-model="form.name"
+                      :class="{ 'is-invalid': form.errors.has('name') }"
                     />
-                    <div class="validate"></div>
+                    <div
+                      class="invalid-feedback text-left validate"
+                      v-if="form.errors.has('name')"
+                    >
+                      {{ form.errors.get("name") }}
+                    </div>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="name">Votre Email</label>
@@ -739,8 +721,15 @@
                       id="email"
                       data-rule="email"
                       data-msg="Veuillez entrer un email valide"
+                      v-model="form.email"
+                      :class="{ 'is-invalid': form.errors.has('email') }"
                     />
-                    <div class="validate"></div>
+                    <div
+                      class="invalid-feedback text-left validate"
+                      v-if="form.errors.has('email')"
+                    >
+                      {{ form.errors.get("email") }}
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -752,8 +741,15 @@
                     id="subject"
                     data-rule="minlen:4"
                     data-msg="Veuillez entrer au moins 8 caractères"
+                    v-model="form.objet"
+                    :class="{ 'is-invalid': form.errors.has('objet') }"
                   />
-                  <div class="validate"></div>
+                  <div
+                    class="invalid-feedback text-left validate"
+                    v-if="form.errors.has('objet')"
+                  >
+                    {{ form.errors.get("objet") }}
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="name">Message</label>
@@ -762,9 +758,16 @@
                     name="message"
                     rows="10"
                     data-rule="required"
+                    v-model="form.message"
+                    :class="{ 'is-invalid': form.errors.has('message') }"
                     data-msg="S'il vous plaît écrivez nous quelque chose"
                   ></textarea>
-                  <div class="validate"></div>
+                  <div
+                    class="invalid-feedback text-left validate"
+                    v-if="form.errors.has('message')"
+                  >
+                    {{ form.errors.get("message") }}
+                  </div>
                 </div>
                 <div class="mb-3">
                   <div class="loading">Chargement</div>
@@ -787,8 +790,35 @@
   </div>
 </template>
 <script>
+import Form from "vform";
 export default {
-  components: {},
+  data: () => ({
+    form: new Form({
+      name: "",
+      email: "",
+      objet: "",
+      message: "",
+    }),
+  }),
+  methods: {
+    contact() {
+      this.form
+        .post("/api/v1/store-contact")
+        .then(async (response) => {
+          this.form.reset();
+          this.$toasted.success(response.data.message, {
+            singleton: true,
+            icon: "check",
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+            icon: "warning",
+          });
+        });
+    },
+  },
 };
 </script>
 

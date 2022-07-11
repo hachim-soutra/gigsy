@@ -1,12 +1,12 @@
 <template>
-  <div class="col-12 row m-0">
+  <div class="col-12 row m-0 mb-3">
     <div class="col-9 section-title m-0 p-0" data-aos="fade-up">
       <h3 class="text-left">
-        I will build SEO backlinks with high quality contextual link building
+        {{ title }}
       </h3>
     </div>
-    <div class="col">
-      <button class="button">
+    <div class="col text-right p-0">
+      <button class="button m-0">
         <span>Add to cart</span>
         <div class="cart">
           <svg viewBox="0 0 36 26">
@@ -23,6 +23,7 @@
 
 <script>
 export default {
+  props: ["title"],
   data() {
     return {};
   },
