@@ -11,6 +11,7 @@ class ServiceRepository implements ServiceInterface
 {
     public function all()
     {
+        return Service::get();
         return app(Pipeline::class)
             ->send(Service::query())
             ->through([
