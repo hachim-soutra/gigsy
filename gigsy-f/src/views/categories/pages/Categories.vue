@@ -6,7 +6,7 @@
         <div class="section-title" data-aos="fade-up">
           <p>Découvrez les excellents services que nous offrons</p>
         </div>
-        <div class="row" v-if="loading">
+        <div class="row" v-if="loading" data-aos="fade-up">
           <loader
             class="col-6 col-md-3 col-lg-4"
             :active="loading"
@@ -23,7 +23,7 @@
             message="Please wait 5 seconds"
           />
         </div>
-        <div class="row" v-else>
+        <div class="row" data-aos="fade-up" v-else>
           <div
             class="col-6 col-md-3 col-lg-4"
             v-for="service in services"

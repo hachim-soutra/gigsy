@@ -1,6 +1,6 @@
 <template>
   <div class="row o-layout--flex py-3 m-0">
-    <div class="col-9 profile_navbar p-0">
+    <div class="col-12 profile_navbar p-0">
       <div class="o-layout--flex profile_navbar__title">
         <span>
           <div
@@ -9,7 +9,7 @@
             :class="{ 'profile_navbar__title-item--active': toggleProfil == 1 }"
             @click="toggleProfil = 1"
           >
-            <i class="fa fa-fw fa-user"></i>Profil
+            <i class="fa fa-fw fa-user"></i>My services active
           </div>
         </span>
 
@@ -21,63 +21,21 @@
             @click="toggleProfil = 0"
           >
             <i class="fa fa-fw fa-briefcase"></i>
-            Prestations de service
+            My services pending
           </div>
         </span>
       </div>
     </div>
-    <div class="col profile_navbar-btn p-0 text-right">
-      <router-link
-        :to="{ name: 'update.profil' }"
-        class="c-button c-button--primary"
-      >
-        <i class="fa fa-fw fa-sliders"></i>
-        Modifier le profil
-      </router-link>
-    </div>
     <div class="row bg-gray m-0 w-100" v-if="toggleProfil == 1">
-      <div class="col-8">
-        <UserProfilCard title="Bref sur moi">
-          <p class="text-left">Senior developer</p>
-        </UserProfilCard>
+      <div class="col-12">
         <UserProfilCard title="Mes services">
           <div class="row">
             <div
-              class="col-md-6 d-flex align-items-stretch"
+              class="col-md-4 d-flex align-items-stretch"
               v-for="service in services"
               :key="service.$key"
             >
               <Gigs :service="service" />
-            </div>
-          </div>
-        </UserProfilCard>
-      </div>
-      <div class="col">
-        <UserProfilCard title="Statistiques">
-          <div class="row m-0">
-            <div class="col-12 d-flex justify-content-between p-0">
-              <span>Commentaires :</span>
-              <span>5 <i class="fa fa-star" aria-hidden="true"></i></span>
-            </div>
-            <div class="col-12 d-flex justify-content-between p-0">
-              <span>Services publiés :</span>
-              <span>12</span>
-            </div>
-            <div class="col-12 d-flex justify-content-between p-0">
-              <span>Nombre de clients :</span>
-              <span>5</span>
-            </div>
-          </div>
-          <hr />
-          <div class="row m-0">
-            <div class="col-12 d-flex justify-content-between p-0">
-              <span>date de l'inscription</span>
-              <span>2022-06-12</span>
-            </div>
-            <div class="col-12 d-flex justify-content-between p-0">
-              <span>vu pour la dernière fois :</span>
-
-              <span>5 min</span>
             </div>
           </div>
         </UserProfilCard>

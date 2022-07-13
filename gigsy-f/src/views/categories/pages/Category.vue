@@ -1,6 +1,10 @@
 <template>
   <div class="container-fluid log-reg-container p-0">
-    <section id="services" class="services section-bg m-0 p-0">
+    <section
+      id="services"
+      data-aos="fade-up"
+      class="services section-bg m-0 p-0"
+    >
       <div class="container">
         <div class="row">
           <div class="section-title p-3 col-12" data-aos="fade-up">
@@ -36,39 +40,7 @@
                 v-for="service in category.services"
                 :key="service.$key"
               >
-                <router-link
-                  tag="div"
-                  :to="{ name: 'gigs', params: { slug: service.slug } }"
-                  class="icon-box p-0"
-                >
-                  <div>
-                    <img
-                      class="card-img-top"
-                      :src="service.image"
-                      alt="Card image cap"
-                    />
-                  </div>
-                  <div class="row m-0 d-flex justify-content-between">
-                    <div class="col-12 my-3 d-flex justify-content-between">
-                      <span>
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        {{ service.seller.user.fullname }}
-                      </span>
-                      <span
-                        >{{ service.rating }}
-                        <span class="fa fa-star checked"></span
-                      ></span>
-                    </div>
-                    <div class="col-12 my-3 d-flex justify-content-between">
-                      <h5 class="text-left checked">
-                        {{ service.name }}
-                      </h5>
-                    </div>
-                    <smal class="col-12 text-muted text-left">
-                      start from {{ service.price }}$
-                    </smal>
-                  </div>
-                </router-link>
+                <Gigs :service="service" />
               </div>
             </div>
           </div>
@@ -82,6 +54,7 @@
 <script>
 import FilterAside from "../components/FilterAside.vue";
 import { fetchCategory } from "./../api/categories";
+import Gigs from "../../../components/Gigs.vue";
 export default {
   data() {
     return {
@@ -89,7 +62,7 @@ export default {
       category: true,
     };
   },
-  components: { FilterAside },
+  components: { FilterAside, Gigs },
   mounted() {
     this.fetchData();
   },

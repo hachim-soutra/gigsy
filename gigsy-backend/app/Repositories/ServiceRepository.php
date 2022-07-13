@@ -12,13 +12,6 @@ class ServiceRepository implements ServiceInterface
     public function all()
     {
         return Service::get();
-        return app(Pipeline::class)
-            ->send(Service::query())
-            ->through([
-                \App\Filters\Active::class,
-            ])
-            ->thenReturn()
-            ->get();
     }
 
     public function paginate()
@@ -26,7 +19,6 @@ class ServiceRepository implements ServiceInterface
         $page = request('page') ? request('page') : 1;
         $search = request('search') ? request('search') : '';
         $per_page = request('per_page') ? request('per_page') : 15;
-
         return Service::where('name', 'LIKE', "%$search%")
             ->paginate($per_page, ['*'], 'page', $page);
     }

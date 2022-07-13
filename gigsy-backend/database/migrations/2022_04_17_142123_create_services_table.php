@@ -26,7 +26,7 @@ class CreateServicesTable extends Migration
             $table->double('price');
             $table->time('livraison');
             $table->integer('seller_id');
-            $table->integer('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

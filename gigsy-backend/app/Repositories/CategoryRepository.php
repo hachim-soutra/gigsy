@@ -25,37 +25,41 @@ class CategoryRepository implements CategoryInterface
             ->paginate($per_page, ['*'], 'page', $page);
     }
 
-    public function get($id)
+    public function get(Categorie $category)
     {
-        return Categorie::with('services')->withCount('services')->find($id);
+        $response['data'] = $category;
+        $response['message'] = __('service retrieved with success');
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
     public function store(array $data)
     {
-        return Categorie::create($data);
+        $category = Categorie::create($data);
+        $response['data'] = $category;
+        $response['message'] = __('Categorie created with success');
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
-    public function update($id, array $data)
+    public function update(Categorie $category, $request): Response
     {
-        return Categorie::find($id)->update($data);
+        $category->update($request);
+        $response['data'] = $category;
+        $response['message'] = __('Categorie updated with success');
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
-    public function delete($id)
+    public function delete(Categorie $category): Response
     {
-        return Categorie::destroy($id);
+        $category->delete();
+        $response['message'] = __('Categorie deleted with success');
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
     public function findBySlug(string $slug)
     {
-        return Categorie::where('slug', $slug)->with('services')->withCount('services')->firstOrFail();
-    }
-
-    public function findById(int $id): Response
-    {
-        $admin = Categorie::findOrFail($id);
-        $response['data'] = $admin;
-        $response['message'] = __('service retrieved with success');
-
-        return response($response, ResponseAlias::HTTP_OK);
+        return Categorie::where('slug', $slug)
+            ->with('services')
+            ->withCount('services')
+            ->firstOrFail();
     }
 }

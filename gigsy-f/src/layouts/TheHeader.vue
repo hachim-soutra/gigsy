@@ -48,19 +48,28 @@
           </template>
           <template v-else>
             <li class="">
-              <a class="" href="/cart" data-badge="1">
+              <router-link class="menu-item-link" :to="{ name: 'cart.profil' }">
                 <i class="fa fa-shopping-cart"></i>
-              </a>
+                <span class="badge badge-danger">3</span>
+              </router-link>
             </li>
-            <li class="hide-xs-only">
-              <a class="" href="/messages">
+            <li>
+              <router-link
+                class="menu-item-link"
+                :to="{ name: 'messages.profil' }"
+              >
                 <i class="fa fa-envelope"></i>
-              </a>
+                <span class="badge badge-danger">5</span>
+              </router-link>
             </li>
-            <li class="">
-              <a class="" href="/notifications">
+            <li>
+              <router-link
+                class="menu-item-link"
+                :to="{ name: 'notifications.profil' }"
+              >
                 <i class="fa fa-bell"></i>
-              </a>
+                <span class="badge badge-danger">10</span>
+              </router-link>
             </li>
             <li class="dropdown">
               <button
@@ -79,27 +88,15 @@
                   >
                 </li>
                 <li>
-                  <a href="/collections">
+                  <router-link :to="{ name: 'service.profil' }">
                     <i class="fa fa-fw fa-bookmark"></i> My services
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a href="/credit">
+                  <router-link :to="{ name: 'credit.profil' }">
                     <i class="fa fa-fw fa-usd"></i>
-                    sold
-                  </a>
-                </li>
-                <li>
-                  <a href="/account/profile">
-                    <i class="fa fa-fw fa-sliders"></i>
-                    Parameters
-                  </a>
-                </li>
-                <li class="hsoub-dropdown-item hsoub-dropdown-divider">
-                  <a href="https://accounts.hsoub.com/edit" target="_blank">
-                    <i class="fa fa-fw fa-edit"></i>
-                    Update compte
-                  </a>
+                    Sold
+                  </router-link>
                 </li>
                 <li>
                   <a href="#"> <i class="fa fa-fw fa-sign-out"></i> Log out</a>
@@ -158,5 +155,23 @@ export default {
   height: 45px;
   width: 45px;
   cursor: pointer;
+}
+a.menu-item-link {
+  position: relative;
+}
+.badge {
+  padding: 0;
+  width: 19px;
+  height: 19px;
+  padding: 0 !important;
+  border-radius: 50%;
+  margin: 0;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 </style>

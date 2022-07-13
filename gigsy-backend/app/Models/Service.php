@@ -32,7 +32,6 @@ class Service extends Model
         'galeries' => 'array'
     ];
 
-
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Categorie::class, 'category_id');
@@ -46,5 +45,15 @@ class Service extends Model
     public function getRatingAttribute()
     {
         return 5;
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('status', 0);
     }
 }

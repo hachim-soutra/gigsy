@@ -13,7 +13,7 @@ class AdminRepository implements UserRepositoryInterface
 {
     public function login($request): Response
     {
-        if (! auth()->attempt(['email' => $request->email, 'password' => $request['password']])) {
+        if (!auth()->attempt(['email' => $request->email, 'password' => $request['password']])) {
             return response(['message' => __('login ou mot de passe incorrect')], 404);
         }
 
@@ -73,17 +73,11 @@ class AdminRepository implements UserRepositoryInterface
         return response($response, ResponseAlias::HTTP_OK);
     }
 
-    public function deleteById(int $id): Response
+    public function deleteById(Admin $admin): Response
     {
-        if ($admin = Admin::findOrFail($id)) {
-            $admin->delete();
-            $response['message'] = __('Admin deleted with success');
-
-            return response($response, ResponseAlias::HTTP_OK);
-        }
-        $response['message'] = __('Admin not found');
-
-        return response($response, ResponseAlias::HTTP_NOT_FOUND);
+        $admin->delete();
+        $response['message'] = __('Admin deleted with success');
+        return response($response, ResponseAlias::HTTP_OK);
     }
 
     public function updateById(int $id, $request): Response

@@ -1,6 +1,6 @@
 <template>
   <div class="c-card">
-    <div class="c-card__head">
+    <div class="c-card__head text-left">
       <h3>{{ title }}</h3>
     </div>
     <div class="c-card__body">
@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .c-card {
-  margin: 2rem;
+  margin: 1rem 0;
   background-color: white;
 }
 .c-card__head {

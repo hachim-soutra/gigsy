@@ -30,6 +30,36 @@ let routes = [
     component: () => import(`@v/Profil/Profil.vue`),
   },
   {
+    path: "/update-profil",
+    name: "update.profil",
+    component: () => import(`@v/Profil/UpdateProfil.vue`),
+  },
+  {
+    path: "/my-services",
+    name: "service.profil",
+    component: () => import(`@v/Profil/MyService.vue`),
+  },
+  {
+    path: "/credit",
+    name: "credit.profil",
+    component: () => import(`@v/Profil/Credit.vue`),
+  },
+  {
+    path: "/notifications",
+    name: "notifications.profil",
+    component: () => import(`@v/Profil/Notification.vue`),
+  },
+  {
+    path: "/cart",
+    name: "cart.profil",
+    component: () => import(`@v/Profil/Cart.vue`),
+  },
+  {
+    path: "/messages",
+    name: "messages.profil",
+    component: () => import(`@v/Profil/Messages.vue`),
+  },
+  {
     path: "/categories/:slug",
     name: "category",
     component: () => import(`@v/categories/pages/Category.vue`),

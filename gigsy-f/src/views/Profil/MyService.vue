@@ -1,15 +1,17 @@
 <template>
   <div class="container">
-    <UserProfilHeader data-aos="fade-up"></UserProfilHeader>
-    <UserProfilTabs data-aos="fade-up" class="services" :services="services" />
+    <UserMyServicesTabs
+      data-aos="fade-up"
+      class="services"
+      :services="services"
+    />
   </div>
 </template>
 
 <script>
 import Form from "vform";
 import { fetchMyServices } from "./api/profil";
-import UserProfilHeader from "./components/UserProfilHeader.vue";
-import UserProfilTabs from "./components/UserProfilTabs.vue";
+import UserMyServicesTabs from "./components/UserMyServicesTabs.vue";
 export default {
   data: () => ({
     services: [],
@@ -48,7 +50,7 @@ export default {
         .finally(() => (this.loading = false));
     },
   },
-  components: { UserProfilHeader, UserProfilTabs },
+  components: { UserMyServicesTabs },
 };
 </script>
 

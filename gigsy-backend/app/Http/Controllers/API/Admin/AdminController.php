@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Repositories\AdminRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -74,11 +75,11 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Admin $admin)
     {
-        return $this->adminRepository->deleteById($id);
+        return $this->adminRepository->deleteById($admin);
     }
 }
