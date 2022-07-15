@@ -60,6 +60,11 @@ let routes = [
     component: () => import(`@v/Profil/Messages.vue`),
   },
   {
+    path: "/message/:seller",
+    name: "message.profil",
+    component: () => import(`@v/Profil/Message.vue`),
+  },
+  {
     path: "/categories/:slug",
     name: "category",
     component: () => import(`@v/categories/pages/Category.vue`),

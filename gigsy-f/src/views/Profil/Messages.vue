@@ -1,110 +1,42 @@
 <template>
   <div class="container">
-    <section class="row">
-      <div class="col-12 row m-0 bg-gray p-3" data-aos="fade-up">
-        <div class="col">
-          <UserCreditCard
-            title="solde total"
-            description="Le solde total de votre compte comprend désormais les bénéfices et le solde en attente."
-            sold="1000"
-          />
-        </div>
-        <div class="col">
-          <UserCreditCard
-            title="solde en attente"
-            description="Vos gains sont suspendus pendant 14 jours avant que vous ne puissiez les utiliser."
-            sold="1000"
-          />
-        </div>
-        <div class="col">
-          <UserCreditCard
-            title="Bénéfices pouvant être retirés"
-            description="Le montant que vous avez gagné en vendant les services peut être retiré sur votre compte PayPal."
-            sold="1000"
-          />
-        </div>
+    <section class="row" data-aos="fade-up">
+      <div class="col-9">
+        <UserMessage
+          v-for="item in 10"
+          :key="item.$key"
+          title="solde total"
+          description="12/12/2022"
+          img="1000"
+        />
       </div>
-      <br />
-      <br />
-      <div class="col-12 bg-gray" data-aos="fade-up">
-        <UserProfilCard title="Que voulez-vous faire de vos gains ?">
-          <small
-            class="col-12 text-left text-success d-flex justify-content-start mb-5 p-0"
-            >Les sommes dues au titre de la vente de services sont envoyées
-            quotidiennement sur votre e-mail via PayPal lorsqu'elles dépassent
-            10 $</small
+      <div class="col">
+        <ul class="list-group">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
           >
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label>Votre compte PayPal :</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="user@example.com"
-                />
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-group">
-                <label>le prix demandé :</label>
-                <input class="form-control" type="text" />
-              </div>
-            </div>
-            <div class="col-12 d-flex justify-content-end">
-              <button class="btn btn-primary" type="submit">valider</button>
-            </div>
-          </div>
-        </UserProfilCard>
+            Messages entrants
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            messages sortants
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import Form from "vform";
-import { fetchMyServices } from "./api/profil";
-import UserCreditCard from "./components/UserCreditCard.vue";
-import UserProfilCard from "./components/UserProfilCard.vue";
+import UserMessage from "./components/UserMessage.vue";
 export default {
-  data: () => ({
-    services: [],
-    form: new Form({
-      first_name: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-    }),
-    date: "12/12/22",
-    fullname: "Hachim Soutra",
-    telephone: "06 00 00 00 00",
-    emailp: "hachim.soutra@gigsy.com",
-  }),
-  mounted() {
-    this.fetchData();
-  },
-  methods: {
-    register() {
-      this.form
-        .post(this.$app_url + "/api/v1/user/register")
-        .then((response) => {
-          this.form.reset();
-          this.$toasted.success(response.data.message);
-        });
-    },
-    fetchData() {
-      this.loading = true;
-      fetchMyServices()
-        .then((res) => {
-          this.services = res.data.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => (this.loading = false));
-    },
-  },
-  components: { UserCreditCard, UserProfilCard },
+  data: () => ({}),
+  mounted() {},
+  methods: {},
+  components: { UserMessage },
 };
 </script>
 

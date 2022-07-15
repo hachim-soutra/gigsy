@@ -12,6 +12,10 @@ class Buyer extends Model
 
     protected $userable = [];
 
+    protected $fillable = ['status'];
+
+    protected $with = ['user'];
+
     public function user()
     {
         return $this->morphOne(User::class, 'userable');

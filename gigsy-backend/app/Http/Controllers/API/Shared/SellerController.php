@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\Shared;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BuyerController extends Controller
+class SellerController extends Controller
 {
     /**
      * Display a listing of the resource.
