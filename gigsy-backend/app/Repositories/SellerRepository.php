@@ -4,14 +4,15 @@
 
 namespace App\Repositories;
 
-use App\Models\Buyer;
-use Illuminate\Http\Request;
+use App\Models\Seller;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
-class BuyerRepository implements BuyerInterface
+class SellerRepository implements SellerInterface
 {
     public function all()
     {
-        return Buyer::get();
+        return Seller::get();
     }
 
     public function paginate()
@@ -19,27 +20,34 @@ class BuyerRepository implements BuyerInterface
         $page = request('page') ? request('page') : 1;
         $search = request('search') ? request('search') : '';
         $per_page = request('per_page') ? request('per_page') : 15;
-        return Buyer::where('name', 'LIKE', "%$search%")
-            ->paginate($per_page, ['*'], 'page', $page);
+        return Seller::paginate($per_page, ['*'], 'page', $page);
     }
 
-    public function get(Buyer $buyer)
+    public function get(Seller $Seller)
     {
-        return $buyer;
+        return $Seller;
     }
 
     public function store(array $data)
     {
-        return Buyer::create($data);
+        $Seller = Seller::create([]);
+        $data['userable_id'] = $Seller->id;
+        $data['userable_type'] = Seller::class;
+        $data['password'] = Hash::make($data['password']);
+        $user = User::create($data);
+        $user->userable()->associate($Seller);
+        return $Seller;
     }
 
-    public function update(Buyer $buyer, array $data)
+    public function update(Seller $Seller, array $data)
     {
-        return $buyer->update($data);
+        $Seller->update([]);
+        $Seller->user->update($data);
+        return $Seller;
     }
 
-    public function delete(Buyer $buyer)
+    public function delete(Seller $Seller)
     {
-        return $buyer->delete();
+        return $Seller->delete();
     }
 }

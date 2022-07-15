@@ -8,7 +8,9 @@ interface SellerInterface
 {
     public function all();
 
-    public function get(Seller $id);
+    public function paginate();
+
+    public function get(Seller $Seller);
 
     public function store(array $data);
 
