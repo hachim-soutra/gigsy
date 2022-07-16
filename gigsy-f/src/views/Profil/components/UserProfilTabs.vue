@@ -17,8 +17,8 @@
           <div
             data-tab-index="2"
             class="col profile_navbar__title-item px-4 py-2"
-            :class="{ 'profile_navbar__title-item--active': toggleProfil != 1 }"
-            @click="toggleProfil = 0"
+            :class="{ 'profile_navbar__title-item--active': toggleProfil == 2 }"
+            @click="fetchMyServices"
           >
             <i class="fa fa-fw fa-briefcase"></i>
             Prestations de service
@@ -38,18 +38,7 @@
     <div class="row bg-gray m-0 w-100" v-if="toggleProfil == 1">
       <div class="col-8">
         <UserProfilCard title="Bref sur moi">
-          <p class="text-left">Senior developer</p>
-        </UserProfilCard>
-        <UserProfilCard title="Mes services">
-          <div class="row">
-            <div
-              class="col-md-6 d-flex align-items-stretch"
-              v-for="service in services"
-              :key="service.$key"
-            >
-              <Gigs :service="service" />
-            </div>
-          </div>
+          <p class="text-left white_space">{{ getData.user.description }}</p>
         </UserProfilCard>
       </div>
       <div class="col">
@@ -57,27 +46,27 @@
           <div class="row m-0">
             <div class="col-12 d-flex justify-content-between p-0">
               <span>Commentaires :</span>
-              <span>5 <i class="fa fa-star" aria-hidden="true"></i></span>
+              <span>0 <i class="fa fa-star" aria-hidden="true"></i></span>
             </div>
             <div class="col-12 d-flex justify-content-between p-0">
               <span>Services publiés :</span>
-              <span>12</span>
+              <span>{{ getData.services.length }}</span>
             </div>
             <div class="col-12 d-flex justify-content-between p-0">
               <span>Nombre de clients :</span>
-              <span>5</span>
+              <span>0</span>
             </div>
           </div>
           <hr />
           <div class="row m-0">
             <div class="col-12 d-flex justify-content-between p-0">
               <span>date de l'inscription</span>
-              <span>2022-06-12</span>
+              <span>{{ getData.user.created_at | moment("MM-DD-YYYY") }}</span>
             </div>
             <div class="col-12 d-flex justify-content-between p-0">
               <span>vu pour la dernière fois :</span>
 
-              <span>5 min</span>
+              <span>{{ getData.user.online_date }}</span>
             </div>
           </div>
         </UserProfilCard>
@@ -104,12 +93,36 @@
 <script>
 import UserProfilCard from "./UserProfilCard.vue";
 import Gigs from "../../../components/Gigs.vue";
+import ApiService from "../../../services/api.service";
 export default {
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
   data: () => ({
     toggleProfil: 1,
+    services: [],
+    loading: false,
   }),
   components: { UserProfilCard, Gigs },
-  props: ["services"],
+  methods: {
+    fetchMyServices() {
+      this.toggleProfil = 2;
+      ApiService.get("api/v1/seller/services/list/" + this.getData.id)
+        .then((res) => {
+          this.services = res.data.data;
+          this.$toasted.success(res.data.message, {
+            singleton: true,
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+  },
 };
 </script>
 
@@ -179,5 +192,8 @@ a {
 }
 .bg-gray {
   background: #f1f1f1;
+}
+.white_space {
+  white-space: break-spaces;
 }
 </style>

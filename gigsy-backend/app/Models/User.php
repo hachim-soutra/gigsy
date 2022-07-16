@@ -17,6 +17,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'img',
+        'description',
+        'last_seen',
         'first_name',
         'last_name',
         'email',
@@ -35,7 +38,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $appends = ['fullname'];
+    protected $appends = ['fullname', 'online', 'online_date'];
+
+    protected $dates = ['last_seen'];
 
     /**
      * The attributes that should be cast.
@@ -48,7 +53,17 @@ class User extends Authenticatable
 
     public function getFullNameAttribute()
     {
-        return ucfirst($this->first_name).' '.ucfirst($this->last_name);
+        return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
+    }
+
+    public function getOnlineAttribute()
+    {
+        return now()->diffInMinutes($this->last_seen, false) < 2;
+    }
+
+    public function getOnlineDateAttribute()
+    {
+        return $this->last_seen ? $this->last_seen->diffForHumans() : "";
     }
 
     /**

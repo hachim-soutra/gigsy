@@ -1,21 +1,22 @@
 <template>
   <div class="col-8 bg-white p-3">
-    <VueSlickCarousel v-bind="settings">
+    <!-- <VueSlickCarousel v-bind="settings">
       <div v-for="image in galeries" :key="image.$key">
         <img :src="image" />
       </div>
-    </VueSlickCarousel>
+    </VueSlickCarousel> -->
+    <img :src="image" width="100%" height="auto" />
     <div class="row m-0 mt-5" v-html="description"></div>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+// import VueSlickCarousel from "vue-slick-carousel";
+// import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
-  components: { VueSlickCarousel },
-  props: ["galeries", "description"],
+  // components: { VueSlickCarousel },
+  props: ["galeries", "description", "image"],
   data() {
     return {
       loading: true,
@@ -82,11 +83,6 @@ small {
   position: relative;
   margin-top: 10px;
   color: gray;
-}
-
-img {
-  width: 300px;
-  height: 300px;
 }
 
 .button {

@@ -6,12 +6,19 @@ namespace App\Repositories;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class ServiceRepository implements ServiceInterface
 {
     public function all()
     {
         return Service::get();
+    }
+
+    public function filterByStatus($status)
+    {
+        return Service::where("status", $status)->latest()->get();
     }
 
     public function paginate()
@@ -30,6 +37,19 @@ class ServiceRepository implements ServiceInterface
 
     public function store(array $data)
     {
+        $data['slug'] = Str::slug($data['name']);
+        $file = $data['image'];
+        $filename = str_replace(" ", "_", date('YmdHi') . $file->getClientOriginalName());
+        $file->move(public_path('images/services'), $filename);
+        $data['image'] = url("/images/services/$filename");
+        $array_filename = [];
+        // foreach ($data['galeries'] as $file) {
+        //     Log::alert($file);
+        //     $filename = date('YmdHi') . $file->getClientOriginalName();
+        //     $file->move(public_path('images/services'), $filename);
+        //     $array_filename[] = url("/images/services/$filename");
+        // }
+        $request['galeries'] = json_encode($array_filename);
         return Service::create($data);
     }
 

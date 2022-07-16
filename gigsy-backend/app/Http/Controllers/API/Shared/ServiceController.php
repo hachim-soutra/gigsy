@@ -35,6 +35,12 @@ class ServiceController extends Controller
         return $this->success(__('get services by success'), $data, Response::HTTP_OK);
     }
 
+    public function filterByStatus($status)
+    {
+        $data = $this->serviceRepository->filterByStatus($status);
+        return $this->success(__('get services by success'), $data, Response::HTTP_OK);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -53,7 +59,8 @@ class ServiceController extends Controller
      */
     public function store(ServiceRequest $request)
     {
-        //
+        $data = $this->serviceRepository->store($request->validated());
+        return $this->success(__('store service by success'), $data, Response::HTTP_OK);
     }
 
     /**

@@ -5,8 +5,17 @@
         {{ title }}
       </h3>
     </div>
-    <div class="col text-right p-0">
-      <button class="button m-0">
+    <div
+      class="col text-right p-0"
+      v-if="getData && gigs.seller_id != getData.id && gigs.status == 1"
+    >
+      <router-link
+        tag="button"
+        :to="{
+          name: 'cart.profil',
+        }"
+        class="button m-0"
+      >
         <span>Add to cart</span>
         <div class="cart">
           <svg viewBox="0 0 36 26">
@@ -16,14 +25,19 @@
             <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
           </svg>
         </div>
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["title"],
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
+  props: ["title", "gigs"],
   data() {
     return {};
   },

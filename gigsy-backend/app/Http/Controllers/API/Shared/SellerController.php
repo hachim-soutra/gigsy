@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Shared;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\SellerRequest;
 use App\Models\Seller;
+use App\Models\User;
 use App\Repositories\SellerRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -66,9 +67,9 @@ class SellerController extends Controller
      * @param  Bayer  $bayer
      * @return \Illuminate\Http\Response
      */
-    public function update(SellerRequest $request, Seller $Seller)
+    public function update(SellerRequest $request, User $user)
     {
-        $data = $this->SellerRepository->update($Seller, $request->validated());
+        $data = $this->SellerRepository->update($user, $request->validated());
         return $this->success(__('Update Seller by success'), $data, Response::HTTP_OK);
     }
 

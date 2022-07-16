@@ -11,7 +11,7 @@
       <div class="col-12 my-3 d-flex justify-content-between">
         <span>
           <i class="fa fa-user" aria-hidden="true"></i>
-          {{ service.seller.user.fullname }}
+          {{ service.seller ? service.seller.user.fullname : "" }}
         </span>
         <span
           >{{ service.rating }} <span class="fa fa-star checked"></span

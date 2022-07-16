@@ -26,30 +26,6 @@
       <option value="2">jusqu'à 7 jours</option>
       <option value="3">à toute heure</option>
     </select>
-
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        value=""
-        id="flexCheckDefault"
-      />
-      <label class="form-check-label" for="flexCheckDefault">
-        online users
-      </label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        value=""
-        id="flexCheckChecked"
-        checked
-      />
-      <label class="form-check-label" for="flexCheckChecked">
-        Checked checkbox
-      </label>
-    </div>
   </div>
 
   <!-- cd-main-content -->

@@ -20,6 +20,24 @@
             class="php-email-form w-100"
           >
             <div class="form-group">
+              <label for="img">Image profil</label>
+
+              <input
+                @change="onFileChange"
+                class="form-control"
+                id="img"
+                :class="{ 'is-invalid': form.errors.has('img') }"
+                type="file"
+                accept="image/*"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('img')"
+              >
+                {{ form.errors.get("img") }}
+              </div>
+            </div>
+            <div class="form-group">
               <label for="name">Votre nom</label>
               <input
                 type="text"
@@ -64,6 +82,25 @@
                 v-if="form.errors.has('email')"
               >
                 {{ form.errors.get("email") }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="description"
+                :class="{ 'is-invalid': form.errors.has('description') }"
+                cols="30"
+                rows="10"
+                v-model="form.description"
+              >
+              </textarea>
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('description')"
+              >
+                {{ form.errors.get("description") }}
               </div>
             </div>
 
@@ -121,17 +158,32 @@ export default {
       first_name: "",
       last_name: "",
       email: "",
+      description: "",
+      img: null,
       password: "",
       password_confirmation: "",
     }),
   }),
 
   methods: {
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.form.img = files[0];
+    },
     register() {
-      this.form.post("/api/v1/user/register").then((response) => {
-        this.form.reset();
-        this.$toasted.success(response.data.message);
-      });
+      this.form
+        .post("/api/v1/user/register")
+        .then((response) => {
+          this.form.reset();
+          this.$toasted.success(response.data.message);
+          this.$router.push({ name: "login" });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
     },
   },
 };

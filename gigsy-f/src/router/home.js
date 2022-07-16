@@ -60,7 +60,7 @@ let routes = [
     component: () => import(`@v/Profil/Messages.vue`),
   },
   {
-    path: "/message/:seller",
+    path: "/message/:seller/:gigs",
     name: "message.profil",
     component: () => import(`@v/Profil/Message.vue`),
   },

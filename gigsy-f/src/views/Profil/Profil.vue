@@ -27,6 +27,11 @@ export default {
   mounted() {
     this.fetchData();
   },
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
   methods: {
     register() {
       this.form
@@ -38,7 +43,7 @@ export default {
     },
     fetchData() {
       this.loading = true;
-      fetchMyServices()
+      fetchMyServices(this.getData.id)
         .then((res) => {
           this.services = res.data.data;
         })

@@ -5,7 +5,7 @@
         <div class="relative">
           <img
             class="u-circle img-shadow"
-            src="https://avatars.hsoubcdn.com/0e1b05f1e953ee83547da4fb06b9db31?s=256"
+            :src="getData.user.img"
             width="128"
             height="128"
           />
@@ -17,16 +17,16 @@
         </div>
 
         <h1 class="username">
-          Hachim Soutra
+          {{ getData.user.fullname }}
 
-          <span class="sup">
+          <span class="sup" v-if="getData.online">
             <i class="fa fa-circle text-success"></i>
           </span>
         </h1>
-        <ul class="details-list">
+        <ul class="details-list p-0">
           <li>
             <i class="fa fa-fw fa-user"></i>
-            Nouvel utilisateur
+            {{ getData.status_name }}
           </li>
         </ul>
       </div>
@@ -35,7 +35,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
+};
 </script>
 
 <style scoped>

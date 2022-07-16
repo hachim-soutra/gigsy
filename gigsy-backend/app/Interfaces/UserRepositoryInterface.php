@@ -10,6 +10,6 @@ interface UserRepositoryInterface
 {
     public function login(LoginRequest $request);
 
-    public function register(RegisterRequest $request);
-//    public function forget(Request $request);
+    public function register($request);
+    //    public function forget(Request $request);
 }

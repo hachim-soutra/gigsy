@@ -14,8 +14,44 @@ class Seller extends Model
 
     protected $with = ['user'];
 
+    protected $appends = [
+        'total_cart',
+        'total_message',
+        'total_notification',
+        'status_name'
+    ];
+
     public function user()
     {
         return $this->morphOne(User::class, 'userable');
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function getTotalCartAttribute()
+    {
+        return 0;
+    }
+
+    public function getTotalMessageAttribute()
+    {
+        return 0;
+    }
+
+    public function getTotalNotificationAttribute()
+    {
+        return 0;
+    }
+
+    public function getStatusNameAttribute()
+    {
+        return "Nouvel utilisateur";
     }
 }

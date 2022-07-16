@@ -23,7 +23,7 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $this->userRepository->register($request);
+        $this->userRepository->register($request->validated());
         $response['message'] = __('User successfully register.');
 
         return response($response, 200);

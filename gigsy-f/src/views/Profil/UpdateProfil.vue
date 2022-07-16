@@ -1,165 +1,149 @@
 <template>
-  <div class="container">
-    <section class="row" data-aos="fade-up">
-      <div class="col mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="e-profile">
-              <div class="row">
-                <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px">
-                    <div
-                      class="d-flex justify-content-center align-items-center rounded"
-                      style="
-                        height: 140px;
-                        background-color: rgb(233, 236, 239);
-                      "
-                    >
-                      <span
-                        style="color: rgb(166, 168, 170); font: bold 8pt Arial"
-                        >140x140</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col d-flex flex-column flex-sm-row justify-content-between mb-3"
-                >
-                  <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                    <div class="text-muted">
-                      <small>Last seen 2 hours ago</small>
-                    </div>
-                    <div class="mt-2">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="text-center text-sm-right">
-                    <span class="badge badge-secondary">administrator</span>
-                    <div class="text-muted">
-                      <small>Joined 09 Dec 2017</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div class="container-fluid log-reg-container">
+    <section class="login-regester mt-lg-5">
+      <div class="row d-flex justify-content-center">
+        <div
+          class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <img class="img-fluid animated" src="assets/img/hero-img.svg" />
+        </div>
+        <div
+          class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <form
+            @submit.prevent="register"
+            @keydown="form.onKeydown($event)"
+            class="php-email-form w-100"
+          >
+            <div class="form-group">
+              <label for="img">Image profil</label>
 
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
-                  <form class="form" novalidate="">
-                    <div class="row">
-                      <div class="col">
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Full Name</label>
-                              <input
-                                class="form-control"
-                                type="text"
-                                name="name"
-                                placeholder="John Smith"
-                                value="John Smith"
-                              />
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Username</label>
-                              <input
-                                class="form-control"
-                                type="text"
-                                name="username"
-                                placeholder="johnny.s"
-                                value="johnny.s"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Email</label>
-                              <input
-                                class="form-control"
-                                type="text"
-                                placeholder="user@example.com"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col mb-3">
-                            <div class="form-group">
-                              <label>About</label>
-                              <textarea
-                                class="form-control"
-                                rows="5"
-                                placeholder="My Bio"
-                              ></textarea>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row"></div>
-                    <div class="row" v-if="showPassword">
-                      <div class="col-12 mb-3">
-                        <div class="mb-2"><b>Change Password</b></div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Current Password</label>
-                              <input
-                                class="form-control"
-                                type="password"
-                                placeholder="••••••"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="col">
-                            <div class="form-group">
-                              <label>New Password</label>
-                              <input
-                                class="form-control"
-                                type="password"
-                                placeholder="••••••"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="col">
-                            <div class="form-group">
-                              <label
-                                >Confirm
-                                <span class="d-none d-xl-inline"
-                                  >Password</span
-                                ></label
-                              >
-                              <input
-                                class="form-control"
-                                type="password"
-                                placeholder="••••••"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col d-flex justify-content-end">
-                        <button class="btn btn-primary" type="submit">
-                          Save Changes
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+              <input
+                @change="onFileChange"
+                class="form-control"
+                id="img"
+                :class="{ 'is-invalid': form.errors.has('first_name') }"
+                type="file"
+                accept="image/*"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('first_name')"
+              >
+                {{ form.errors.get("first_name") }}
               </div>
             </div>
-          </div>
+            <div class="form-group">
+              <label for="name">Votre nom</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="form.first_name"
+                :class="{ 'is-invalid': form.errors.has('first_name') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('first_name')"
+              >
+                {{ form.errors.get("first_name") }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Votre prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="form.last_name"
+                :class="{ 'is-invalid': form.errors.has('last_name') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('last_name')"
+              >
+                {{ form.errors.get("last_name") }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Votre Email</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                v-model="form.email"
+                :class="{ 'is-invalid': form.errors.has('email') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('email')"
+              >
+                {{ form.errors.get("email") }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="description"
+                :class="{ 'is-invalid': form.errors.has('description') }"
+                cols="30"
+                rows="10"
+                v-model="form.description"
+              >
+              </textarea>
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('description')"
+              >
+                {{ form.errors.get("description") }}
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Mot de Passe</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="password"
+                v-model="form.password"
+                :class="{ 'is-invalid': form.errors.has('password') }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('password')"
+              >
+                {{ form.errors.get("password") }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Répéter le mot de passe</label>
+              <input
+                type="password"
+                class="form-control"
+                name="re-password"
+                id="re-password"
+                v-model="form.password_confirmation"
+                :class="{
+                  'is-invalid': form.errors.has('password_confirmation'),
+                }"
+              />
+              <div
+                class="invalid-feedback text-left"
+                v-if="form.errors.has('password_confirmation')"
+              >
+                {{ form.errors.get("password_confirmation") }}
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" :disabled="form.busy">Modifier</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -167,7 +151,53 @@
 </template>
 
 <script>
-export default {};
+import Form from "vform";
+export default {
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
+  data: () => ({
+    form: new Form({
+      first_name: "",
+      last_name: "",
+      email: "",
+      description: "",
+      img: "",
+      password: "",
+      password_confirmation: "",
+    }),
+  }),
+  mounted() {
+    this.form.first_name = this.getData.user.first_name;
+    this.form.last_name = this.getData.user.last_name;
+    this.form.email = this.getData.user.email;
+    this.form.description = this.getData.user.description;
+  },
+
+  methods: {
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.form.img = files[0];
+    },
+    register() {
+      this.form
+        .put("/api/v1/sellers/" + this.getData.user.id)
+        .then(async (response) => {
+          await this.$store.dispatch("setUser", response.data);
+          this.form.reset();
+          this.$toasted.success(response.data.message);
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -175,5 +205,16 @@ label {
   text-align: left;
   width: 100%;
   padding-left: 1rem;
+}
+label {
+  float: left;
+}
+button {
+  background: #eb5d1e;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 15px;
+  padding: 10px 25px;
+  border: none;
 }
 </style>

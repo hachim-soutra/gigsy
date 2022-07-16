@@ -1,5 +1,12 @@
 <template>
-  <div class="row m-0 border-bottom px-5 py-2">
+  <router-link
+    tag="div"
+    :to="{
+      name: 'message.profil',
+      params: { seller: 1, gigs: 1 },
+    }"
+    class="row m-0 border-bottom px-5 py-2"
+  >
     <img
       class="u-circle img-shadow col-1"
       src="https://avatars.hsoubcdn.com/0e1b05f1e953ee83547da4fb06b9db31?s=256"
@@ -10,12 +17,12 @@
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  props: ["title", "description", "img"],
+  props: ["title", "description", "img", "seller", "gigs"],
 };
 </script>
 

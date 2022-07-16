@@ -50,7 +50,9 @@
             <li class="">
               <router-link class="menu-item-link" :to="{ name: 'cart.profil' }">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="badge badge-danger">3</span>
+                <span class="badge badge-danger" v-if="getData.total_cart > 0">
+                  {{ getData.total_cart }}
+                </span>
               </router-link>
             </li>
             <li>
@@ -59,7 +61,12 @@
                 :to="{ name: 'messages.profil' }"
               >
                 <i class="fa fa-envelope"></i>
-                <span class="badge badge-danger">5</span>
+                <span
+                  class="badge badge-danger"
+                  v-if="getData.total_message > 0"
+                >
+                  {{ getData.total_message }}
+                </span>
               </router-link>
             </li>
             <li>
@@ -68,7 +75,12 @@
                 :to="{ name: 'notifications.profil' }"
               >
                 <i class="fa fa-bell"></i>
-                <span class="badge badge-danger">10</span>
+                <span
+                  class="badge badge-danger"
+                  v-if="getData.total_notification > 0"
+                >
+                  {{ getData.total_notification }}
+                </span>
               </router-link>
             </li>
             <li class="dropdown">
@@ -77,14 +89,14 @@
                 type="button"
                 data-toggle="dropdown"
               >
-                {{ user.data.first_name | TwoLetter }}
+                {{ user.data.user.first_name | TwoLetter }}
               </button>
               <ul class="dropdown-menu">
                 <li>
                   <router-link :to="{ name: 'profil' }">
                     <i class="fa fa-fw fa-user"></i>
-                    {{ user.data.first_name }}
-                    {{ user.data.last_name }}</router-link
+                    {{ user.data.user.first_name }}
+                    {{ user.data.user.last_name }}</router-link
                   >
                 </li>
                 <li>
@@ -98,7 +110,7 @@
                     Sold
                   </router-link>
                 </li>
-                <li>
+                <li @click="logoutHandler">
                   <a href="#"> <i class="fa fa-fw fa-sign-out"></i> Log out</a>
                 </li>
               </ul>
@@ -113,13 +125,25 @@
 
 <script>
 import userMixin from "../common/mixins/user.js";
+import { mapActions } from "vuex";
 export default {
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
   mixins: [userMixin],
   filters: {
     TwoLetter: function (value) {
       if (!value) return "";
       value = value.toString();
       return value.substring(0, 2);
+    },
+  },
+  methods: {
+    ...mapActions(["logout"]),
+    logoutHandler() {
+      this.logout({ router: this.$router });
     },
   },
 };

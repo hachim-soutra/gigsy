@@ -13,14 +13,16 @@
         </ol>
       </nav>
       <div class="col-9">
-        <UserMessageData
-          v-for="item in 10"
-          :key="item.$key"
-          user="hachim soutra"
-          date="12/12/2022"
-          description="lodeeee dhdhdjd <br/> ssbsbbsbshshshss"
-          img="1000"
-        />
+        <div class="overflow-message">
+          <UserMessageData
+            v-for="item in 10"
+            :key="item.$key"
+            user="hachim soutra"
+            date="12/12/2022"
+            description="lodeeee dhdhdjd <br/> ssbsbbsbshshshss"
+            img="1000"
+          />
+        </div>
         <div class="row mt-3">
           <div class="col-12">
             <div class="panel panel-default">
@@ -66,11 +68,28 @@
 </template>
 
 <script>
+import ApiService from "../../services/api.service";
 import UserMessageData from "./components/UserMessageData.vue";
 export default {
-  data: () => ({}),
-  mounted() {},
-  methods: {},
+  data() {
+    return { messages: [] };
+  },
+  created() {
+    this.fetchMessages();
+  },
+  methods: {
+    fetchMessages() {
+      ApiService.get("/messages").then((response) => {
+        this.messages = response.data;
+      });
+    },
+    addMessage(message) {
+      this.messages.push(message);
+      ApiService.post("/messages", message).then((response) => {
+        console.log(response.data);
+      });
+    },
+  },
   components: { UserMessageData },
 };
 </script>

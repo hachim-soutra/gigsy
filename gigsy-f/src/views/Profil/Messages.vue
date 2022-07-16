@@ -1,13 +1,15 @@
 <template>
   <div class="container">
     <section class="row" data-aos="fade-up">
-      <div class="col-9">
+      <div class="col-9 overflow-message">
         <UserMessage
           v-for="item in 10"
           :key="item.$key"
           title="solde total"
           description="12/12/2022"
           img="1000"
+          gigs="1000"
+          seller="1000"
         />
       </div>
       <div class="col">
@@ -69,5 +71,8 @@ button {
 li {
   text-align: left;
   line-height: 2rem;
+}
+.overflow-message {
+  overflow-x: auto;
 }
 </style>

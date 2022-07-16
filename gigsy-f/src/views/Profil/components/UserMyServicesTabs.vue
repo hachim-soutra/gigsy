@@ -7,9 +7,16 @@
             data-tab-index="0"
             class="col profile_navbar__title-item px-4 py-2"
             :class="{ 'profile_navbar__title-item--active': toggleProfil == 1 }"
-            @click="toggleProfil = 1"
+            @click="fetchMyServicesActive"
           >
             <i class="fa fa-fw fa-user"></i>My services active
+
+            <span
+              class="badge badge-success ml-2"
+              v-if="this.toggleProfil == 1"
+            >
+              {{ services.length }}
+            </span>
           </div>
         </span>
 
@@ -17,16 +24,33 @@
           <div
             data-tab-index="2"
             class="col profile_navbar__title-item px-4 py-2"
-            :class="{ 'profile_navbar__title-item--active': toggleProfil != 1 }"
-            @click="toggleProfil = 0"
+            :class="{ 'profile_navbar__title-item--active': toggleProfil == 2 }"
+            @click="fetchMyServicesPending"
           >
             <i class="fa fa-fw fa-briefcase"></i>
             My services pending
+            <span
+              class="badge badge-success ml-2"
+              v-if="this.toggleProfil == 2"
+            >
+              {{ services.length }}
+            </span>
+          </div>
+        </span>
+        <span>
+          <div
+            data-tab-index="2"
+            class="col profile_navbar__title-item px-4 py-2"
+            :class="{ 'profile_navbar__title-item--active': toggleProfil == 3 }"
+            @click="toggleProfil = 3"
+          >
+            <i class="fa fa-fw fa-briefcase"></i>
+            ajouter service
           </div>
         </span>
       </div>
     </div>
-    <div class="row bg-gray m-0 w-100" v-if="toggleProfil == 1">
+    <div class="row bg-gray m-0 w-100" v-if="this.toggleProfil == 1">
       <div class="col-12">
         <UserProfilCard title="Mes services">
           <div class="row">
@@ -41,7 +65,7 @@
         </UserProfilCard>
       </div>
     </div>
-    <div class="row bg-gray m-0 w-100 jus" v-else>
+    <div class="row bg-gray m-0 w-100" v-if="toggleProfil == 2">
       <div class="col-12">
         <UserProfilCard title="Mes services">
           <div class="row">
@@ -52,6 +76,132 @@
             >
               <Gigs :service="service" />
             </div>
+          </div>
+        </UserProfilCard>
+      </div>
+    </div>
+    <div class="row bg-gray m-0 w-100 jus" v-if="toggleProfil == 3">
+      <div class="col-12">
+        <UserProfilCard title="ajouter service">
+          <div class="row">
+            <form
+              @submit.prevent="register"
+              @keydown="form.onKeydown($event)"
+              class="container"
+            >
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input
+                  @change="onFileChange"
+                  class="form-control"
+                  id="image"
+                  :class="{ 'is-invalid': form.errors.has('image') }"
+                  type="file"
+                  accept="image/*"
+                />
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('image')"
+                >
+                  {{ form.errors.get("image") }}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="form.name"
+                  :class="{ 'is-invalid': form.errors.has('name') }"
+                />
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('name')"
+                >
+                  {{ form.errors.get("name") }}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Prix</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  v-model="form.price"
+                  :class="{ 'is-invalid': form.errors.has('price') }"
+                />
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('price')"
+                >
+                  {{ form.errors.get("price") }}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">livraison (jour)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  v-model="form.livraison"
+                  :class="{ 'is-invalid': form.errors.has('livraison') }"
+                />
+
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('livraison')"
+                >
+                  {{ form.errors.get("livraison") }}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Categorie</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  v-model="form.livraison"
+                  :class="{ 'is-invalid': form.errors.has('category_id') }"
+                />
+                <select>
+                  <option
+                    :value="category.id"
+                    v-for="category in categories"
+                    :key="category.$key"
+                  >
+                    {{ category.name }}
+                  </option>
+                </select>
+
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('category_id')"
+                >
+                  {{ form.errors.get("category_id") }}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  class="form-control"
+                  name="description"
+                  id="description"
+                  :class="{ 'is-invalid': form.errors.has('description') }"
+                  cols="30"
+                  rows="10"
+                  v-model="form.description"
+                >
+                </textarea>
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('description')"
+                >
+                  {{ form.errors.get("description") }}
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" :disabled="form.busy">Ajouter</button>
+              </div>
+            </form>
           </div>
         </UserProfilCard>
       </div>
@@ -62,12 +212,106 @@
 <script>
 import UserProfilCard from "./UserProfilCard.vue";
 import Gigs from "../../../components/Gigs.vue";
+import ApiService from "../../../services/api.service";
+import Form from "vform";
+
 export default {
   data: () => ({
     toggleProfil: 1,
+    services: [],
+    categories: [],
+    loading: false,
+    form: new Form({
+      image: null,
+      seller_id: null,
+      category_id: null,
+      galeries: [],
+      name: "",
+      description: "",
+      price: "",
+      livraison: "",
+    }),
   }),
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
   components: { UserProfilCard, Gigs },
-  props: ["services"],
+  mounted() {
+    this.form.seller_id = this.getData.id;
+    this.fetchMyServicesActive();
+    this.fetchMyCategories();
+  },
+  methods: {
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.form.image = files[0];
+    },
+    onFileChangeGaleries(e) {
+      console.log(e.target.files);
+      for (let i = 0; i < this.$refs.files.files.length; i++) {
+        this.form.galeries.push(this.$refs.files.files[i]);
+      }
+    },
+    fetchMyCategories() {
+      this.toggleProfil = 1;
+      ApiService.get("api/v1/seller/categories/list")
+        .then((res) => {
+          this.categories = res.data.data;
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+    fetchMyServicesActive() {
+      this.toggleProfil = 1;
+      ApiService.get("api/v1/seller/services/filter/1/" + this.getData.id)
+        .then((res) => {
+          this.services = res.data.data;
+          this.$toasted.success(res.data.message, {
+            singleton: true,
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+    fetchMyServicesPending() {
+      this.toggleProfil = 2;
+      ApiService.get("api/v1/seller/services/filter/0/" + this.getData.id)
+        .then((res) => {
+          this.services = res.data.data;
+          this.$toasted.success(res.data.message, {
+            singleton: true,
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+    register() {
+      this.form
+        .post("/api/v1/services")
+        .then(async (response) => {
+          this.form.reset();
+          this.$toasted.success(response.data.message);
+          this.fetchMyServicesPending();
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
+  },
 };
 </script>
 
@@ -137,5 +381,21 @@ a {
 }
 .bg-gray {
   background: #f1f1f1;
+}
+label {
+  text-align: left;
+  width: 100%;
+  padding-left: 1rem;
+}
+label {
+  float: left;
+}
+button {
+  background: #eb5d1e;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 15px;
+  padding: 10px 25px;
+  border: none;
 }
 </style>

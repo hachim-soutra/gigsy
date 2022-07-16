@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Seller;
+use App\Models\User;
 
 interface SellerInterface
 {
@@ -14,7 +15,7 @@ interface SellerInterface
 
     public function store(array $data);
 
-    public function update(Seller $id, array $data);
+    public function update(User $id, array $data);
 
     public function delete(Seller $id);
 }

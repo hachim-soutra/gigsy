@@ -6,7 +6,7 @@ export default {
       token: payload.access_token,
     });
   },
-  logout(context) {
-    context.dispatch("logout");
+  logout(context, payload) {
+    context.commit("logout", payload);
   },
 };

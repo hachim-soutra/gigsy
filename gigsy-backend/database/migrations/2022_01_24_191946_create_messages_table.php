@@ -16,6 +16,10 @@ class CreateMessagesTable extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->text('message');
+            $table->integer('bayer_id')->unsigned();
+            $table->integer('seller_id')->unsigned();
+            $table->integer('service_id')->unsigned();
+            $table->boolean('seen')->default(false);
             $table->timestamps();
         });
     }

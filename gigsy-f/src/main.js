@@ -9,9 +9,18 @@ import production from "@/config/production.json";
 import Toasted from "vue-toasted";
 
 import ApiService from "./services/api.service";
-
+Vue.use(require("vue-moment"));
 // Importing the global css file
 import "@/assets/css/global.css";
+
+// import Echo from "laravel-echo";
+// window.Pusher = require("pusher-js");
+// window.Echo = new Echo({
+//   broadcaster: "pusher",
+//   key: "95aae49b4facb8a0d3b9",
+//   cluster: "4c2b259b8d229486f694",
+//   forceTLS: true,
+// });
 
 Vue.config.productionTip = false;
 if (process.env.NODE_ENV === "production") {

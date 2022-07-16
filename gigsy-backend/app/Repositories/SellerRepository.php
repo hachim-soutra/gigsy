@@ -39,11 +39,11 @@ class SellerRepository implements SellerInterface
         return $Seller;
     }
 
-    public function update(Seller $Seller, array $data)
+    public function update(User $user, array $data)
     {
-        $Seller->update([]);
-        $Seller->user->update($data);
-        return $Seller;
+        $user->userable->update([]);
+        $user->update($data);
+        return $user->userable;
     }
 
     public function delete(Seller $Seller)

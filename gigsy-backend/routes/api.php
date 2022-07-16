@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('v1')->group(function () {
+Route::prefix('v1')->middleware('seen')->group(function () {
     Route::prefix('user')->namespace('User')->group(function () {
         Route::post('login', [AuthController::class, 'login'])->name('login');
         Route::post('register', [AuthController::class, 'register'])->name('register');
@@ -27,12 +27,19 @@ Route::prefix('v1')->group(function () {
         Route::post('register', [AdminAuthController::class, 'register'])->name('register');
     });
 
+    Route::prefix('seller')->name('seller.')->group(function () {
+        Route::get('services/list/{userId}', [\App\Http\Controllers\API\seller\ServiceController::class, 'list']);
+        Route::get('services/filter/{status}/{userId}', [\App\Http\Controllers\API\seller\ServiceController::class, 'filterByStatus']);
+        Route::resource('services', \App\Http\Controllers\API\Shared\ServiceController::class);
+    });
+
     Route::name('shared.')->group(function () {
         Route::get('categories/list', [\App\Http\Controllers\API\Shared\CategoryController::class, 'list']);
         Route::get('category/{slug}', [\App\Http\Controllers\API\Shared\CategoryController::class, 'findBySlug']);
         Route::resource('categories', \App\Http\Controllers\API\Shared\CategoryController::class);
 
         Route::get('services/list', [\App\Http\Controllers\API\Shared\ServiceController::class, 'list']);
+        Route::get('services/filter/{status}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'filterByStatus']);
         Route::get('gigs/{slug}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'findBySlug']);
         Route::resource('services', \App\Http\Controllers\API\Shared\ServiceController::class);
 
@@ -47,5 +54,8 @@ Route::prefix('v1')->group(function () {
 
         Route::post('store-newsletter', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'store']);
         Route::post('store-contact', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'storeContact']);
+
+        Route::get('/messages', [App\Http\Controllers\API\ChatsController::class, 'fetchMessages']);
+        Route::post('/messages', [App\Http\Controllers\API\ChatsController::class, 'sendMessage']);
     });
 });

@@ -44,7 +44,7 @@ class Service extends Model
 
     public function getRatingAttribute()
     {
-        return 5;
+        return 0;
     }
 
     public function scopeActive($query)

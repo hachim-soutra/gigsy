@@ -141,13 +141,11 @@ export default {
           this.form.reset();
           this.$toasted.success(response.data.message, {
             singleton: true,
-            icon: "check",
           });
         })
         .catch(({ response }) => {
           this.$toasted.error(response.data.message, {
             singleton: true,
-            icon: "warning",
           });
         });
     },

@@ -6,6 +6,6 @@ export default {
   logout(state) {
     state.data = null;
     state.token = null;
-    this.$router.push({ name: "login" });
+    window.location.replace("/");
   },
 };

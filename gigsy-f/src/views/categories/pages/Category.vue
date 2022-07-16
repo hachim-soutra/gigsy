@@ -38,7 +38,7 @@
               <div
                 class="col-md-6 col-lg-4 d-flex align-items-stretch"
                 v-for="service in category.services"
-                :key="service.$key"
+                :key="service.id"
               >
                 <Gigs :service="service" />
               </div>

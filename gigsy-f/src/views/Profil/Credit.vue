@@ -75,13 +75,14 @@ export default {
       password: "",
       password_confirmation: "",
     }),
-    date: "12/12/22",
-    fullname: "Hachim Soutra",
-    telephone: "06 00 00 00 00",
-    emailp: "hachim.soutra@gigsy.com",
   }),
   mounted() {
     this.fetchData();
+  },
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
   },
   methods: {
     register() {
@@ -94,7 +95,7 @@ export default {
     },
     fetchData() {
       this.loading = true;
-      fetchMyServices()
+      fetchMyServices(this.getData.id)
         .then((res) => {
           this.services = res.data.data;
         })

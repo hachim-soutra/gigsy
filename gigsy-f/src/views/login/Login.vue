@@ -80,12 +80,19 @@ export default {
   }),
   methods: {
     login() {
-      this.form.post("/api/v1/user/login").then(async (response) => {
-        this.form.reset();
-        await this.$store.dispatch("setUser", response.data);
-        this.$toasted.success(response.data.message);
-        this.$router.push({ name: "home" });
-      });
+      this.form
+        .post("/api/v1/user/login")
+        .then(async (response) => {
+          this.form.reset();
+          await this.$store.dispatch("setUser", response.data);
+          this.$toasted.success(response.data.message);
+          this.$router.push({ name: "home" });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
     },
   },
 };

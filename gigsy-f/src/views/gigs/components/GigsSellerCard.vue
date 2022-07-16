@@ -7,7 +7,7 @@
         </div>
         <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">livraisons :</div>
-          <div class="col text-right">{{ livraison }}</div>
+          <div class="col text-right">{{ livraison }} Jour</div>
         </div>
         <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">Reviews :</div>
@@ -17,14 +17,14 @@
         </div>
         <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">Acheteurs :</div>
-          <div class="col text-right">25</div>
+          <div class="col text-right">0</div>
           <!-- <div class="col text-right">{{ bayers_count }}</div> -->
         </div>
         <div class="row m-0 d-flex justify-content-between mb-2">
           <div class="col-8 text-left p-0">
             Le prix du service commence à partir de :
           </div>
-          <div class="col text-right">{{ price }}$</div>
+          <div class="col text-right">{{ price }} DHS</div>
         </div>
       </div>
     </div>
@@ -46,16 +46,25 @@
       </div>
       <p v-html="seller.bio"></p>
       <br />
-      <button type="button" class="btn btn-outline-primary" href="#">
+      <router-link
+        v-if="getData && seller.id != getData.id && gigs.status == 1"
+        :to="{ name: 'message.profil', params: { seller: seller.id } }"
+        class="btn btn-outline-primary"
+      >
         contacter le vendeur
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["seller", "price", "livraison", "rating", "bayers_count"],
+  props: ["seller", "price", "livraison", "rating", "bayers_count", "gigs"],
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
   data() {
     return {};
   },

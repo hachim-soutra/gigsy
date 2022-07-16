@@ -23,7 +23,6 @@ class BuyerRequest extends FormRequest
      */
     public function rules()
     {
-
         if ($this->isMethod('post')) {
             return $this->createRules();
         } elseif ($this->isMethod('put')) {

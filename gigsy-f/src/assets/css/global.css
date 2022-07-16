@@ -3,3 +3,26 @@
   --primary-color: #14142b;
   --secondary-color: #ff5b2c;
 }
+
+
+.overflow-message {
+    overflow-y: auto;
+    height: 80vh;
+}
+.overflow-message {
+    overflow-y: auto;
+    height: 60vh;
+}
+
+.overflow-message::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+    background: transparent;
+
+}
+
+/* Add a thumb */
+.overflow-message::-webkit-scrollbar-thumb {
+    background-color: #ff5b2c; /* or add it to the track */
+
+}
