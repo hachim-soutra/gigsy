@@ -2,7 +2,7 @@
   <div class="row m-0 border-bottom px-0 py-2">
     <img
       class="u-circle img-shadow col-1"
-      src="https://avatars.hsoubcdn.com/0e1b05f1e953ee83547da4fb06b9db31?s=256"
+      :src="img"
       width="100%"
       height="auto"
     />
@@ -10,9 +10,17 @@
       <h3>{{ title }}</h3>
     </div>
     <div class="col-3 d-flex justify-content-center align-items-center">
-      <input type="number" name="" id="" v-model="price" />
+      <input
+        type="number"
+        name=""
+        id=""
+        v-model="$parent.orders[order].amount"
+      />
     </div>
-    <div class="col-2 d-flex justify-content-center align-items-center">
+    <div
+      class="col-2 d-flex justify-content-center align-items-center"
+      @click="$parent.removeOrderItem(id)"
+    >
       <i class="fa fa-window-close text-danger" aria-hidden="true"></i>
     </div>
   </div>
@@ -20,7 +28,7 @@
 
 <script>
 export default {
-  props: ["title", "price", "img"],
+  props: ["id", "title", "price", "img", "order"],
 };
 </script>
 

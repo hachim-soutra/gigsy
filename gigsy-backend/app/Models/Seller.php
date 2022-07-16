@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Traits\Userable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Seller extends Model
 {
@@ -37,7 +38,10 @@ class Seller extends Model
 
     public function getTotalCartAttribute()
     {
-        return 0;
+        $services = Service::where("seller_id", $this->id)->pluck("id")->toArray();
+        Log::alert($services);
+        Log::alert($this->id);
+        return Order::whereIn("service_id", $services)->count();
     }
 
     public function getTotalMessageAttribute()

@@ -71,7 +71,8 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        return $this->serviceRepository->findById($id);
+        $data = $this->serviceRepository->findById($id);
+        return $this->success(__('store service by success'), $data, Response::HTTP_OK);
     }
 
     /**

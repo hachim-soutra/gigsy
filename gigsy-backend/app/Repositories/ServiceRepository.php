@@ -70,6 +70,6 @@ class ServiceRepository implements ServiceInterface
 
     public function findById($id)
     {
-        Service::where('id', $id)->firstOrFail();
+        return Service::where('id', $id)->firstOrFail();
     }
 }

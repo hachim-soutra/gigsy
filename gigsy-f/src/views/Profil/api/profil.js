@@ -9,3 +9,6 @@ export const fetchMyServices = ($user) => {
 export const fetchMyOrders = ($user) => {
   return ApiService.get(`api/v1/seller/orders/list/` + $user);
 };
+export const removeOrder = ($id) => {
+  return ApiService.delete(`api/v1/seller/orders/` + $id);
+};

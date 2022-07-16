@@ -12,7 +12,24 @@
           </li>
         </ol>
       </nav>
-      <div class="col-12">
+      <div class="row" v-if="loading" data-aos="fade-up">
+        <loader
+          class="col-6 col-md-3 col-lg-4"
+          :active="loading"
+          message="Please wait 5 seconds"
+        />
+        <loader
+          class="col-6 col-md-3 col-lg-4"
+          :active="loading"
+          message="Please wait 5 seconds"
+        />
+        <loader
+          class="col-6 col-md-3 col-lg-4"
+          :active="loading"
+          message="Please wait 5 seconds"
+        />
+      </div>
+      <div class="col-12" v-if="!loading">
         <div class="row m-0 border-bottom px-0 py-2 bg-light">
           <div
             class="col text-left d-flex justify-content-start align-items-center"
@@ -27,12 +44,14 @@
           ></div>
         </div>
         <UserPanier
-          v-for="order in orders"
-          :key="order.$key"
-          title="hachim soutra"
-          price="2022"
-          description="lodeeee dhdhdjd <br/> ssbsbbsbshshshss"
-          img="1000"
+          v-for="(order, key) in orders"
+          :key="key"
+          :order="key"
+          :id="order.id"
+          :title="order.service.name"
+          :price="order.amount"
+          :description="order.service.description"
+          :img="order.service.image"
         />
         <div class="row m-0 border-bottom p-1 bg-light border-0">
           <div
@@ -41,7 +60,7 @@
             Sub Total
           </div>
           <div class="col-3 d-flex justify-content-end align-items-center">
-            1000 DHS
+            {{ priceTotal }} DHS
           </div>
           <div
             class="col-2 d-flex justify-content-center align-items-center"
@@ -54,7 +73,7 @@
             Tarif
           </div>
           <div class="col-3 d-flex justify-content-end align-items-center">
-            20 DHS
+            {{ priceTotal * 0.1 }} DHS
           </div>
           <div
             class="col-2 d-flex justify-content-center align-items-center"
@@ -65,9 +84,12 @@
             class="col text-left d-flex justify-content-start align-items-center"
           ></div>
           <div class="col-3 d-flex justify-content-end align-items-center">
-            1020 DHS
+            {{ Number.parseFloat(priceTotal * 1.1).toFixed(2) }} DHS
           </div>
-          <div class="col-2 d-flex justify-content-center align-items-center">
+          <div
+            class="col-2 d-flex justify-content-center align-items-center"
+            v-if="orders.length > 0"
+          >
             <button class="btn btn-success">Checkout</button>
           </div>
         </div>
@@ -79,15 +101,27 @@
 <script>
 import UserPanier from "./components/UserPanier.vue";
 import { fetchMyOrders } from "./api/profil";
+import Form from "vform";
 
 export default {
   computed: {
     getData() {
       return this.$store.state.user.data;
     },
+    priceTotal() {
+      let total = 0;
+      for (let i = 0; i < this.orders.length; i++) {
+        //loop through the array
+        total += this.orders[i].amount; //Do the math!
+      }
+      return Number.parseFloat(total).toFixed(2);
+    },
   },
   data: () => ({
     orders: [],
+    loading: false,
+    form: new Form({}),
+    form2: new Form({}),
   }),
   mounted() {
     this.fetchData();
@@ -103,6 +137,22 @@ export default {
           console.log(err);
         })
         .finally(() => (this.loading = false));
+    },
+    removeOrderItem(id) {
+      this.loading = true;
+      this.form
+        .delete("/api/v1/seller/orders/" + id)
+        .then((res) => {
+          this.$toasted.success(res.data.message, {
+            singleton: true,
+          });
+          this.fetchData();
+        })
+        .catch((err) => {
+          this.$toasted.error(err.response.data.message, {
+            singleton: true,
+          });
+        });
     },
   },
   components: { UserPanier },
