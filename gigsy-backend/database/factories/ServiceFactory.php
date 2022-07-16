@@ -25,7 +25,7 @@ class ServiceFactory extends Factory
             ),
             'faq' => json_encode(["q1" => $this->faker->paragraph]),
             'price' => $this->faker->randomNumber(),
-            'livraison' => $this->faker->time(),
+            'livraison' => $this->faker->randomNumber(),
             'seller_id' => $this->faker->randomElement(Seller::pluck('id')->toArray()),
             'status' => 1,
             'galeries' => json_encode(
