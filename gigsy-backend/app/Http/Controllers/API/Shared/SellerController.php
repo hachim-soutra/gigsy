@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Shared;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shared\SellerRequest;
+use App\Models\Order;
 use App\Models\Seller;
 use App\Models\User;
 use App\Repositories\SellerRepository;
@@ -24,6 +25,11 @@ class SellerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function myOffre($userId)
+    {
+        $data = Order::where('buyer_id', $userId)->with(["buyer", "service"])->where("status", 0)->get();
+        return $this->success(__('get order by success'), $data, Response::HTTP_OK);
+    }
     public function index()
     {
         $data = $this->SellerRepository->paginate();

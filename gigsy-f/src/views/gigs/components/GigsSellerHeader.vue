@@ -9,13 +9,7 @@
       class="col text-right p-0"
       v-if="getData && gigs.seller_id != getData.id && gigs.status == 1"
     >
-      <router-link
-        tag="button"
-        :to="{
-          name: 'cart.profil',
-        }"
-        class="button m-0"
-      >
+      <button class="button m-0" @click="addToCard">
         <span>Add to cart</span>
         <div class="cart">
           <svg viewBox="0 0 36 26">
@@ -25,12 +19,14 @@
             <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
           </svg>
         </div>
-      </router-link>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import Form from "vform";
+
 export default {
   computed: {
     getData() {
@@ -39,7 +35,33 @@ export default {
   },
   props: ["title", "gigs"],
   data() {
-    return {};
+    return {
+      form: new Form({
+        service_id: null,
+        buyer_id: null,
+      }),
+    };
+  },
+  mounted() {
+    this.form.buyer_id = this.getData.id;
+    this.form.service_id = this.gigs.id;
+  },
+  methods: {
+    addToCard() {
+      this.form
+        .post("/api/v1/seller/orders")
+        .then((res) => {
+          this.$router.push({ name: "cart.profil" });
+          this.$toasted.success(res.data.message, {
+            singleton: true,
+          });
+        })
+        .catch(({ response }) => {
+          this.$toasted.error(response.data.message, {
+            singleton: true,
+          });
+        });
+    },
   },
 };
 </script>

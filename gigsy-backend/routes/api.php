@@ -31,6 +31,8 @@ Route::prefix('v1')->middleware('seen')->group(function () {
         Route::get('services/list/{userId}', [\App\Http\Controllers\API\seller\ServiceController::class, 'list']);
         Route::get('services/filter/{status}/{userId}', [\App\Http\Controllers\API\seller\ServiceController::class, 'filterByStatus']);
         Route::resource('services', \App\Http\Controllers\API\Shared\ServiceController::class);
+        Route::get('orders/list/{userId}', [\App\Http\Controllers\API\Shared\SellerController::class, 'myOffre']);
+        Route::resource('orders', \App\Http\Controllers\API\Shared\OrderController::class);
     });
 
     Route::name('shared.')->group(function () {
@@ -51,6 +53,8 @@ Route::prefix('v1')->middleware('seen')->group(function () {
 
         Route::get('sellers/list', [\App\Http\Controllers\API\Shared\SellerController::class, 'list']);
         Route::resource('sellers', \App\Http\Controllers\API\Shared\SellerController::class);
+
+        Route::resource('orders', \App\Http\Controllers\API\Shared\OrderController::class);
 
         Route::post('store-newsletter', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'store']);
         Route::post('store-contact', [\App\Http\Controllers\API\Shared\NewsLetterController::class, 'storeContact']);

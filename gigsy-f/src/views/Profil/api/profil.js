@@ -6,3 +6,6 @@ export const fetchCategories = () => {
 export const fetchMyServices = ($user) => {
   return ApiService.get(`api/v1/seller/services/list/` + $user);
 };
+export const fetchMyOrders = ($user) => {
+  return ApiService.get(`api/v1/seller/orders/list/` + $user);
+};

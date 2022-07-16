@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Shared\Service;
+namespace App\Http\Requests\Shared;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServiceRequest extends FormRequest
+class OrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -38,13 +38,8 @@ class ServiceRequest extends FormRequest
     public function createRules(): array
     {
         return [
-            'image' => 'required',
-            'seller_id' => 'required',
-            'category_id' => 'required',
-            'name' => 'required',
-            'price' => 'required|numeric|between:0,9999999999.99',
-            'description' => 'required',
-            'livraison' => 'required'
+            'service_id'    => 'required',
+            'buyer_id'      => 'required',
         ];
     }
 
@@ -56,14 +51,8 @@ class ServiceRequest extends FormRequest
     public function updateRules(): array
     {
         return [
-            'name' => 'required',
-            'description' => 'required',
-            'seller_id' => 'required',
-            'category_id' => 'required',
-            'price' => 'required|numeric|between:0,9999999999.99',
-            'image' => 'required',
-            'livraison' => 'required',
-            'status' => 'required',
+            'service_id'    => 'required',
+            'buyer_id'      => 'required',
         ];
     }
 }

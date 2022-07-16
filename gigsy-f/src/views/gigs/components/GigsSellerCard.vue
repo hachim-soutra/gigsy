@@ -29,12 +29,12 @@
       </div>
     </div>
 
-    <div class="wrapper w-100 bg-white p-3">
+    <div class="wrapper w-100 bg-white p-3" v-if="seller">
       <div class="section-title" data-aos="fade-up">
         <p>About The Seller</p>
       </div>
       <div class="image">
-        <img :src="seller.photo" alt="" width="100%" height="auto" />
+        <img :src="seller.user.img" alt="" width="100%" height="auto" />
       </div>
       <strong>{{ seller.user.fullname }}</strong>
       <div class="rating">
@@ -44,7 +44,7 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
       </div>
-      <p v-html="seller.bio"></p>
+      <p v-html="seller.user.description"></p>
       <br />
       <router-link
         v-if="getData && seller.id != getData.id && gigs.status == 1"
@@ -325,8 +325,8 @@ span {
 }
 
 .container .image img {
-  height: auto;
-  width: 60%;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid black;

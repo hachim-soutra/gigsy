@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       loading: true,
-      gigs: true,
+      gigs: null,
     };
   },
   mounted() {

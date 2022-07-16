@@ -27,8 +27,8 @@
           ></div>
         </div>
         <UserPanier
-          v-for="item in 3"
-          :key="item.$key"
+          v-for="order in orders"
+          :key="order.$key"
           title="hachim soutra"
           price="2022"
           description="lodeeee dhdhdjd <br/> ssbsbbsbshshshss"
@@ -78,10 +78,33 @@
 
 <script>
 import UserPanier from "./components/UserPanier.vue";
+import { fetchMyOrders } from "./api/profil";
+
 export default {
-  data: () => ({}),
-  mounted() {},
-  methods: {},
+  computed: {
+    getData() {
+      return this.$store.state.user.data;
+    },
+  },
+  data: () => ({
+    orders: [],
+  }),
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      this.loading = true;
+      fetchMyOrders(this.getData.id)
+        .then((res) => {
+          this.orders = res.data.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => (this.loading = false));
+    },
+  },
   components: { UserPanier },
 };
 </script>

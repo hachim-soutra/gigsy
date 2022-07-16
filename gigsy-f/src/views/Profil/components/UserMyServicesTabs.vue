@@ -87,9 +87,24 @@
             <form
               @submit.prevent="register"
               @keydown="form.onKeydown($event)"
-              class="container"
+              class="container row"
             >
-              <div class="form-group">
+              <div class="form-group col-12">
+                <label for="name">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="form.name"
+                  :class="{ 'is-invalid': form.errors.has('name') }"
+                />
+                <div
+                  class="invalid-feedback text-left"
+                  v-if="form.errors.has('name')"
+                >
+                  {{ form.errors.get("name") }}
+                </div>
+              </div>
+              <div class="form-group col-6">
                 <label for="image">Image</label>
                 <input
                   @change="onFileChange"
@@ -107,22 +122,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="name">Title</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  v-model="form.name"
-                  :class="{ 'is-invalid': form.errors.has('name') }"
-                />
-                <div
-                  class="invalid-feedback text-left"
-                  v-if="form.errors.has('name')"
-                >
-                  {{ form.errors.get("name") }}
-                </div>
-              </div>
-              <div class="form-group">
+              <div class="form-group col-6">
                 <label for="name">Prix</label>
                 <input
                   type="number"
@@ -137,7 +137,7 @@
                   {{ form.errors.get("price") }}
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group col-6">
                 <label for="name">livraison (jour)</label>
                 <input
                   type="number"
@@ -153,21 +153,20 @@
                   {{ form.errors.get("livraison") }}
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group col-6">
                 <label for="name">Categorie</label>
-                <input
-                  type="number"
+
+                <select
                   class="form-control"
-                  v-model="form.livraison"
+                  v-model="form.category_id"
                   :class="{ 'is-invalid': form.errors.has('category_id') }"
-                />
-                <select>
+                >
                   <option
                     :value="category.id"
                     v-for="category in categories"
                     :key="category.$key"
                   >
-                    {{ category.name }}
+                    {{ category.category_name }}
                   </option>
                 </select>
 
@@ -178,7 +177,7 @@
                   {{ form.errors.get("category_id") }}
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group col-12">
                 <label for="description">Description</label>
                 <textarea
                   class="form-control"
@@ -257,7 +256,7 @@ export default {
     },
     fetchMyCategories() {
       this.toggleProfil = 1;
-      ApiService.get("api/v1/seller/categories/list")
+      ApiService.get("api/v1/categories/list")
         .then((res) => {
           this.categories = res.data.data;
         })
