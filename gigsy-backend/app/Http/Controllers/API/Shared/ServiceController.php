@@ -98,6 +98,17 @@ class ServiceController extends Controller
         //
     }
 
+    public function updateStatus(Request $request, $id)
+    {
+        $service = Service::findOrFail($id);
+        $service->update([
+            'status' => 1
+        ]);
+        $data['success'] = 1;
+        return $this->success(__('update service by success'), $data, Response::HTTP_OK);
+    }
+
+
     /**
      * Remove the specified resource from storage.
      *

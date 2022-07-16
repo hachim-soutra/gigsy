@@ -44,6 +44,7 @@ Route::prefix('v1')->middleware('seen')->group(function () {
         Route::get('services/filter/{status}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'filterByStatus']);
         Route::get('gigs/{slug}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'findBySlug']);
         Route::resource('services', \App\Http\Controllers\API\Shared\ServiceController::class);
+        Route::post('services/update/approve/{id}', [\App\Http\Controllers\API\Shared\ServiceController::class, 'updateStatus']);
 
         Route::get('admins/list', [AdminController::class, 'list']);
         Route::resource('admins', AdminController::class);
