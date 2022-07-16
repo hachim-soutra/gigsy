@@ -83,7 +83,7 @@ class AdminRepository implements UserRepositoryInterface
     public function updateById(int $id, $request): Response
     {
         $admin = Admin::findOrFail($id);
-        $admin->update($request);
+        $admin->user->update($request);
         $response['data'] = $admin;
         $response['message'] = __('Admin updated with success');
 
